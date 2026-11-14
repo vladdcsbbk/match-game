@@ -60,7 +60,7 @@
 	{"options_left" : [{"option1" : "exercise"}, {"option2" : "hobby"}, {"option3" : "jog"}],
 	 "options_right" : [{"option1" : "an activity you enjoy doing in your free time, such as painting, collecting things or gardening"}, {"option2" : "run at a slow, steady pace to keep fit, nudge or bump slightly, prompt someone's memory"}, {"option3" : "physical activity done to stay fit and healthy, a task done to practise a skill, use or put into action"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "feverish"}, {"option2" : "sneeze"}, {"option3" : "flu"}],
 	 "options_right" : [{"option1" : "suddenly force air out through your nose and mouth with a loud noise, often because of dust or pollen"}, {"option2" : "an infectious illness caused by a virus, with aches, tiredness and a high temperature, short for influenza"}, {"option3" : "hot and unwell with a raised body temperature, extremely excited, nervous or frantic"}],
