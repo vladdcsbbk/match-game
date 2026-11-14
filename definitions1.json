@@ -55,7 +55,7 @@
 	{"options_left" : [{"option1" : "chase"}, {"option2" : "race"}, {"option3" : "sport"}],
 	 "options_right" : [{"option1" : "a contest of speed, move or run very fast, compete to be the first to achieve something"}, {"option2" : "a game or activity such as football or swimming that needs physical effort and skill, wear something proudly"}, {"option3" : "run after someone or something to catch them, try hard to get something, drive away"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "exercise"}, {"option2" : "hobby"}, {"option3" : "jog"}],
 	 "options_right" : [{"option1" : "an activity you enjoy doing in your free time, such as painting, collecting things or gardening"}, {"option2" : "run at a slow, steady pace to keep fit, nudge or bump slightly, prompt someone's memory"}, {"option3" : "physical activity done to stay fit and healthy, a task done to practise a skill, use or put into action"}],
