@@ -130,7 +130,7 @@
 	{"options_left" : [{"option1" : "scarce"}, {"option2" : "penultimate"}, {"option3" : "limited"}],
 	 "options_right" : [{"option1" : "second to last, the one just before the last"}, {"option2" : "kept within fixed boundaries, restricted, not great in amount or ability"}, {"option3" : "not plentiful, hard to find or get hold of, rare"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "ground"}, {"option2" : "feeling"}, {"option3" : "opinion"}],
 	 "options_right" : [{"option1" : "an emotion such as joy or anger, the sense of touch, a vague idea or hunch that something is true"}, {"option2" : "what someone thinks or believes about something, a view or judgement, expert advice"}, {"option3" : "the surface of the earth, land used for sport, a good reason for doing or believing something, crushed into powder"}],
