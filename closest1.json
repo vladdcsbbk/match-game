@@ -50,7 +50,7 @@
   {"options_left" : [{"option1" : "waste"}, {"option2" : "hoard"}, {"option3" : "bank"}],
 	 "options_right" : [{"option1" : "spend"}, {"option2" : "invest"}, {"option3" : "squander"}],
 	 "correct_match" : [{"option1" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "burglary"}, {"option2" : "crime"}, {"option3" : "defraud"}],
 	 "options_right" : [{"option1" : "swindle"}, {"option2" : "vandalise"}, {"option3" : "steal"}],
