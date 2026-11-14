@@ -60,7 +60,7 @@
   {"options_left" : [{"option1" : "trudge"}, {"option2" : "meander"}, {"option3" : "loiter"}],
 	 "options_right" : [{"option1" : "slow"}, {"option2" : "stumble"}, {"option3" : "dawdle"}],
 	 "correct_match" : [{"option3" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "eventual"}, {"option2" : "finite"}, {"option3" : "final"}],
 	 "options_right" : [{"option1" : "scarce"}, {"option2" : "penultimate"}, {"option3" : "limited"}],
