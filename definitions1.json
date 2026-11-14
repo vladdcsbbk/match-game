@@ -25,7 +25,7 @@
 	{"options_left" : [{"option1" : "whisper"}, {"option2" : "hoarse"}, {"option3" : "listen"}],
 	 "options_right" : [{"option1" : "sounding rough and croaky, often because of a sore throat or too much shouting"}, {"option2" : "pay attention to sounds or to someone speaking, take notice of advice and follow it"}, {"option3" : "speak very softly using your breath instead of your voice, a soft rustling sound, a rumour or hint"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "say"}, {"option2" : "mumble"}, {"option3" : "quiet"}],
 	 "options_right" : [{"option1" : "speak softly and unclearly with your mouth almost closed, so that words are hard to understand"}, {"option2" : "making little or no noise, calm and peaceful, shy and not talkative, not busy"}, {"option3" : "speak words aloud, tell or state something, give an opinion, the right to help make a decision"}],
