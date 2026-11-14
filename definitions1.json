@@ -115,7 +115,7 @@
 	{"options_left" : [{"option1" : "trudge"}, {"option2" : "meander"}, {"option3" : "loiter"}],
 	 "options_right" : [{"option1" : "follow a winding, twisting course like a river, wander about without hurrying or with no clear aim"}, {"option2" : "stand or wait around somewhere with no obvious reason, move slowly and keep stopping"}, {"option3" : "walk slowly with heavy steps because you are tired or the ground is difficult"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "slow"}, {"option2" : "stumble"}, {"option3" : "dawdle"}],
 	 "options_right" : [{"option1" : "trip or lose your balance for a moment, walk unsteadily, make mistakes when speaking or reading, find something by chance"}, {"option2" : "take more time than needed to do something or get somewhere, waste time, lag behind others"}, {"option3" : "moving or happening without much speed, not quick to understand, showing a time behind the correct one, reduce speed"}],
