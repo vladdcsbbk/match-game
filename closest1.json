@@ -45,7 +45,7 @@
   {"options_left" : [{"option1" : "devour"}, {"option2" : "dine"}, {"option3" : "swallow"}],
 	 "options_right" : [{"option1" : "greedy"}, {"option2" : "gobble"}, {"option3" : "nibble"}],
 	 "correct_match" : [{"option1" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "waste"}, {"option2" : "hoard"}, {"option3" : "bank"}],
 	 "options_right" : [{"option1" : "spend"}, {"option2" : "invest"}, {"option3" : "squander"}],
