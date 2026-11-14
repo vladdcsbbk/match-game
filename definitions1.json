@@ -105,7 +105,7 @@
 	{"options_left" : [{"option1" : "burglary"}, {"option2" : "crime"}, {"option3" : "defraud"}],
 	 "options_right" : [{"option1" : "an action that breaks the law and can be punished, illegal acts in general, something shameful or very wrong"}, {"option2" : "get money or property from someone illegally by tricking or deceiving them, cheat"}, {"option3" : "breaking into a house or other building illegally to steal things"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "swindle"}, {"option2" : "vandalise"}, {"option3" : "steal"}],
 	 "options_right" : [{"option1" : "deliberately damage or destroy property that belongs to someone else or to the public"}, {"option2" : "take something that belongs to someone else without permission, move quietly and secretly"}, {"option3" : "cheat someone out of money or property by tricking them, a dishonest scheme"}],
