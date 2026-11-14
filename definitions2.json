@@ -1,0 +1,206 @@
+{
+"game_name": "Definitions 2",
+"instructions": "Connect each word on the left to its definition on the right",
+"questions": [
+	{"options_left" : [{"option1" : "humble"}, {"option2" : "poor"}, {"option3" : "unhappy"}],
+	 "options_right" : [{"option1" : "having very little money, of low quality or badly done, deserving sympathy, lacking in something"}, {"option2" : "sad or miserable, not pleased or satisfied, unlucky or unfortunate"}, {"option3" : "modest and not boastful, not thinking you are better than others, simple and plain rather than grand, low in rank"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "proud"}, {"option2" : "ordinary"}, {"option3" : "weak"}],
+	 "options_right" : [{"option1" : "normal and usual, nothing special, plain and average"}, {"option2" : "lacking physical strength or energy, easily broken or damaged, not convincing, watery or diluted"}, {"option3" : "pleased about something you or someone close to you has done, thinking too highly of yourself, dignified"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "unusual"}, {"option2" : "dull"}, {"option3" : "interesting"}],
+	 "options_right" : [{"option1" : "boring and not exciting, not bright or shiny, cloudy and grey, not sharp, slow to understand"}, {"option2" : "catching and holding your attention, making you curious to know more"}, {"option3" : "not common or ordinary, rare, different from what is expected"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "long"}, {"option2" : "mundane"}, {"option3" : "old"}],
+	 "options_right" : [{"option1" : "ordinary and dull, lacking excitement or interest, to do with everyday life"}, {"option2" : "having lived or existed for many years, belonging to the past, not new or modern, former or previous"}, {"option3" : "measuring a great distance from one end to the other, lasting a lot of time, wish very much for something"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "challenge"}, {"option2" : "conquer"}, {"option3" : "battle"}],
+	 "options_right" : [{"option1" : "take control of a country or people by force, defeat an enemy, overcome a problem or fear"}, {"option2" : "a fight between armies or groups, a long struggle to achieve something, struggle hard against something"}, {"option3" : "a difficult task that tests your ability, invite someone to compete, question whether something is true or right"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "fight"}, {"option2" : "lose"}, {"option3" : "drop"}],
+	 "options_right" : [{"option1" : "no longer have something because you cannot find it, fail to win a game or contest, have something taken away"}, {"option2" : "let something fall, fall or become lower, a small round amount of liquid, stop doing or including something"}, {"option3" : "use your body or weapons to try to hurt someone, a struggle against something, argue angrily, try hard to stop or achieve something"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "decaying"}, {"option2" : "ancient"}, {"option3" : "dirty"}],
+	 "options_right" : [{"option1" : "belonging to the very distant past, very old, having existed for a very long time"}, {"option2" : "covered with mud, dust or stains, not clean, unfair or dishonest, rude"}, {"option3" : "rotting or breaking down slowly, becoming weaker or falling into ruin"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "elegant"}, {"option2" : "decorative"}, {"option3" : "modern"}],
+	 "options_right" : [{"option1" : "making something look more attractive, used as an ornament rather than for a practical purpose"}, {"option2" : "belonging to the present time or recent times, using the latest ideas or equipment, up to date"}, {"option3" : "graceful and stylish in appearance or movement, cleverly simple"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "brave"}, {"option2" : "strong"}, {"option3" : "confident"}],
+	 "options_right" : [{"option1" : "having great physical power, not easily broken, intense or powerful, firm in your beliefs"}, {"option2" : "sure of yourself and your abilities, feeling certain that something will happen"}, {"option3" : "ready to face danger or pain without showing fear, courageous"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "shy"}, {"option2" : "surly"}, {"option3" : "suspicious"}],
+	 "options_right" : [{"option1" : "bad-tempered, unfriendly and rude"}, {"option2" : "feeling that someone may be guilty or dishonest, not trusting, making you think something is wrong"}, {"option3" : "nervous and uncomfortable around other people, easily startled, unwilling to do something"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "cease"}, {"option2" : "ban"}, {"option3" : "prevent"}],
+	 "options_right" : [{"option1" : "officially forbid something, an official rule saying that something is not allowed"}, {"option2" : "keep something from happening, make it impossible for someone to do something"}, {"option3" : "stop doing something, come to an end, bring something to an end"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "finish"}, {"option2" : "commence"}, {"option3" : "abolish"}],
+	 "options_right" : [{"option1" : "begin or start, often in a formal way"}, {"option2" : "officially get rid of a law, system or custom, do away with completely"}, {"option3" : "come or bring to an end, complete a task, the last part of something, the surface coating on wood or furniture"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "reserved"}, {"option2" : "slow"}, {"option3" : "serene"}],
+	 "options_right" : [{"option1" : "moving or happening without much speed, not quick to understand, showing a time behind the correct one, reduce speed"}, {"option2" : "calm, peaceful and free from worry, still and clear like a cloudless sky"}, {"option3" : "keeping your feelings and thoughts to yourself, quiet and private, booked or kept for someone"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "busy"}, {"option2" : "frenzied"}, {"option3" : "troublesome"}],
+	 "options_right" : [{"option1" : "wild, uncontrolled and frantic, done very fast and with great energy"}, {"option2" : "causing difficulty, worry or annoyance, hard to deal with"}, {"option3" : "having a lot to do, full of people or activity, in use, too full of detail"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "claim"}, {"option2" : "accuse"}, {"option3" : "quarrel"}],
+	 "options_right" : [{"option1" : "say that someone has done something wrong or illegal, blame"}, {"option2" : "an angry argument, argue angrily with someone"}, {"option3" : "say something is true without giving proof, ask for something because you think it belongs to you, a statement that might not be true"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "decide"}, {"option2" : "fight"}, {"option3" : "defend"}],
+	 "options_right" : [{"option1" : "use your body or weapons to try to hurt someone, a struggle against something, argue angrily, try hard to stop or achieve something"}, {"option2" : "protect someone or something from attack or harm, speak in support of someone who is criticised or accused"}, {"option3" : "make up your mind after thinking, choose, settle a question or argument"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "deteriorate"}, {"option2" : "undermine"}, {"option3" : "elevate"}],
+	 "options_right" : [{"option1" : "gradually weaken someone or something, often secretly, dig away underneath something"}, {"option2" : "lift or raise to a higher position, promote to a higher rank, make better or more important"}, {"option3" : "become worse in quality or condition, decline"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "correct"}, {"option2" : "advance"}, {"option3" : "improve"}],
+	 "options_right" : [{"option1" : "move forward, make progress, lend money before it is due, a forward movement"}, {"option2" : "make or become better"}, {"option3" : "free from mistakes, right or true, put something right, mark mistakes in work, proper and suitable"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "direct"}, {"option2" : "honest"}, {"option3" : "genuine"}],
+	 "options_right" : [{"option1" : "truthful, not lying, cheating or stealing, fair and open"}, {"option2" : "real and exactly what it seems to be, not fake or copied, sincere and heartfelt"}, {"option3" : "going straight from one place to another without stopping or turning, frank and to the point, manage or control, show someone the way"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "ignorant"}, {"option2" : "natural"}, {"option3" : "untruthful"}],
+	 "options_right" : [{"option1" : "not made or caused by people, normal or expected, relaxed and not pretending, present from birth like a talent"}, {"option2" : "saying things that are false, dishonest, not to be believed"}, {"option3" : "not knowing about something, lacking education or information, rude or impolite"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "modest"}, {"option2" : "wealthy"}, {"option3" : "golden"}],
+	 "options_right" : [{"option1" : "having a lot of money or possessions, rich"}, {"option2" : "made of or coloured like the precious yellow metal, shining and yellow, very special or successful, a happy time of great success"}, {"option3" : "not boasting about your abilities or achievements, fairly small or not expensive, simple and plain"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "pitiful"}, {"option2" : "sad"}, {"option3" : "needy"}],
+	 "options_right" : [{"option1" : "unhappy or full of sorrow, causing sorrow, regrettable or unfortunate"}, {"option2" : "very poor and lacking things such as food or shelter, wanting a lot of attention and reassurance"}, {"option3" : "making you feel sorry for someone, deserving sympathy, so poor in quality that it is laughable"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "rich"}, {"option2" : "plentiful"}, {"option3" : "sufficient"}],
+	 "options_right" : [{"option1" : "available in large amounts, more than enough, abundant"}, {"option2" : "as much as is needed for a purpose, adequate"}, {"option3" : "having a lot of money or possessions, full of good things, heavy with butter, cream or sugar, deep and strong in colour or sound"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "ample"}, {"option2" : "feeble"}, {"option3" : "scarce"}],
+	 "options_right" : [{"option1" : "very weak, lacking strength or energy, not convincing or effective"}, {"option2" : "not plentiful, hard to find or get hold of, rare"}, {"option3" : "more than enough, plenty, large and roomy"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "sometimes"}, {"option2" : "regularly"}, {"option3" : "never"}],
+	 "options_right" : [{"option1" : "happening at fixed or even intervals, often, as a habit or routine"}, {"option2" : "at no time in the past or future, not once, not at all"}, {"option3" : "on some occasions but not always, now and then"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "normally"}, {"option2" : "daily"}, {"option3" : "occasionally"}],
+	 "options_right" : [{"option1" : "happening once every twenty-four hours, a newspaper published each morning"}, {"option2" : "now and then, from time to time, not often"}, {"option3" : "usually, in the ordinary way, as is typical"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "vengeful"}, {"option2" : "violent"}, {"option3" : "bitter"}],
+	 "options_right" : [{"option1" : "using physical force to hurt or damage, extremely strong and sudden, such as a storm"}, {"option2" : "having a sharp, unpleasant taste, angry and hurt because of unfair treatment, painfully cold"}, {"option3" : "wanting to hurt someone in return for a harm they did to you, wanting to get even"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "merciful"}, {"option2" : "resentful"}, {"option3" : "supportive"}],
+	 "options_right" : [{"option1" : "feeling angry and upset because you think you have been treated unfairly"}, {"option2" : "giving help, encouragement and kindness to someone"}, {"option3" : "showing kindness and forgiveness to someone you could punish, bringing relief from suffering"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "nimble"}, {"option2" : "lumbering"}, {"option3" : "quick"}],
+	 "options_right" : [{"option1" : "moving in a slow, heavy and awkward way"}, {"option2" : "moving fast or done in a short time, lasting only a short time, sudden or hasty"}, {"option3" : "light and agile on your feet, moving easily and neatly, sharp-witted"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "clumsy"}, {"option2" : "awkward"}, {"option3" : "swift"}],
+	 "options_right" : [{"option1" : "making you feel embarrassed or uncomfortable, difficult to use, do or deal with, stiff and ungraceful"}, {"option2" : "happening or moving very quickly, prompt, a small fast-flying bird"}, {"option3" : "often dropping things or bumping into them, moving carelessly, done without skill"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "tropical"}, {"option2" : "deserted"}, {"option3" : "humid"}],
+	 "options_right" : [{"option1" : "empty of people, abandoned or left alone"}, {"option2" : "damp and warm, with a lot of moisture in the air"}, {"option3" : "belonging to the hot regions of the world near the equator, very hot"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "barren"}, {"option2" : "impoverished"}, {"option3" : "arid"}],
+	 "options_right" : [{"option1" : "made very poor, without enough money to live on, made weaker or worse in quality"}, {"option2" : "having very little rain, extremely dry, dull and uninteresting"}, {"option3" : "unable to produce crops or plants, bleak and lifeless, producing no results"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "muffle"}, {"option2" : "restrain"}, {"option3" : "restrict"}],
+	 "options_right" : [{"option1" : "hold someone back from doing something, keep feelings or actions under control"}, {"option2" : "put a limit on something, keep within certain boundaries"}, {"option3" : "make a sound quieter or less clear, wrap something up to keep it warm"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "amplify"}, {"option2" : "elaborate"}, {"option3" : "summarise"}],
+	 "options_right" : [{"option1" : "very detailed and complicated, add more details to something you have said"}, {"option2" : "give a short account of the main points of something"}, {"option3" : "make a sound louder, especially with electronic equipment, make something stronger or greater"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "pithy"}, {"option2" : "rambling"}, {"option3" : "complicated"}],
+	 "options_right" : [{"option1" : "long and confused, wandering from one subject to another, spreading out in many directions, walking for pleasure in the countryside"}, {"option2" : "made of many connected parts, difficult to understand or deal with"}, {"option3" : "short but full of meaning, brief and to the point"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "incomplete"}, {"option2" : "abbreviated"}, {"option3" : "concise"}],
+	 "options_right" : [{"option1" : "made shorter by leaving parts out, such as a word written in a shortened form"}, {"option2" : "giving a lot of information clearly in few words"}, {"option3" : "not finished, with some parts missing"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "doubtful"}, {"option2" : "tactful"}, {"option3" : "sincere"}],
+	 "options_right" : [{"option1" : "careful not to upset or offend people, saying difficult things in a kind and sensitive way"}, {"option2" : "honest and meaning what you say, genuine, not pretending"}, {"option3" : "feeling unsure or uncertain, unlikely to happen, questionable"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "obnoxious"}, {"option2" : "forthright"}, {"option3" : "obstinate"}],
+	 "options_right" : [{"option1" : "saying exactly what you think, openly and plainly, even if it upsets people"}, {"option2" : "refusing to change your mind or behaviour, stubborn, hard to get rid of"}, {"option3" : "extremely unpleasant and rude, very annoying"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "dismiss"}, {"option2" : "excuse"}, {"option3" : "condemn"}],
+	 "options_right" : [{"option1" : "a reason given to explain a mistake or bad behaviour, forgive someone, allow someone not to do something"}, {"option2" : "say strongly that something is wrong or bad, sentence someone to a punishment, declare a building unsafe"}, {"option3" : "send someone away, remove someone from their job, decide something is not worth thinking about"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "ridicule"}, {"option2" : "commend"}, {"option3" : "reject"}],
+	 "options_right" : [{"option1" : "praise someone, especially formally or in public, speak well of something"}, {"option2" : "refuse to accept or agree to something, throw away as not good enough, push someone away"}, {"option3" : "make fun of someone or something in an unkind way, mockery"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	}
+    ]
+}
