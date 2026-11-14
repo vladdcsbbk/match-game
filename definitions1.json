@@ -35,7 +35,7 @@
 	{"options_left" : [{"option1" : "crafty"}, {"option2" : "villain"}, {"option3" : "wrong"}],
 	 "options_right" : [{"option1" : "an evil person who harms others or breaks the law, the bad character in a story, film or play"}, {"option2" : "not correct or true, unfair or morally bad, not suitable, not working properly"}, {"option3" : "clever at getting what you want, especially by tricking people, cunning and sneaky"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "naughty"}, {"option2" : "sly"}, {"option3" : "wicked"}],
 	 "options_right" : [{"option1" : "clever at tricking people in a secret way, cunning, showing that you know a secret"}, {"option2" : "evil or very bad, causing great harm, playfully mischievous, really great in slang"}, {"option3" : "badly behaved or disobedient, especially of a child, slightly rude or cheeky"}],
