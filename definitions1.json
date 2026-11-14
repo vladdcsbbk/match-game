@@ -20,7 +20,7 @@
 	{"options_left" : [{"option1" : "spade"}, {"option2" : "scoop"}, {"option3" : "pail"}],
 	 "options_right" : [{"option1" : "a deep spoon for serving ice cream or flour, lift out with a curved movement, a news story printed before anyone else's"}, {"option2" : "an open container with a handle for carrying water or milk, another word for a bucket"}, {"option3" : "a tool with a flat metal blade and a long handle for digging, one of the four suits in a pack of playing cards"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "whisper"}, {"option2" : "hoarse"}, {"option3" : "listen"}],
 	 "options_right" : [{"option1" : "sounding rough and croaky, often because of a sore throat or too much shouting"}, {"option2" : "pay attention to sounds or to someone speaking, take notice of advice and follow it"}, {"option3" : "speak very softly using your breath instead of your voice, a soft rustling sound, a rumour or hint"}],
