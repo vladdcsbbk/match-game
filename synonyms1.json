@@ -1,0 +1,17 @@
+{
+"game_name": "Match synonyms 1",
+"instructions": "Connect each word on the left to a word on the right that is its best synonym",
+"questions": [
+	{"options_left" : ["option1" : "love", "option2" : "hate"],
+	 "options_right" : ["option1" : "antipathy", "option2" : "sympathy"],
+	 "correct_match" : ["option1" : "option2", "option2" : "option1"],
+	 "done" : false
+	},
+	{"options_left" : ["option1" : "calculate", "option2" : "destroy"],
+	 "options_right" : ["option1" : "compute", "option2" : "dog"],
+	 "correct_match" : ["option1" : "option1"],
+	 "done" : false
+	}
+
+    ]
+}
