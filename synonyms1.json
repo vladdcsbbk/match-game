@@ -10,7 +10,7 @@
 	{"options_left" : [{"option1" : "calculate"}, {"option2" : "destroy"}],
 	 "options_right" : [{"option1" : "compute"}, {"option2" : "dog"}],
 	 "correct_match" : [{"option1" : "option1"}],
-	 "done" : false
+	 "done" : true
 	}
 
     ]
