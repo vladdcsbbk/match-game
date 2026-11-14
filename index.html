@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Word Match</title>
+<meta name="theme-color" content="#EAF5EE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Word Match">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23CFE8D9'/%3E%3Crect x='5' y='14' width='20' height='16' rx='4' fill='%23fff' stroke='%2326214A' stroke-width='3'/%3E%3Crect x='39' y='34' width='20' height='16' rx='4' fill='%23fff' stroke='%2326214A' stroke-width='3'/%3E%3Cpath d='M25 22C33 40 31 46 39 42' fill='none' stroke='%2326214A' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M25 22C33 40 31 46 39 42' fill='none' stroke='%23FF5A4E' stroke-width='3.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@600;700;800&display=swap">
+<style>
+:root {
+  --page: #EAF5EE;
+  --board: #CFE8D9;
+  --hole: rgba(38, 33, 74, 0.13);
+  --ink: #26214A;
+  --ink-2: #57527A;
+  --card: #FFFFFF;
+  --sun: #FFC93C;
+  --leaf: #15804F;
+  --berry: #B8325A;
+  --select: #FFF0B8;
+  --display: "Shantell Sans", "Chalkboard SE", "Comic Neue", "Comic Sans MS", system-ui, sans-serif;
+  --text: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gap-w: 124px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; touch-action: manipulation; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 18px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #2F7DF6; outline-offset: 3px; }
+
+.view {
+  max-width: 1080px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: max(20px, env(safe-area-inset-top)) max(22px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(22px, env(safe-area-inset-left));
+}
+
+/* ---------- Logo: two word tiles joined by a cord ---------- */
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1;
+}
+.logo-tile {
+  position: relative;
+  display: inline-block;
+  padding: 14px 24px 17px;
+  background: var(--card);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 0 5px 0 var(--ink);
+}
+.logo-tile:first-child { transform: rotate(-3deg); }
+.logo-tile + .logo-tile { margin-left: 100px; transform: rotate(2.5deg); }
+.logo-tile:first-child .jack { right: -17px; }
+.logo-tile + .logo-tile .jack { left: -17px; }
+.logo .cords { z-index: 2; }
+
+/* ---------- Loading ---------- */
+.view-loading { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.loading-text { margin: 40px 0 0; font-size: 20px; color: var(--ink-2); }
+
+/* ---------- Menu ---------- */
+.menu-head { position: relative; padding: 26px 0 6px; text-align: center; }
+.head-tools { position: absolute; top: 0; right: 0; display: flex; }
+.head-tools > * + * { margin-left: 12px; }
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  background: var(--card);
+  border: 2.5px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 0 4px 0 var(--ink);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.icon-btn svg { width: 28px; height: 28px; }
+.icon-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+.icon-btn.is-off .snd-on, .icon-btn:not(.is-off) .snd-off { display: none; }
+
+.menu-title { margin: 34px 0 24px; font-family: var(--display); font-weight: 700; font-size: 30px; text-align: center; }
+.game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.game-tile {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  align-content: space-between;
+  min-height: 124px;
+  padding: 20px 22px 20px;
+  text-align: left;
+  background: var(--card);
+  border: 2.5px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: 0 5px 0 var(--ink);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.game-tile:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--ink); }
+.game-tile.is-complete { background: #FFF7DA; }
+.game-name { display: block; padding-right: 36px; font-size: 24px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+.game-meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+.game-count { font-size: 16px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+.meter { display: block; height: 12px; overflow: hidden; background: #E2EFE8; border: 2px solid var(--ink); border-radius: 99px; }
+.meter-fill { display: block; width: 0; height: 100%; background: var(--leaf); border-radius: 99px; transition: width .4s ease; }
+.badge-star { position: absolute; top: -16px; right: -12px; width: 52px; height: 52px; transform: rotate(12deg); }
+
+.banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  max-width: 780px;
+  margin: 22px auto 0;
+  padding: 14px 16px 14px 20px;
+  background: var(--select);
+  border: 2.5px solid var(--ink);
+  border-radius: 16px;
+}
+.banner-text { margin: 0; font-size: 17px; }
+.btn-small {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--card);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 0 3px 0 var(--ink);
+}
+.btn-small:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--ink); }
+.menu-message { max-width: 560px; margin: 56px auto 0; text-align: center; font-size: 20px; }
+.menu-message p { margin: 0 0 22px; }
+.notes { max-width: 780px; margin: 44px auto 0; font-size: 15px; color: var(--ink-2); }
+.notes summary { cursor: pointer; font-weight: 600; }
+.notes ul { margin: 10px 0 0; padding-left: 20px; }
+.notes li { margin: 6px 0; overflow-wrap: anywhere; }
+
+/* ---------- Game screen ---------- */
+.game-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px; }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 54px;
+  padding: 0 18px 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--card);
+  border: 2.5px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 0 4px 0 var(--ink);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.back-btn svg { width: 22px; height: 22px; margin-right: 4px; }
+.back-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+.game-title { margin: 0; overflow: hidden; font-family: var(--display); font-size: 26px; font-weight: 700; line-height: 1.2; text-align: center; white-space: nowrap; text-overflow: ellipsis; }
+.game-tools { display: flex; align-items: center; justify-content: flex-end; }
+.game-tools > * + * { margin-left: 14px; }
+.progress { position: relative; display: grid; gap: 6px; justify-items: end; }
+.progress-text { font-size: 15px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+.progress .meter { width: 124px; height: 11px; }
+.save-status { position: absolute; top: calc(100% + 6px); right: 0; font-size: 13px; font-weight: 700; line-height: 1.2; white-space: nowrap; }
+.save-status.is-busy { color: var(--ink-2); }
+.save-status.is-ok { color: var(--leaf); }
+.save-status.is-warn { color: var(--berry); }
+
+.prompt { max-width: 800px; margin: 28px 0 22px; }
+.instructions { margin: 0; font-size: 22px; font-weight: 600; line-height: 1.35; }
+.reminder { display: flex; align-items: center; margin: 10px 0 0; font-size: 17px; color: var(--ink-2); }
+.reminder svg { flex: none; width: 26px; height: 26px; margin-right: 10px; }
+
+.board-panel {
+  position: relative;
+  padding: 30px 30px 36px;
+  background-color: var(--board);
+  background-image: radial-gradient(circle, var(--hole) 2.6px, transparent 3.2px);
+  background-position: 13px 13px;
+  background-size: 26px 26px;
+  border-radius: 30px;
+  box-shadow: inset 0 0 0 2.5px rgba(38, 33, 74, .1);
+}
+.board { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) var(--gap-w) minmax(0, 1fr); align-items: center; min-height: 34vh; }
+.board.is-shaking { animation: shake .42s ease; }
+.col { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: center; min-width: 0; }
+.cords { position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 74px;
+  margin: 0;
+  padding: 14px 20px;
+  font-family: var(--text);
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  background: var(--tint, var(--card));
+  border: 2.5px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 0 4px 0 var(--ink);
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  transition: background-color .15s ease;
+}
+.col-left .card { padding-right: 36px; }
+.col-right .card { padding-left: 36px; }
+.card-text { display: block; min-width: 0; overflow-wrap: break-word; word-wrap: break-word; }
+.size-l { font-size: 25px; line-height: 1.2; }
+.size-m { font-size: 22px; line-height: 1.25; }
+.size-s { font-size: 19px; font-weight: 400; line-height: 1.32; }
+.size-xs { font-size: 17px; font-weight: 400; line-height: 1.36; }
+.card:active, .card.is-selected, .card.is-source, .card.is-target { background: var(--select); }
+.board.is-locked .card { cursor: default; }
+.board.is-locked .card:active { background: var(--tint, var(--card)); }
+.jack {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  background: var(--card);
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+}
+.jack::after { content: ""; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; background: var(--ink); border-radius: 50%; }
+.col-left .jack { right: -16px; }
+.col-right .jack { left: -16px; }
+.card.is-selected .jack, .card.is-source .jack { animation: jack-pulse 1.1s ease-out infinite; }
+
+.cord { transition: opacity .2s ease; }
+.cord.is-leaving { opacity: 0; }
+.cord-outline { fill: none; stroke: var(--ink); stroke-width: 10; stroke-linecap: round; }
+.cord-fill { fill: none; stroke-width: 6; stroke-linecap: round; }
+.cord-gloss { fill: none; stroke: #fff; stroke-opacity: .5; stroke-width: 1.6; stroke-linecap: round; }
+.plug-body { stroke: var(--ink); stroke-width: 2.5; }
+.board.is-correct .cord-fill { animation: cord-glow .6s ease-out 2; }
+
+.hint { margin: 18px 0 0; font-size: 17px; color: var(--ink-2); text-align: center; }
+
+.actionbar {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 12px 0 max(16px, env(safe-area-inset-bottom));
+  background: linear-gradient(rgba(234, 245, 238, 0), var(--page) 32%);
+  pointer-events: none; /* words underneath stay tappable; only the button takes touches */
+}
+.actionbar .btn { pointer-events: auto; }
+.feedback { min-height: 44px; margin: 0; font-family: var(--display); font-size: 30px; font-weight: 700; line-height: 1.4; text-align: center; }
+.feedback.is-good { color: var(--leaf); }
+.feedback.is-bad { color: var(--berry); }
+.feedback.is-info { font-size: 24px; color: var(--ink-2); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  min-height: 68px;
+  padding: 10px 34px;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--sun);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--ink);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.btn:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--ink); }
+.btn.btn-next { color: #fff; background: var(--leaf); }
+.btn.btn-plain { background: var(--card); }
+
+/* ---------- Overlays ---------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  background: rgba(38, 33, 74, .42);
+}
+.sheet {
+  width: 100%;
+  max-width: 540px;
+  margin: auto;
+  padding: 30px 30px 28px;
+  background: var(--card);
+  border: 3px solid var(--ink);
+  border-radius: 26px;
+  box-shadow: 0 8px 0 var(--ink);
+  animation: sheet-in .3s cubic-bezier(.2, 1.4, .4, 1);
+}
+.sheet h2 { margin: 0 0 12px; font-family: var(--display); font-size: 32px; font-weight: 800; line-height: 1.15; }
+.sheet p { margin: 0 0 22px; font-size: 19px; }
+.sheet-actions { display: grid; gap: 14px; }
+.sheet-actions .btn { width: 100%; }
+.celebrate-sheet { text-align: center; }
+.celebrate-sheet .celebrate-game { margin-bottom: 6px; font-size: 22px; font-weight: 700; }
+.celebrate-star { display: block; width: 136px; height: 136px; margin: -6px auto 6px; animation: star-pop .7s cubic-bezier(.2, 1.6, .4, 1); }
+
+.settings-sheet { max-width: 600px; }
+.setting { padding: 18px 0; border-top: 2px solid #E5EEE9; }
+.setting:first-of-type { padding-top: 4px; border-top: 0; }
+.setting h3 { margin: 0 0 6px; font-size: 19px; }
+.setting p { margin: 0 0 12px; font-size: 16px; color: var(--ink-2); }
+.switch-row { display: flex; align-items: center; justify-content: space-between; }
+.switch-row h3 { margin: 0; }
+.switch { position: relative; flex: none; width: 66px; height: 38px; padding: 0; background: #E4E2EE; border: 2.5px solid var(--ink); border-radius: 99px; }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 27px; height: 27px; background: #fff; border: 2.5px solid var(--ink); border-radius: 50%; transition: transform .15s ease; }
+.switch[aria-checked="true"] { background: var(--leaf); }
+.switch[aria-checked="true"]::after { transform: translateX(28px); }
+.field-label { display: block; margin-bottom: 6px; font-size: 15px; font-weight: 700; }
+.field { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+.field input { min-width: 0; padding: 12px 14px; font: 16px var(--text); color: var(--ink); background: #fff; border: 2.5px solid var(--ink); border-radius: 12px; }
+.link-btn { margin-top: 12px; padding: 0; font-size: 16px; font-weight: 600; color: var(--berry); text-decoration: underline; background: none; border: 0; }
+
+#confetti { position: fixed; top: 0; left: 0; z-index: 60; width: 100%; height: 100%; pointer-events: none; }
+
+@keyframes jack-pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 178, 30, .9); } 100% { box-shadow: 0 0 0 15px rgba(255, 178, 30, 0); } }
+@keyframes cord-glow { 50% { stroke-width: 9; } }
+@keyframes shake { 20% { transform: translateX(-10px); } 40% { transform: translateX(9px); } 60% { transform: translateX(-6px); } 80% { transform: translateX(4px); } }
+@keyframes sheet-in { from { opacity: 0; transform: translateY(18px) scale(.96); } }
+@keyframes star-pop { from { transform: scale(.3) rotate(-30deg); } }
+
+@media (min-width: 900px) {
+  :root { --gap-w: 180px; }
+}
+/* Tablets held sideways: tighter vertical spacing so a whole question fits on screen */
+@media (max-height: 860px) and (min-width: 701px) {
+  .view { padding-top: max(14px, env(safe-area-inset-top)); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .prompt { margin: 16px 0 14px; }
+  .instructions { font-size: 20px; }
+  .reminder { margin-top: 6px; font-size: 16px; }
+  .board-panel { padding: 20px 26px 24px; }
+  .col { gap: 14px; }
+  .card { min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
+  .hint { margin-top: 10px; }
+  .actionbar { padding-top: 6px; gap: 2px; }
+  .feedback { min-height: 38px; font-size: 27px; }
+  .btn { min-height: 60px; }
+  .menu-title { margin: 22px 0 18px; }
+}
+@media (max-width: 700px) {
+  :root { --gap-w: 70px; }
+  .head-tools { position: static; justify-content: flex-end; margin-bottom: 18px; }
+  .logo { font-size: 32px; }
+  .logo-tile { padding: 11px 18px 13px; }
+  .logo-tile + .logo-tile { margin-left: 70px; }
+  .game-head { grid-template-columns: auto minmax(0, 1fr); }
+  .game-tools { grid-column: 1 / -1; }
+  .board-panel { padding: 22px 16px 28px; border-radius: 22px; }
+  .card { min-height: 60px; padding: 11px 14px; }
+  .col-left .card { padding-right: 26px; }
+  .col-right .card { padding-left: 26px; }
+  .size-l { font-size: 21px; }
+  .size-m { font-size: 19px; }
+  .size-s { font-size: 17px; }
+  .size-xs { font-size: 15px; }
+  .btn { min-width: 200px; font-size: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
+</style>
+</head>
+<body>
+<main id="app">
+
+  <section class="view view-loading" id="view-loading">
+    <div class="logo" data-logo="swing" aria-hidden="true">
+      <span class="logo-tile">Word<span class="jack"></span></span>
+      <span class="logo-tile"><span class="jack"></span>Match</span>
+      <svg class="cords"></svg>
+    </div>
+    <p class="loading-text" id="loading-text">Looking for games…</p>
+  </section>
+
+  <section class="view view-menu" id="view-menu" hidden>
+    <header class="menu-head">
+      <div class="head-tools">
+        <button class="icon-btn" type="button" data-sound-toggle aria-label="Sound is on">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="snd-on" d="M15.5 9a4.2 4.2 0 0 1 0 6M18.2 6.4a8 8 0 0 1 0 11.2"/><path class="snd-off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+        </button>
+        <button class="icon-btn" type="button" id="open-settings" aria-label="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3.5 7h9.5M18 7h2.5M3.5 17h3M11.5 17h9"/><circle cx="15.5" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/></svg>
+        </button>
+      </div>
+      <h1 class="logo" data-logo="drop">
+        <span class="logo-tile">Word<span class="jack"></span></span>
+        <span class="logo-tile"><span class="jack"></span>Match</span>
+        <svg class="cords" aria-hidden="true"></svg>
+      </h1>
+    </header>
+    <div class="banner" id="banner" role="alert" hidden>
+      <p class="banner-text" id="banner-text"></p>
+      <button class="btn-small" type="button" id="banner-settings">Settings</button>
+    </div>
+    <h2 class="menu-title" id="menu-title">Pick a game</h2>
+    <div class="game-grid" id="game-grid"></div>
+    <div class="menu-message" id="menu-message" hidden>
+      <p id="menu-message-text"></p>
+      <button class="btn" type="button" id="menu-message-btn">Try again</button>
+    </div>
+    <details class="notes" id="notes" hidden>
+      <summary id="notes-summary"></summary>
+      <ul id="notes-list"></ul>
+    </details>
+  </section>
+
+  <section class="view view-game" id="view-game" hidden>
+    <header class="game-head">
+      <button class="back-btn" type="button" id="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
+        Games
+      </button>
+      <h1 class="game-title" id="game-title"></h1>
+      <div class="game-tools">
+        <div class="progress">
+          <span class="progress-text" id="progress-text"></span>
+          <span class="meter"><span class="meter-fill" id="progress-bar"></span></span>
+          <span class="save-status" id="save-status" role="status" hidden></span>
+        </div>
+        <button class="icon-btn" type="button" data-sound-toggle aria-label="Sound is on">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="snd-on" d="M15.5 9a4.2 4.2 0 0 1 0 6M18.2 6.4a8 8 0 0 1 0 11.2"/><path class="snd-off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="prompt">
+      <p class="instructions" id="instructions"></p>
+      <p class="reminder">
+        <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2.5v7" stroke="#26214A" stroke-width="6" stroke-linecap="round"/><path d="M13 2.5v7" stroke="#FFB21E" stroke-width="2.8" stroke-linecap="round"/><circle cx="13" cy="15.5" r="7.5" fill="#FFB21E" stroke="#26214A" stroke-width="2.4"/><circle cx="10.4" cy="13.2" r="2.2" fill="#fff" fill-opacity=".75"/></svg>
+        Some words may not have a partner. Leave those on their own.
+      </p>
+    </div>
+    <div class="board-panel">
+      <div class="board" id="board"></div>
+    </div>
+    <p class="hint" id="hint">Tap a word, then tap its partner. Or drag a line from one to the other.</p>
+    <div class="actionbar">
+      <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+      <button class="btn" type="button" id="action-btn" data-mode="check">Check!</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="overlay" id="overlay-dialog" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-body"></p>
+    <div class="sheet-actions" id="dialog-actions"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-celebrate" hidden>
+  <div class="sheet celebrate-sheet" role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
+    <svg class="celebrate-star" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M50 8L61.8 35.8L91.8 38.4L69 58.2L75.9 87.6L50 72L24.1 87.6L31 58.2L8.2 38.4L38.2 35.8Z" fill="#FFC93C" stroke="#26214A" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="42.5" cy="51" r="3.4" fill="#26214A"/><circle cx="57.5" cy="51" r="3.4" fill="#26214A"/>
+      <path d="M42 59.5Q50 66.5 58 59.5" fill="none" stroke="#26214A" stroke-width="3.4" stroke-linecap="round"/>
+    </svg>
+    <h2 id="celebrate-title">You finished it!</h2>
+    <p class="celebrate-game" id="celebrate-game"></p>
+    <p>Every question is done. Brilliant work!</p>
+    <div class="sheet-actions"><button class="btn" type="button" id="celebrate-close">Choose a game</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-settings" hidden>
+  <div class="sheet settings-sheet" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <h2 id="settings-title">Settings</h2>
+    <section class="setting">
+      <div class="switch-row">
+        <h3 id="sound-label">Sound effects</h3>
+        <button class="switch" type="button" id="sound-switch" role="switch" aria-checked="true" aria-labelledby="sound-label"></button>
+      </div>
+    </section>
+    <section class="setting">
+      <h3>Saving progress</h3>
+      <p id="repo-line"></p>
+      <p id="token-status"></p>
+      <label class="field-label" for="token-input">New GitHub token</label>
+      <div class="field">
+        <input id="token-input" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Paste the token here">
+        <button class="btn-small" type="button" id="token-save">Save token</button>
+      </div>
+      <button class="link-btn" type="button" id="token-remove" hidden>Stop using the token saved on this tablet</button>
+    </section>
+    <section class="setting">
+      <h3>Game files</h3>
+      <p>Added or changed a game file on GitHub? Load the list again.</p>
+      <button class="btn-small" type="button" id="reload-games">Reload games</button>
+    </section>
+    <div class="sheet-actions"><button class="btn" type="button" id="settings-close">Done</button></div>
+  </div>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ================= Settings you may want to change ================= */
+
+  var REPO_OWNER = 'vladdcsbbk';
+  var REPO_NAME = 'match-game';
+
+  // GitHub token used to save progress. It is split into pieces on purpose: GitHub automatically
+  // revokes tokens it finds written out in full in a public repository. If you ever replace it,
+  // split the new one the same way, with the break inside its "github_pat" prefix.
+  var BUILT_IN_TOKEN = ['github', '_pat_', '11AH2QZDI09mvchqwqBZ4l', '_ONCnavSrHueACYGi', 'WUfmewc8zhScG5ZFCFzLpIl1Bfg2F2TMJF5g7RmioJY'].join('');
+
+  var API = 'https://api.github.com';
+
+  /* ================= Small helpers ================= */
+
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var reducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function h(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function svgEl(tag, attrs) {
+    var e = document.createElementNS(SVGNS, tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+    return e;
+  }
+  function removeEl(e) { if (e && e.parentNode) e.parentNode.removeChild(e); }
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')); }
+  function has(obj, key) { return Object.prototype.hasOwnProperty.call(obj, key); }
+  function store(key, val) {
+    try {
+      if (val === undefined) return localStorage.getItem(key);
+      if (val === null) localStorage.removeItem(key); else localStorage.setItem(key, val);
+    } catch (e) { /* storage unavailable: carry on without it */ }
+    return null;
+  }
+  var collator = (window.Intl && Intl.Collator) ? new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' }) : null;
+  function naturalCompare(a, b) { return collator ? collator.compare(a, b) : (a < b ? -1 : a > b ? 1 : 0); }
+
+  function base64ToText(b64) {
+    var bin = atob(String(b64).replace(/\s+/g, ''));
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder('utf-8', { ignoreBOM: true }).decode(bytes);
+  }
+  function textToBase64(text) {
+    var bytes = new TextEncoder().encode(text);
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+
+  /* ================= Lenient JSON reader =================
+     Reads standard JSON plus the friendlier forms people type by hand:
+     ["option1": "love", "option2": "hate"] (a list written like an object), trailing commas,
+     // comments, curly "smart" quotes and True/False. It remembers where every value sits in the
+     text, so progress can be saved by changing only the "done" values and nothing else. */
+
+  var QUOTE_CLOSE = { '"': '"', "'": "'", '“': '”', '”': '”', '‘': '’' };
+
+  function parseLenient(text) {
+    var i = 0;
+    var n = text.length;
+
+    function fail(msg, at) {
+      var p = Math.min(at === undefined ? i : at, n);
+      var line = 1, col = 1;
+      for (var k = 0; k < p; k++) { if (text.charCodeAt(k) === 10) { line++; col = 1; } else col++; }
+      var err = new Error(msg + ' (line ' + line + ', column ' + col + ')');
+      err.parse = true;
+      throw err;
+    }
+    function skip() {
+      while (i < n) {
+        var c = text.charCodeAt(i);
+        if (c === 32 || c === 9 || c === 10 || c === 13 || c === 11 || c === 12 || c === 0xA0 || c === 0xFEFF || c === 0x2028 || c === 0x2029) { i++; continue; }
+        if (c === 47 && text.charCodeAt(i + 1) === 47) { i += 2; while (i < n && text.charCodeAt(i) !== 10) i++; continue; }
+        if (c === 47 && text.charCodeAt(i + 1) === 42) {
+          var j = text.indexOf('*/', i + 2);
+          if (j < 0) fail('A /* comment is never closed');
+          i = j + 2;
+          continue;
+        }
+        break;
+      }
+    }
+    function word() {
+      var s = i;
+      if (i < n && /[A-Za-z_$]/.test(text[i])) {
+        i++;
+        while (i < n && /[A-Za-z0-9_$]/.test(text[i])) i++;
+      }
+      return text.slice(s, i);
+    }
+    function str() {
+      var start = i;
+      var close = QUOTE_CLOSE[text[i]];
+      var out = '';
+      i++;
+      for (;;) {
+        if (i >= n) fail('Text that starts with a quote mark is never closed', start);
+        var ch = text[i];
+        if (ch === close) { i++; return out; }
+        if (ch === '\\') {
+          var e = text[i + 1];
+          i += 2;
+          if (e === 'n') out += '\n';
+          else if (e === 't') out += '\t';
+          else if (e === 'r') out += '\r';
+          else if (e === 'b') out += '\b';
+          else if (e === 'f') out += '\f';
+          else if (e === 'u') {
+            var hex = text.substr(i, 4);
+            if (!/^[0-9a-fA-F]{4}$/.test(hex)) fail('Broken \\u code', i - 2);
+            out += String.fromCharCode(parseInt(hex, 16));
+            i += 4;
+          } else if (e === '\r') { if (text[i] === '\n') i++; }
+          else if (e !== '\n' && e !== undefined) out += e;
+          continue;
+        }
+        out += ch;
+        i++;
+      }
+    }
+    function num() {
+      var s = i;
+      var m = /^[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?/.exec(text.slice(i, i + 64));
+      if (!m) fail('Unexpected character "' + text[i] + '"');
+      i += m[0].length;
+      return { t: 'num', v: parseFloat(m[0]), s: s, e: i };
+    }
+    function value() {
+      skip();
+      if (i >= n) fail('The file ends too early');
+      var ch = text[i];
+      var s = i;
+      if (ch === '{') { i++; return members('}', { t: 'obj', m: [], s: s, e: -1 }); }
+      if (ch === '[') return list();
+      if (QUOTE_CLOSE[ch]) { var v = str(); return { t: 'str', v: v, s: s, e: i }; }
+      if (ch === '-' || ch === '+' || ch === '.' || (ch >= '0' && ch <= '9')) return num();
+      var w = word();
+      var lw = w.toLowerCase();
+      if (lw === 'true') return { t: 'bool', v: true, s: s, e: i };
+      if (lw === 'false') return { t: 'bool', v: false, s: s, e: i };
+      if (lw === 'null') return { t: 'null', v: null, s: s, e: i };
+      if (w) fail('Unexpected word "' + w + '". Put text inside "quote marks"', s);
+      fail('Unexpected character "' + ch + '"');
+    }
+    function members(close, node) {
+      for (;;) {
+        skip();
+        if (i >= n) fail('Missing a closing ' + close, node.s);
+        var ch = text[i];
+        if (ch === close) { i++; node.e = i; return node; }
+        if (ch === ',') { i++; continue; }
+        var key;
+        if (QUOTE_CLOSE[ch]) key = str();
+        else if (ch >= '0' && ch <= '9') { var nn = num(); key = text.slice(nn.s, nn.e); }
+        else {
+          key = word();
+          if (!key) fail('Expected a name in "quote marks" but found "' + ch + '"');
+        }
+        skip();
+        if (text[i] !== ':') fail('Expected a : after "' + key + '"');
+        i++;
+        var v = value();
+        node.m.push({ k: key, v: v });
+        skip();
+        if (text[i] === ',') { i++; continue; }
+        if (text[i] === close) { i++; node.e = i; return node; }
+        fail(i >= n ? 'Missing a closing ' + close : 'Expected a comma or ' + close);
+      }
+    }
+    function looksLikeKey() {
+      var save = i;
+      try {
+        skip();
+        if (QUOTE_CLOSE[text[i]]) str();
+        else if (!word()) return false;
+        skip();
+        return text[i] === ':';
+      } catch (e) {
+        return false;
+      } finally {
+        i = save;
+      }
+    }
+    function list() {
+      var s = i;
+      i++;
+      if (looksLikeKey()) return members(']', { t: 'obj', m: [], s: s, e: -1 });
+      var node = { t: 'arr', items: [], s: s, e: -1 };
+      for (;;) {
+        skip();
+        if (i >= n) fail('Missing a closing ]', s);
+        var ch = text[i];
+        if (ch === ']') { i++; node.e = i; return node; }
+        if (ch === ',') { i++; continue; }
+        node.items.push(value());
+        skip();
+        if (text[i] === ',') { i++; continue; }
+        if (text[i] === ']') { i++; node.e = i; return node; }
+        fail(i >= n ? 'Missing a closing ]' : 'Expected a comma or ]');
+      }
+    }
+
+    var root = value();
+    skip();
+    if (i < n) fail('Unexpected extra text after the end');
+    return root;
+  }
+
+  /* ================= Reading game files ================= */
+
+  function normKey(k) { return String(k).toLowerCase().replace(/[^a-z0-9]/g, ''); }
+  function getMember(node, name) {
+    if (!node || node.t !== 'obj') return null;
+    var want = normKey(name);
+    var found = null;
+    node.m.forEach(function (m) { if (normKey(m.k) === want) found = m; });
+    return found;
+  }
+  function textOf(node) {
+    if (!node) return '';
+    if (node.t === 'str') return node.v;
+    if (node.t === 'num' || node.t === 'bool') return String(node.v);
+    return '';
+  }
+  function isTrue(node) {
+    if (!node) return false;
+    if (node.t === 'bool') return node.v;
+    if (node.t === 'num') return node.v !== 0;
+    if (node.t === 'str') return /^\s*(true|yes|y|1|done)\s*$/i.test(node.v);
+    return false;
+  }
+  function readOptions(member, warn, label) {
+    var out = [];
+    if (!member) return out;
+    function add(key, valNode) {
+      var text = textOf(valNode).trim();
+      if (!text) return;
+      key = String(key);
+      for (var k = 0; k < out.length; k++) {
+        if (out[k].key === key) { warn(label + ' uses the name "' + key + '" twice'); out.splice(k, 1); break; }
+      }
+      out.push({ key: key, text: text });
+    }
+    var node = member.v;
+    if (node.t === 'obj') node.m.forEach(function (m) { add(m.k, m.v); });
+    else if (node.t === 'arr') {
+      node.items.forEach(function (it, k) {
+        if (it.t === 'obj') it.m.forEach(function (m) { add(m.k, m.v); });
+        else add('option' + (k + 1), it);
+      });
+    } else if (node.t === 'str') add('option1', node);
+    return out;
+  }
+  function findOption(list, ref) {
+    var r = String(ref);
+    var hit = null;
+    list.forEach(function (o) { if (!hit && o.key === r) hit = o; });
+    if (!hit) {
+      var nk = normKey(r);
+      if (nk) list.forEach(function (o) { if (!hit && normKey(o.key) === nk) hit = o; });
+    }
+    if (!hit) {
+      var t = r.trim().toLowerCase();
+      list.forEach(function (o) { if (!hit && o.text.toLowerCase() === t) hit = o; });
+    }
+    return hit;
+  }
+  function readMatches(member, left, right, warn, label) {
+    var pairs = [];
+    if (!member) return pairs;
+    function add(lref, rref) {
+      if (rref === '' || rref === null || rref === undefined) return;
+      var L = findOption(left, lref);
+      var R = findOption(right, rref);
+      if (!L) { warn(label + ': correct_match mentions "' + lref + '", which is not in options_left'); return; }
+      if (!R) { warn(label + ': correct_match mentions "' + rref + '", which is not in options_right'); return; }
+      for (var k = 0; k < pairs.length; k++) if (pairs[k][0] === L.key && pairs[k][1] === R.key) return;
+      pairs.push([L.key, R.key]);
+    }
+    var node = member.v;
+    if (node.t === 'obj') {
+      node.m.forEach(function (m) {
+        if (m.v.t === 'arr') m.v.items.forEach(function (it) { add(m.k, textOf(it)); });
+        else if (m.v.t !== 'null') add(m.k, textOf(m.v));
+      });
+    } else if (node.t === 'arr') {
+      node.items.forEach(function (it) {
+        if (it.t === 'arr' && it.items.length >= 2) add(textOf(it.items[0]), textOf(it.items[1]));
+        else if (it.t === 'obj') it.m.forEach(function (m) { add(m.k, textOf(m.v)); });
+      });
+    }
+    return pairs;
+  }
+
+  // Finds every question in a parsed file. Each question gets a signature built from its
+  // contents, so it can be found again in a newer copy of the file.
+  function scanQuestions(root, warn) {
+    var qm = getMember(root, 'questions');
+    if (!qm) return null;
+    if (qm.v.t !== 'arr') throw new Error('"questions" should be a list inside [ ]');
+    var seen = {};
+    var out = [];
+    qm.v.items.forEach(function (qn, idx) {
+      var label = 'Question ' + (idx + 1);
+      if (qn.t !== 'obj') { warn(label + ' is not inside { }'); return; }
+      var left = readOptions(getMember(qn, 'options_left'), warn, label);
+      var right = readOptions(getMember(qn, 'options_right'), warn, label);
+      if (!left.length || !right.length) { warn(label + ' needs options_left and options_right'); return; }
+      var pairs = readMatches(getMember(qn, 'correct_match'), left, right, warn, label);
+      var base = JSON.stringify([
+        left.map(function (o) { return [o.key, o.text]; }),
+        right.map(function (o) { return [o.key, o.text]; }),
+        pairs
+      ]);
+      seen[base] = (seen[base] || 0) + 1;
+      var dm = getMember(qn, 'done');
+      out.push({ node: qn, doneMember: dm, left: left, right: right, pairs: pairs, done: isTrue(dm && dm.v), sig: base + '#' + seen[base] });
+    });
+    return out;
+  }
+
+  function fileLabel(path) { return path.split('/').pop().replace(/\.json$/i, ''); }
+
+  function buildGame(path, text) {
+    var root = parseLenient(text);
+    if (root.t !== 'obj') throw new Error('The file should start with { and contain "game_name" and "questions"');
+    var warnings = [];
+    var scanned = scanQuestions(root, function (msg) { warnings.push(msg); });
+    var nameM = getMember(root, 'game_name');
+    if (!scanned && !nameM) return null; // some other kind of JSON file
+    if (!scanned) throw new Error('This file has no "questions" list');
+    var instrM = getMember(root, 'instructions');
+    return {
+      path: path,
+      name: (nameM && textOf(nameM.v).trim()) || fileLabel(path),
+      instructions: instrM ? textOf(instrM.v).trim() : '',
+      questions: scanned.map(function (q) { return { sig: q.sig, left: q.left, right: q.right, pairs: q.pairs, done: q.done }; }),
+      warnings: warnings
+    };
+  }
+
+  // Returns the file text with the "done" values set as wanted. Only those values change;
+  // everything else in the file (layout, spacing, comments) stays exactly as it was.
+  function applyDone(text, desired) {
+    var root = parseLenient(text);
+    var scanned = scanQuestions(root, function () {}) || [];
+    var edits = [];
+    var toTrue = 0, toFalse = 0;
+    scanned.forEach(function (q) {
+      if (!has(desired, q.sig)) return;
+      var want = !!desired[q.sig];
+      if (q.done === want) return;
+      var lit = want ? 'true' : 'false';
+      if (q.doneMember) edits.push({ s: q.doneMember.v.s, e: q.doneMember.v.e, t: lit });
+      else if (q.node.m.length) {
+        var last = q.node.m[q.node.m.length - 1].v;
+        edits.push({ s: last.e, e: last.e, t: ', "done": ' + lit });
+      } else edits.push({ s: q.node.s + 1, e: q.node.s + 1, t: '"done": ' + lit });
+      if (want) toTrue++; else toFalse++;
+    });
+    edits.sort(function (a, b) { return b.s - a.s; });
+    var out = text;
+    edits.forEach(function (ed) { out = out.slice(0, ed.s) + ed.t + out.slice(ed.e); });
+    return { text: out, changed: edits.length, toTrue: toTrue, toFalse: toFalse };
+  }
+
+  /* ================= GitHub ================= */
+
+  var GH = { branch: null, tokenRejected: false };
+
+  function activeToken() { return store('wm.token') || BUILT_IN_TOKEN; }
+  function repoPath(rest) { return '/repos/' + encodeURIComponent(REPO_OWNER) + '/' + encodeURIComponent(REPO_NAME) + rest; }
+  function contentsPath(filePath) { return repoPath('/contents/' + filePath.split('/').map(encodeURIComponent).join('/')); }
+  function ghError(message, status, kind, resetAt) {
+    var e = new Error(message);
+    e.status = status; e.kind = kind; e.resetAt = resetAt || 0;
+    return e;
+  }
+
+  function gh(method, path, body, opts) {
+    opts = opts || {};
+    var headers = { Accept: 'application/vnd.github+json' };
+    if (!opts.anonymous) {
+      var tok = activeToken();
+      if (tok) headers.Authorization = 'Bearer ' + tok;
+    }
+    if (body !== undefined) headers['Content-Type'] = 'application/json';
+    var url = API + path;
+    if (opts.fresh) url += (url.indexOf('?') >= 0 ? '&' : '?') + 'fresh=' + Date.now();
+    return fetch(url, {
+      method: method,
+      headers: headers,
+      body: body !== undefined ? JSON.stringify(body) : undefined,
+      cache: opts.fresh ? 'no-store' : 'default'
+    }).then(function (res) {
+      return res.text().then(function (raw) {
+        var data = null;
+        try { data = raw ? JSON.parse(raw) : null; } catch (e) { data = null; }
+        if (res.ok) return data;
+        var msg = (data && data.message) || ('GitHub answered ' + res.status);
+        var low = msg.toLowerCase();
+        var kind = 'other';
+        if (res.status === 401) kind = 'auth';
+        else if (res.status === 403 || res.status === 429) kind = (res.headers.get('x-ratelimit-remaining') === '0' || low.indexOf('rate limit') >= 0) ? 'ratelimit' : 'forbidden';
+        else if (res.status === 404) kind = 'notfound';
+        else if (res.status === 409) kind = 'conflict';
+        else if (res.status === 422) kind = low.indexOf('sha') >= 0 ? 'conflict' : 'invalid';
+        else if (res.status >= 500) kind = 'server';
+        throw ghError(msg, res.status, kind, Number(res.headers.get('x-ratelimit-reset') || 0) * 1000);
+      });
+    }, function () {
+      throw ghError('No connection to GitHub', 0, 'network');
+    });
+  }
+
+  // Reads work without a token too (the repository is public), so a rejected token
+  // only stops saving, never playing.
+  function ghRead(path, opts) {
+    opts = opts || {};
+    var anon = {};
+    Object.keys(opts).forEach(function (k) { anon[k] = opts[k]; });
+    anon.anonymous = true;
+    if (GH.tokenRejected) return gh('GET', path, undefined, anon);
+    return gh('GET', path, undefined, opts).catch(function (e) {
+      if (e.kind !== 'auth') throw e;
+      markTokenRejected();
+      return gh('GET', path, undefined, anon);
+    });
+  }
+
+  function markTokenRejected() {
+    GH.tokenRejected = true;
+    renderBanner();
+    renderSaveStatus();
+  }
+
+  /* ================= Progress waiting to be saved =================
+     Every change is written to this tablet's storage first, then sent to GitHub.
+     If the tablet is offline, or the page closes, it is sent the next time. */
+
+  var Pending = {
+    data: (function () {
+      try { return JSON.parse(store('wm.pending.v1') || '{}') || {}; } catch (e) { return {}; }
+    })(),
+    save: function () { store('wm.pending.v1', JSON.stringify(this.data)); },
+    of: function (path) { return this.data[path] || {}; },
+    has: function (path) { return !!this.data[path] && Object.keys(this.data[path]).length > 0; },
+    any: function () { var self = this; return Object.keys(this.data).some(function (p) { return self.has(p); }); },
+    setMany: function (path, sigs, val) {
+      var d = this.data[path] || (this.data[path] = {});
+      sigs.forEach(function (s) { d[s] = !!val; });
+      this.save();
+    },
+    clearIfSame: function (path, snapshot) {
+      var d = this.data[path];
+      if (!d) return;
+      Object.keys(snapshot).forEach(function (sig) { if (d[sig] === snapshot[sig]) delete d[sig]; });
+      if (!Object.keys(d).length) delete this.data[path];
+      this.save();
+    }
+  };
+
+  function commitMessage(game, res) {
+    if (res.toTrue && !res.toFalse) return game.name + ': ' + plural(res.toTrue, 'question') + ' done';
+    if (res.toFalse && !res.toTrue) return game.name + ': start over';
+    return game.name + ': progress update';
+  }
+
+  function refreshFile(game) {
+    var q = GH.branch ? '?ref=' + encodeURIComponent(GH.branch) : '';
+    return ghRead(contentsPath(game.path) + q, { fresh: true }).then(function (data) {
+      var text = base64ToText(data.content);
+      game.file.text = text;
+      game.file.sha = data.sha;
+      var fresh = null;
+      try { fresh = buildGame(game.path, text); } catch (e) { fresh = null; }
+      if (!fresh) return;
+      var pend = Pending.of(game.path);
+      var bySig = {};
+      game.questions.forEach(function (q) { bySig[q.sig] = q; });
+      game.questions = fresh.questions.map(function (fq) {
+        var q = bySig[fq.sig] || fq;
+        if (!has(pend, fq.sig)) q.done = fq.done;
+        return q;
+      });
+      game.name = fresh.name;
+      game.instructions = fresh.instructions;
+    });
+  }
+
+  var Saver = {
+    state: 'idle', // idle | saving | saved | waiting | blocked
+    retryTimer: null,
+    retryDelay: 0,
+
+    flush: function (game) {
+      var self = this;
+      if (game.saving) { game.saveAgain = true; return Promise.resolve(); }
+      game.saving = true;
+      var conflicts = 0;
+
+      function step() {
+        game.saveAgain = false;
+        var desired = {};
+        var pend = Pending.of(game.path);
+        Object.keys(pend).forEach(function (k) { desired[k] = pend[k]; });
+        if (!Object.keys(desired).length) return Promise.resolve();
+        if (GH.tokenRejected) { self.set('blocked'); return Promise.resolve(); }
+        var res;
+        try { res = applyDone(game.file.text, desired); } catch (e) {
+          Pending.clearIfSame(game.path, desired); // the file can no longer be read; nothing to save into
+          return Promise.resolve();
+        }
+        if (!res.changed) { Pending.clearIfSame(game.path, desired); return step(); }
+        self.set('saving');
+        return gh('PUT', contentsPath(game.path), {
+          message: commitMessage(game, res),
+          content: textToBase64(res.text),
+          sha: game.file.sha,
+          branch: GH.branch || undefined
+        }).then(function (out) {
+          game.file.text = res.text;
+          if (out && out.content && out.content.sha) game.file.sha = out.content.sha;
+          Pending.clearIfSame(game.path, desired);
+          self.retryDelay = 0;
+          self.set(Pending.any() ? 'saving' : 'saved');
+          return step();
+        }, function (e) {
+          if (e.kind === 'conflict' && conflicts < 3) {
+            conflicts++;
+            return refreshFile(game).then(step);
+          }
+          if (e.kind === 'auth' || e.kind === 'forbidden' || e.kind === 'notfound') {
+            markTokenRejected();
+            self.set('blocked');
+            return;
+          }
+          throw e;
+        });
+      }
+
+      return step().catch(function (e) {
+        self.set('waiting');
+        self.scheduleRetry(e);
+      }).then(function () {
+        game.saving = false;
+        if (game.saveAgain && self.state !== 'waiting' && self.state !== 'blocked') return self.flush(game);
+      });
+    },
+
+    flushAll: function () {
+      var self = this;
+      State.games.forEach(function (g) { if (Pending.has(g.path)) self.flush(g); });
+    },
+
+    scheduleRetry: function (e) {
+      var self = this;
+      if (this.retryTimer) return;
+      this.retryDelay = Math.min(60000, this.retryDelay ? this.retryDelay * 2 : 3000);
+      var delay = this.retryDelay;
+      if (e && e.kind === 'ratelimit' && e.resetAt) delay = Math.max(delay, e.resetAt - Date.now() + 1000);
+      this.retryTimer = setTimeout(function () { self.retryTimer = null; self.flushAll(); }, delay);
+    },
+
+    retryNow: function () {
+      if (this.retryTimer) { clearTimeout(this.retryTimer); this.retryTimer = null; }
+      this.flushAll();
+    },
+
+    set: function (s) { this.state = s; renderSaveStatus(); }
+  };
+
+  /* ================= Loading the games ================= */
+
+  var State = { games: [], problems: [], loading: false };
+
+  function eachLimited(items, limit, fn) {
+    var next = 0;
+    var failed = null;
+    function worker() {
+      if (failed || next >= items.length) return Promise.resolve();
+      var item = items[next++];
+      return Promise.resolve().then(function () { return fn(item); }).then(worker, function (e) { failed = failed || e; });
+    }
+    var workers = [];
+    for (var k = 0; k < Math.min(limit, items.length); k++) workers.push(worker());
+    return Promise.all(workers).then(function () { if (failed) throw failed; });
+  }
+
+  function loadGames() {
+    var games = [];
+    var problems = [];
+    return ghRead(repoPath(''), { fresh: true }).then(function (repo) {
+      GH.branch = (repo && repo.default_branch) || 'main';
+      return ghRead(repoPath('/git/trees/' + encodeURIComponent(GH.branch) + '?recursive=1'), { fresh: true });
+    }).then(function (tree) {
+      var files = ((tree && tree.tree) || []).filter(function (t) {
+        return t.type === 'blob' && /\.json$/i.test(t.path) && !(t.size > 900000);
+      });
+      return eachLimited(files, 6, function (f) {
+        return ghRead(repoPath('/git/blobs/' + f.sha)).then(function (blob) {
+          var text = base64ToText(blob.content);
+          var game;
+          try { game = buildGame(f.path, text); } catch (e) {
+            problems.push({ path: f.path, message: e.message });
+            return;
+          }
+          if (!game) return;
+          game.warnings.forEach(function (w) { problems.push({ path: f.path, message: w }); });
+          if (!game.questions.length) { problems.push({ path: f.path, message: 'No questions could be read from this file' }); return; }
+          game.file = { path: f.path, sha: f.sha, text: text };
+          games.push(game);
+        });
+      });
+    }).then(function () {
+      games.forEach(function (g) {
+        var pend = Pending.of(g.path);
+        g.questions.forEach(function (q) { if (has(pend, q.sig)) q.done = !!pend[q.sig]; });
+      });
+      games.sort(function (a, b) { return naturalCompare(a.name, b.name) || naturalCompare(a.path, b.path); });
+      problems.sort(function (a, b) { return naturalCompare(a.path, b.path); });
+      State.games = games;
+      State.problems = problems;
+      Saver.flushAll();
+    });
+  }
+
+  function boot() {
+    if (State.loading) return;
+    State.loading = true;
+    Game.current = null;
+    showView('loading');
+    loadGames().then(function () {
+      State.loading = false;
+      showMenu();
+    }, function (e) {
+      State.loading = false;
+      showMenu(e);
+    });
+  }
+
+  /* ================= Sound ================= */
+
+  var Sound = {
+    on: store('wm.sound') !== 'off',
+    ctx: null,
+    ensure: function () {
+      if (!this.on) return null;
+      try {
+        if (!this.ctx) {
+          var AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return null;
+          this.ctx = new AC();
+        }
+        if (this.ctx.state === 'suspended' && this.ctx.resume) this.ctx.resume();
+        return this.ctx;
+      } catch (e) { return null; }
+    },
+    tone: function (freq, t, dur, type, vol, freqEnd) {
+      var ctx = this.ctx;
+      var o = ctx.createOscillator();
+      var g = ctx.createGain();
+      o.type = type || 'sine';
+      o.frequency.setValueAtTime(freq, t);
+      if (freqEnd) o.frequency.exponentialRampToValueAtTime(freqEnd, t + dur);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol, t + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g);
+      g.connect(ctx.destination);
+      o.start(t);
+      o.stop(t + dur + 0.03);
+    },
+    play: function (name) {
+      var self = this;
+      var ctx = this.ensure();
+      if (!ctx) return;
+      try {
+        var t = ctx.currentTime + 0.01;
+        if (name === 'pick') this.tone(620, t, 0.08, 'triangle', 0.12);
+        else if (name === 'plug') { this.tone(300, t, 0.06, 'square', 0.05, 120); this.tone(880, t + 0.025, 0.09, 'triangle', 0.12); }
+        else if (name === 'unplug') this.tone(520, t, 0.1, 'triangle', 0.09, 260);
+        else if (name === 'correct') [523.25, 659.25, 783.99, 1046.5].forEach(function (f, k) { self.tone(f, t + k * 0.08, 0.26, 'triangle', 0.15); });
+        else if (name === 'wrong') { this.tone(330, t, 0.18, 'sine', 0.16, 300); this.tone(247, t + 0.16, 0.26, 'sine', 0.16, 215); }
+        else if (name === 'finish') [523.25, 659.25, 783.99, 1046.5, 783.99, 1046.5, 1318.5].forEach(function (f, k) { self.tone(f, t + k * 0.11, 0.32, 'triangle', 0.14); });
+      } catch (e) { /* no sound, no problem */ }
+    }
+  };
+
+  function setSound(on) {
+    Sound.on = on;
+    store('wm.sound', on ? 'on' : 'off');
+    renderSoundButtons();
+    if (on) Sound.play('pick');
+  }
+  function renderSoundButtons() {
+    $$('[data-sound-toggle]').forEach(function (b) {
+      b.classList.toggle('is-off', !Sound.on);
+      b.setAttribute('aria-label', Sound.on ? 'Sound is on' : 'Sound is off');
+      b.setAttribute('aria-pressed', String(Sound.on));
+    });
+    $('#sound-switch').setAttribute('aria-checked', String(Sound.on));
+  }
+
+  /* ================= Confetti ================= */
+
+  var Confetti = {
+    parts: [], raf: 0, cv: null, ctx: null, dpr: 1,
+    fit: function () {
+      if (!this.cv) { this.cv = $('#confetti'); this.ctx = this.cv.getContext('2d'); }
+      this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.round(window.innerWidth * this.dpr), hh = Math.round(window.innerHeight * this.dpr);
+      if (this.cv.width !== w || this.cv.height !== hh) { this.cv.width = w; this.cv.height = hh; }
+    },
+    add: function (x, y, count, spread, speed, drift) {
+      if (reducedMotion) return;
+      this.fit();
+      for (var k = 0; k < count; k++) {
+        var ang = -Math.PI / 2 + (Math.random() - 0.5) * spread;
+        var sp = speed * (0.55 + Math.random() * 0.65);
+        this.parts.push({
+          x: x, y: y, vx: Math.cos(ang) * sp + (drift || 0), vy: Math.sin(ang) * sp,
+          r: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.3,
+          w: 7 + Math.random() * 6, h: 4 + Math.random() * 5,
+          c: PALETTE[k % PALETTE.length].c, life: 0
+        });
+      }
+      var self = this;
+      if (!this.raf) this.raf = requestAnimationFrame(function () { self.tick(); });
+    },
+    tick: function () {
+      var self = this;
+      var ctx = this.ctx, H = window.innerHeight;
+      this.raf = 0;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, this.cv.width, this.cv.height);
+      ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+      this.parts = this.parts.filter(function (p) { return p.y < H + 40 && p.life < 360; });
+      this.parts.forEach(function (p) {
+        p.vy += 0.32; p.vx *= 0.986; p.vy *= 0.986;
+        p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life++;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.r);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.life * 0.15 + p.r)) + 1);
+        ctx.restore();
+      });
+      if (this.parts.length) this.raf = requestAnimationFrame(function () { self.tick(); });
+      else ctx.clearRect(0, 0, this.cv.width, this.cv.height);
+    }
+  };
+  function burstFrom(el) {
+    var r = el.getBoundingClientRect();
+    Confetti.add(r.left + r.width / 2, r.top + r.height / 3, 70, 1.7, 16);
+  }
+  // Celebration: bursts from the two bottom corners, so the message in the middle stays readable.
+  function confettiRain() {
+    var H = window.innerHeight;
+    var speed = Math.sqrt(2 * 0.32 * H * 0.8) * 1.15;
+    for (var k = 0; k < 4; k++) {
+      (function (k) {
+        setTimeout(function () {
+          var leftSide = k % 2 === 0;
+          Confetti.add(window.innerWidth * (leftSide ? 0.06 : 0.94), H + 10, 45, 0.5, speed, leftSide ? 3.2 : -3.2);
+        }, k * 260);
+      })(k);
+    }
+  }
+
+  /* ================= Cords ================= */
+
+  var PALETTE = [
+    { c: '#FF5A4E', t: '#FFE7E4' },
+    { c: '#2F7DF6', t: '#E3EEFE' },
+    { c: '#FFB21E', t: '#FFF2D6' },
+    { c: '#1FB36F', t: '#DEF6EA' },
+    { c: '#9B5CF6', t: '#F0E7FE' },
+    { c: '#FF6FB0', t: '#FFE8F3' },
+    { c: '#14B5C9', t: '#DDF6F9' },
+    { c: '#FF8A2A', t: '#FFEEDF' }
+  ];
+
+  function makeCord(color) {
+    var g = svgEl('g', { 'class': 'cord' });
+    var outline = svgEl('path', { 'class': 'cord-outline' });
+    var fill = svgEl('path', { 'class': 'cord-fill', stroke: color });
+    var gloss = svgEl('path', { 'class': 'cord-gloss', transform: 'translate(0 -1.6)' });
+    var pa = makePlug(color), pb = makePlug(color);
+    [outline, fill, gloss, pa, pb].forEach(function (e) { g.appendChild(e); });
+    return { g: g, paths: [outline, fill, gloss], pa: pa, pb: pb };
+  }
+  function makePlug(color) {
+    var p = svgEl('g', { 'class': 'plug' });
+    p.appendChild(svgEl('circle', { r: '11', fill: color, 'class': 'plug-body' }));
+    p.appendChild(svgEl('circle', { r: '3.4', cx: '-3.4', cy: '-3.6', fill: '#fff', 'fill-opacity': '0.7' }));
+    return p;
+  }
+  function cordPath(a, b, sag) {
+    var dx = b.x - a.x;
+    function r(v) { return Math.round(v * 10) / 10; }
+    return 'M' + r(a.x) + ' ' + r(a.y) +
+      ' C' + r(a.x + dx * 0.3) + ' ' + r(a.y + sag) + ' ' + r(b.x - dx * 0.3) + ' ' + r(b.y + sag) + ' ' + r(b.x) + ' ' + r(b.y);
+  }
+  function placeCord(cord, a, b, sag) {
+    var d = cordPath(a, b, sag);
+    cord.paths.forEach(function (p) { p.setAttribute('d', d); });
+    cord.pa.setAttribute('transform', 'translate(' + a.x.toFixed(1) + ' ' + a.y.toFixed(1) + ')');
+    cord.pb.setAttribute('transform', 'translate(' + b.x.toFixed(1) + ' ' + b.y.toFixed(1) + ')');
+  }
+  // A cord sags more the further it has to reach, like a real cable.
+  function sagBetween(a, b) {
+    var dx = b.x - a.x, dy = b.y - a.y;
+    return Math.min(78, 14 + Math.sqrt(dx * dx + dy * dy) * 0.17);
+  }
+  function centreOf(el, origin) {
+    var r = el.getBoundingClientRect();
+    return { x: r.left + r.width / 2 - origin.left, y: r.top + r.height / 2 - origin.top };
+  }
+
+  function drawLogos() {
+    $$('[data-logo]').forEach(function (logo) {
+      if (!logo.offsetWidth) return; // not on screen
+      var origin = logo.getBoundingClientRect();
+      var jacks = $$('.jack', logo);
+      var a = centreOf(jacks[0], origin), b = centreOf(jacks[1], origin);
+      if (!logo._cord) {
+        logo._cord = makeCord(PALETTE[0].c);
+        $('svg', logo).appendChild(logo._cord.g);
+        logo._t0 = performance.now();
+      }
+      logo._a = a; logo._b = b;
+      if (logo._anim) return;
+      var swing = logo.getAttribute('data-logo') === 'swing';
+      (function frame() {
+        var t = performance.now() - logo._t0;
+        var sag = 32;
+        var more = false;
+        if (!reducedMotion) {
+          if (swing) { sag = 30 + Math.sin(t / 260) * 12; more = !!logo.offsetWidth; }
+          else if (t < 1400) { sag = 32 * (1 - Math.exp(-t / 170) * Math.cos(t / 75)); more = true; }
+        }
+        placeCord(logo._cord, logo._a, logo._b, sag);
+        logo._anim = more ? requestAnimationFrame(frame) : 0;
+      })();
+    });
+  }
+
+  /* ================= The matching board ================= */
+
+  var B = null;          // state of the question on screen
+  var firstLinkMade = false;
+
+  function sizeClass(list) {
+    var longest = list.reduce(function (m, o) { return Math.max(m, o.text.length); }, 0);
+    if (longest <= 16) return 'size-l';
+    if (longest <= 34) return 'size-m';
+    if (longest <= 80) return 'size-s';
+    return 'size-xs';
+  }
+
+  function teardownBoard() {
+    if (B && B.raf) cancelAnimationFrame(B.raf);
+    B = null;
+  }
+
+  function mountBoard(q) {
+    teardownBoard();
+    var wrap = $('#board');
+    wrap.innerHTML = '';
+    wrap.className = 'board';
+    var colL = h('div', 'col col-left');
+    var gap = h('div', 'gap');
+    var colR = h('div', 'col col-right');
+    var cords = svgEl('svg', { 'class': 'cords', 'aria-hidden': 'true' });
+    wrap.appendChild(colL); wrap.appendChild(gap); wrap.appendChild(colR); wrap.appendChild(cords);
+    B = { q: q, wrap: wrap, svg: cords, items: {}, order: [], links: [], sel: null, dangle: null, drag: null, locked: false, pos: {}, raf: 0 };
+
+    var L = shuffle(q.left.slice()), R = shuffle(q.right.slice());
+    var sL = sizeClass(L), sR = sizeClass(R);
+    L.forEach(function (o) { addCard('L', o, colL, sL); });
+    R.forEach(function (o) { addCard('R', o, colR, sR); });
+
+    // Normally each word takes one cord. If the file gives a word several partners, it takes that many.
+    q.pairs.forEach(function (p) {
+      if (B.items['L:' + p[0]]) B.items['L:' + p[0]].need++;
+      if (B.items['R:' + p[1]]) B.items['R:' + p[1]].need++;
+    });
+    B.order.forEach(function (id) { B.items[id].cap = Math.max(1, B.items[id].need); });
+    refreshCards();
+    measure();
+  }
+
+  function addCard(side, opt, col, size) {
+    var id = side + ':' + opt.key;
+    var el = h('button', 'card ' + size);
+    el.type = 'button';
+    el.setAttribute('data-id', id);
+    el.appendChild(h('span', 'card-text', opt.text));
+    var jack = h('span', 'jack');
+    el.appendChild(jack);
+    col.appendChild(el);
+    B.items[id] = { id: id, side: side, text: opt.text, el: el, jack: jack, need: 0, cap: 1 };
+    B.order.push(id);
+  }
+
+  function measure() {
+    if (!B) return;
+    var origin = B.wrap.getBoundingClientRect();
+    B.order.forEach(function (id) { B.pos[id] = centreOf(B.items[id].jack, origin); });
+    draw();
+  }
+
+  function danglePoint(id, now) {
+    var p = B.pos[id];
+    var dir = B.items[id].side === 'L' ? 1 : -1;
+    var ang = reducedMotion ? 0 : Math.sin((now - B.dangle.t0) / 320) * 0.16;
+    var ox = dir * 46, oy = 34; // hangs out into the gap, clear of the word below
+    var c = Math.cos(ang), s = Math.sin(ang);
+    return { x: p.x + ox * c - oy * s, y: p.y + ox * s + oy * c };
+  }
+
+  function draw(now) {
+    if (!B) return;
+    if (typeof now !== 'number') now = performance.now();
+    var moving = false;
+    B.links.forEach(function (link) {
+      var a = B.pos[link.a], b = B.pos[link.b];
+      if (!a || !b) return;
+      var wobble = 1;
+      var an = link.anim;
+      if (an) {
+        var t = Math.max(0, now - an.t0);
+        if (an.from && t < an.fly) {
+          var k = 1 - Math.pow(1 - t / an.fly, 3);
+          var end = an.mover === 'a' ? a : b;
+          var cur = { x: an.from.x + (end.x - an.from.x) * k, y: an.from.y + (end.y - an.from.y) * k };
+          if (an.mover === 'a') a = cur; else b = cur;
+          moving = true;
+        } else {
+          var tt = t - (an.from ? an.fly : 0);
+          if (tt < 650) { wobble = 1 + 0.5 * Math.exp(-tt / 150) * Math.cos(tt / 48); moving = true; }
+          else link.anim = null;
+        }
+      }
+      placeCord(link.cord, a, b, sagBetween(a, b) * wobble);
+    });
+    if (B.dangle && B.pos[B.dangle.id]) {
+      placeCord(B.dangle.cord, B.pos[B.dangle.id], danglePoint(B.dangle.id, now), 8);
+      if (!reducedMotion) moving = true;
+    }
+    if (B.drag && B.pos[B.drag.id]) {
+      var p = B.pos[B.drag.id];
+      placeCord(B.drag.cord, p, B.drag.pt, sagBetween(p, B.drag.pt) * 0.6);
+    }
+    if (moving && !B.raf) {
+      var board = B;
+      B.raf = requestAnimationFrame(function (ts) {
+        board.raf = 0;
+        if (B === board) draw(ts);
+      });
+    }
+  }
+
+  function linksOf(id) { return B.links.filter(function (k) { return k.a === id || k.b === id; }); }
+
+  function freeColor() {
+    var used = B.links.map(function (k) { return k.color; });
+    for (var k = 0; k < PALETTE.length; k++) if (used.indexOf(PALETTE[k]) < 0) return PALETTE[k];
+    return PALETTE[B.links.length % PALETTE.length];
+  }
+
+  function removeLink(link) {
+    var idx = B.links.indexOf(link);
+    if (idx < 0) return;
+    B.links.splice(idx, 1);
+    var g = link.cord.g;
+    g.classList.add('is-leaving');
+    setTimeout(function () { removeEl(g); }, reducedMotion ? 0 : 220);
+  }
+
+  function unplug(id) {
+    var mine = linksOf(id);
+    mine.forEach(removeLink);
+    return mine.length > 0;
+  }
+
+  function connect(l, r, anim, color) {
+    var exists = B.links.some(function (k) { return k.a === l && k.b === r; });
+    if (exists) { boardChanged(); return; }
+    [l, r].forEach(function (id) {
+      var mine = linksOf(id);
+      while (mine.length >= B.items[id].cap) { removeLink(mine[0]); mine = linksOf(id); }
+    });
+    var free = color && B.links.every(function (k) { return k.color !== color; });
+    var col = free ? color : freeColor();
+    var cord = makeCord(col.c);
+    B.svg.appendChild(cord.g);
+    var link = { a: l, b: r, color: col, cord: cord, anim: null };
+    if (!reducedMotion) {
+      link.anim = { t0: performance.now(), from: null, fly: 0, mover: 'b' };
+      if (anim) Object.keys(anim).forEach(function (k) { link.anim[k] = anim[k]; });
+    }
+    B.links.push(link);
+    if (!firstLinkMade) { firstLinkMade = true; $('#hint').hidden = true; }
+    Sound.play('plug');
+    boardChanged();
+    draw();
+  }
+
+  function refreshCards() {
+    B.order.forEach(function (id) {
+      var it = B.items[id];
+      var mine = linksOf(id);
+      it.el.classList.toggle('is-linked', mine.length > 0);
+      it.el.classList.toggle('is-selected', B.sel === id);
+      if (mine.length) it.el.style.setProperty('--tint', mine[0].color.t);
+      else it.el.style.removeProperty('--tint');
+      var label = it.text;
+      if (mine.length) {
+        label += ', joined to ' + mine.map(function (k) { return B.items[k.a === id ? k.b : k.a].text; }).join(' and ');
+      }
+      it.el.setAttribute('aria-label', label);
+      it.el.setAttribute('aria-pressed', B.sel === id ? 'true' : 'false');
+    });
+  }
+
+  function boardChanged() {
+    refreshCards();
+    var f = $('#feedback');
+    if (f.classList.contains('is-bad') || f.classList.contains('is-info')) setFeedback('', '');
+  }
+
+  function select(id) {
+    var color = freeColor();
+    var cord = makeCord(color.c);
+    B.svg.appendChild(cord.g);
+    B.sel = id;
+    B.dangle = { id: id, cord: cord, color: color, t0: performance.now() };
+    Sound.play('pick');
+    refreshCards();
+    draw();
+  }
+
+  function deselect() {
+    if (B.dangle) { removeEl(B.dangle.cord.g); B.dangle = null; }
+    B.sel = null;
+    refreshCards();
+  }
+
+  // Tapping: tap a word to pick it up (this also unplugs it), then tap a word on the other side.
+  function tap(id) {
+    if (!B || B.locked || !B.items[id] || B.drag) return;
+    var it = B.items[id];
+    if (B.sel === null) {
+      if (unplug(id)) boardChanged();
+      select(id);
+      return;
+    }
+    if (B.sel === id) { deselect(); draw(); return; }
+    var picked = B.items[B.sel];
+    if (picked.side === it.side) {
+      deselect();
+      if (unplug(id)) boardChanged();
+      select(id);
+      return;
+    }
+    var from = danglePoint(B.sel, performance.now());
+    var color = B.dangle ? B.dangle.color : null;
+    var l = picked.side === 'L' ? B.sel : id;
+    var r = picked.side === 'L' ? id : B.sel;
+    var mover = picked.side === 'L' ? 'b' : 'a';
+    deselect();
+    connect(l, r, { from: from, mover: mover, fly: 230 }, color);
+  }
+
+  // Dragging: pull a cord out of a word and drop it on a word on the other side.
+  function dragStart(id, cx, cy) {
+    if (B.sel !== null) deselect();
+    if (unplug(id)) boardChanged();
+    var color = freeColor();
+    var cord = makeCord(color.c);
+    B.svg.appendChild(cord.g);
+    var origin = B.wrap.getBoundingClientRect();
+    B.drag = { id: id, cord: cord, color: color, pt: { x: cx - origin.left, y: cy - origin.top }, target: null };
+    B.items[id].el.classList.add('is-source');
+    Sound.play('pick');
+    draw();
+  }
+
+  function dragMove(cx, cy) {
+    var d = B.drag;
+    if (!d) return;
+    var origin = B.wrap.getBoundingClientRect();
+    d.pt = { x: cx - origin.left, y: cy - origin.top };
+    var t = targetAt(cx, cy, B.items[d.id].side);
+    if (t !== d.target) {
+      if (d.target) B.items[d.target].el.classList.remove('is-target');
+      d.target = t;
+      if (t) B.items[t].el.classList.add('is-target');
+    }
+    draw();
+  }
+
+  function dragEnd(cancelled) {
+    var d = B.drag;
+    if (!d) return;
+    B.drag = null;
+    B.items[d.id].el.classList.remove('is-source');
+    if (d.target) B.items[d.target].el.classList.remove('is-target');
+    removeEl(d.cord.g);
+    if (!cancelled && d.target) {
+      var src = B.items[d.id];
+      var l = src.side === 'L' ? d.id : d.target;
+      var r = src.side === 'L' ? d.target : d.id;
+      connect(l, r, { from: d.pt, mover: src.side === 'L' ? 'b' : 'a', fly: 120 }, d.color);
+    } else {
+      Sound.play('unplug');
+      draw();
+    }
+  }
+
+  function targetAt(cx, cy, srcSide) {
+    var hit = document.elementFromPoint(cx, cy);
+    var card = hit && hit.closest ? hit.closest('.card') : null;
+    if (card && B.wrap.contains(card)) {
+      var id = card.getAttribute('data-id');
+      if (B.items[id] && B.items[id].side !== srcSide) return id;
+    }
+    // Forgiving drops: a word within 40px of the finger counts.
+    var best = null, bestD = 40;
+    B.order.forEach(function (oid) {
+      var it = B.items[oid];
+      if (it.side === srcSide) return;
+      var r = it.el.getBoundingClientRect();
+      var dx = Math.max(r.left - cx, 0, cx - r.right);
+      var dy = Math.max(r.top - cy, 0, cy - r.bottom);
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < bestD) { bestD = dist; best = oid; }
+    });
+    return best;
+  }
+
+  (function wireBoardInput() {
+    var board = $('#board');
+    var press = null;
+    // Taps are handled when the finger lifts, not on 'click': after a quick drag some browsers
+    // drop the click of the next tap. The click that follows a touch is then ignored; a click
+    // with no touch or press before it (keyboard Enter or Space) still works.
+    var lastPointerUp = 0;
+
+    function down(target, x, y, pid) {
+      if (!B || B.locked || press) return false;
+      var card = target && target.closest ? target.closest('.card') : null;
+      if (!card || !board.contains(card)) return false;
+      press = { id: card.getAttribute('data-id'), x: x, y: y, pid: pid, dragging: false, el: card };
+      return true;
+    }
+    function move(x, y, pid) {
+      if (!press || press.pid !== pid) return false;
+      if (!B || B.locked) return true;
+      if (!press.dragging) {
+        var dx = x - press.x, dy = y - press.y;
+        if (dx * dx + dy * dy < 100) return true;
+        press.dragging = true;
+        dragStart(press.id, x, y);
+      }
+      dragMove(x, y);
+      return true;
+    }
+    function up(pid, cancelled) {
+      if (!press || press.pid !== pid) return;
+      var p = press;
+      press = null;
+      lastPointerUp = Date.now();
+      if (p.dragging) { if (B && B.drag) dragEnd(cancelled); }
+      else if (!cancelled) tap(p.id);
+    }
+
+    if (window.PointerEvent) {
+      board.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        if (down(e.target, e.clientX, e.clientY, e.pointerId)) {
+          try { press.el.setPointerCapture(e.pointerId); } catch (err) { /* not supported */ }
+        }
+      });
+      board.addEventListener('pointermove', function (e) {
+        if (move(e.clientX, e.clientY, e.pointerId)) e.preventDefault();
+      });
+      board.addEventListener('pointerup', function (e) { up(e.pointerId, false); });
+      board.addEventListener('pointercancel', function (e) { up(e.pointerId, true); });
+    } else {
+      // Older iPads without pointer events
+      board.addEventListener('touchstart', function (e) {
+        var t = e.changedTouches[0];
+        down(e.target, t.clientX, t.clientY, t.identifier);
+      }, { passive: true });
+      board.addEventListener('touchmove', function (e) {
+        for (var k = 0; k < e.changedTouches.length; k++) {
+          var t = e.changedTouches[k];
+          if (move(t.clientX, t.clientY, t.identifier)) e.preventDefault();
+        }
+      }, { passive: false });
+      board.addEventListener('touchend', function (e) {
+        for (var k = 0; k < e.changedTouches.length; k++) up(e.changedTouches[k].identifier, false);
+      });
+      board.addEventListener('touchcancel', function (e) {
+        for (var k = 0; k < e.changedTouches.length; k++) up(e.changedTouches[k].identifier, true);
+      });
+    }
+
+    board.addEventListener('click', function (e) {
+      if (Date.now() - lastPointerUp < 1000) return; // already handled when the finger lifted
+      var card = e.target.closest ? e.target.closest('.card') : null;
+      if (card && board.contains(card)) tap(card.getAttribute('data-id'));
+    });
+  })();
+
+  /* ================= Playing a game ================= */
+
+  var Game = { current: null };
+  var PRAISE = ['Brilliant!', 'Well done!', 'Spot on!', 'Superb!', 'Fantastic!', 'You got it!', 'Great matching!', 'Nailed it!'];
+  var RETRY = ['Not quite. Have another go!', 'Not yet. Have another look!', 'Not quite. Try again!'];
+  var lastPraise = -1, lastRetry = -1;
+
+  function pickIndex(list, last) {
+    var k;
+    do { k = Math.floor(Math.random() * list.length); } while (list.length > 1 && k === last);
+    return k;
+  }
+
+  function openGame(g) {
+    var undone = g.questions.filter(function (q) { return !q.done; });
+    if (!undone.length) {
+      dialog({
+        title: 'You did them all!',
+        body: "You've finished every question in " + g.name + '. Do you want to start this game over?',
+        primary: { label: 'Start over', action: function () { resetGame(g); startRound(g); } },
+        secondary: { label: 'Not now' }
+      });
+      return;
+    }
+    startRound(g);
+  }
+
+  function startRound(g) {
+    var undone = g.questions.filter(function (q) { return !q.done; });
+    Game.current = { game: g, round: shuffle(undone.slice()), idx: 0, solved: 0, q: null };
+    showView('game');
+    $('#game-title').textContent = g.name;
+    showQuestion();
+  }
+
+  function showQuestion() {
+    var cur = Game.current;
+    cur.q = cur.round[cur.idx];
+    $('#instructions').textContent = cur.game.instructions || 'Join each word on the left to its partner on the right.';
+    $('#hint').hidden = firstLinkMade;
+    setFeedback('', '');
+    setAction('check');
+    updateProgress();
+    mountBoard(cur.q);
+  }
+
+  function updateProgress() {
+    var cur = Game.current;
+    var total = cur.round.length;
+    $('#progress-text').textContent = 'Question ' + Math.min(cur.idx + 1, total) + ' of ' + total;
+    $('#progress-bar').style.width = Math.round(cur.solved / total * 100) + '%';
+  }
+
+  function setAction(mode) {
+    var btn = $('#action-btn');
+    btn.setAttribute('data-mode', mode);
+    btn.classList.toggle('btn-next', mode !== 'check');
+    btn.textContent = mode === 'check' ? 'Check!' : (mode === 'finish' ? 'Finish' : 'Next question');
+  }
+
+  function setFeedback(text, kind) {
+    var f = $('#feedback');
+    f.textContent = text;
+    f.className = 'feedback' + (kind ? ' is-' + kind : '');
+  }
+
+  function checkAnswer() {
+    if (!B || B.locked || B.drag) return;
+    if (B.sel !== null) { deselect(); draw(); }
+    var pairs = B.q.pairs;
+    if (!B.links.length && pairs.length) { setFeedback('Join some words first.', 'info'); return; }
+    var want = pairs.map(function (p) { return 'L:' + p[0] + '|R:' + p[1]; }).sort();
+    var got = B.links.map(function (k) { return k.a + '|' + k.b; }).sort();
+    var ok = want.length === got.length && want.every(function (w, k) { return w === got[k]; });
+    if (ok) onCorrect(); else onWrong();
+  }
+
+  function onCorrect() {
+    var cur = Game.current;
+    B.locked = true;
+    B.wrap.classList.add('is-locked', 'is-correct');
+    lastPraise = pickIndex(PRAISE, lastPraise);
+    setFeedback(PRAISE[lastPraise], 'good');
+    Sound.play('correct');
+    burstFrom($('#action-btn'));
+    markDone(cur.game, cur.q);
+    cur.solved++;
+    updateProgress();
+    setAction(cur.idx >= cur.round.length - 1 ? 'finish' : 'next');
+  }
+
+  function onWrong() {
+    lastRetry = pickIndex(RETRY, lastRetry);
+    setFeedback(RETRY[lastRetry], 'bad');
+    Sound.play('wrong');
+    var w = B.wrap;
+    w.classList.remove('is-shaking');
+    void w.offsetWidth; // restart the animation
+    w.classList.add('is-shaking');
+  }
+
+  function nextQuestion() {
+    var cur = Game.current;
+    cur.idx++;
+    if (cur.idx < cur.round.length) { showQuestion(); return; }
+    var g = cur.game;
+    if (g.questions.some(function (q) { return !q.done; })) { startRound(g); return; }
+    Game.current = null;
+    showMenu();
+    celebrate(g);
+  }
+
+  function markDone(g, q) {
+    q.done = true;
+    Pending.setMany(g.path, [q.sig], true);
+    Saver.flush(g);
+  }
+
+  function resetGame(g) {
+    g.questions.forEach(function (q) { q.done = false; });
+    Pending.setMany(g.path, g.questions.map(function (q) { return q.sig; }), false);
+    Saver.flush(g);
+  }
+
+  function celebrate(g) {
+    $('#celebrate-game').textContent = g.name;
+    openOverlay('#overlay-celebrate');
+    Sound.play('finish');
+    confettiRain();
+  }
+
+  /* ================= Screens ================= */
+
+  function showView(name) {
+    ['loading', 'menu', 'game'].forEach(function (v) { $('#view-' + v).hidden = v !== name; });
+    if (name !== 'game') teardownBoard();
+    window.scrollTo(0, 0);
+    drawLogos();
+  }
+
+  function showMenu(error) {
+    showView('menu');
+    renderMenu(error);
+  }
+
+  function errorText(e) {
+    if (e.kind === 'network') return "Couldn't reach GitHub. Check that the tablet is online, then try again.";
+    if (e.kind === 'ratelimit') return 'GitHub is limiting requests right now. Wait a few minutes, then try again.';
+    if (e.kind === 'notfound') return "Couldn't find the " + REPO_OWNER + '/' + REPO_NAME + ' repository on GitHub.';
+    return "Couldn't load the games: " + e.message;
+  }
+
+  function renderMenu(error) {
+    var grid = $('#game-grid');
+    grid.innerHTML = '';
+    var msg = $('#menu-message');
+    msg.hidden = true;
+    $('#menu-title').hidden = true;
+    if (error) {
+      $('#menu-message-text').textContent = errorText(error);
+      $('#menu-message-btn').textContent = 'Try again';
+      msg.hidden = false;
+    } else if (!State.games.length) {
+      $('#menu-message-text').textContent = 'No games yet. Add a game file (.json) to the ' + REPO_OWNER + '/' + REPO_NAME + ' repository on GitHub, then load the list again.';
+      $('#menu-message-btn').textContent = 'Load the list again';
+      msg.hidden = false;
+    } else {
+      $('#menu-title').hidden = false;
+      State.games.forEach(function (g) { grid.appendChild(gameTile(g)); });
+    }
+    renderNotes();
+    renderBanner();
+  }
+
+  function starSvg(cls) {
+    var s = svgEl('svg', { viewBox: '0 0 100 100', 'class': cls, 'aria-hidden': 'true' });
+    s.appendChild(svgEl('path', {
+      d: 'M50 8L61.8 35.8L91.8 38.4L69 58.2L75.9 87.6L50 72L24.1 87.6L31 58.2L8.2 38.4L38.2 35.8Z',
+      fill: '#FFC93C', stroke: '#26214A', 'stroke-width': '6', 'stroke-linejoin': 'round'
+    }));
+    return s;
+  }
+
+  function gameTile(g) {
+    var total = g.questions.length;
+    var done = g.questions.filter(function (q) { return q.done; }).length;
+    var b = h('button', 'game-tile');
+    b.type = 'button';
+    var label;
+    if (done === total) { label = 'All done!'; b.classList.add('is-complete'); }
+    else if (done === 0) label = plural(total, 'question');
+    else label = done + ' of ' + total + ' done';
+    b.appendChild(h('span', 'game-name', g.name));
+    var meta = h('span', 'game-meta');
+    var meter = h('span', 'meter');
+    var fill = h('span', 'meter-fill');
+    fill.style.width = (total ? Math.round(done / total * 100) : 0) + '%';
+    meter.appendChild(fill);
+    meta.appendChild(meter);
+    meta.appendChild(h('span', 'game-count', label));
+    b.appendChild(meta);
+    if (done === total) b.appendChild(starSvg('badge-star'));
+    b.setAttribute('aria-label', g.name + ', ' + label);
+    b.addEventListener('click', function () { openGame(g); });
+    return b;
+  }
+
+  function renderNotes() {
+    var box = $('#notes');
+    var items = State.problems;
+    if (!items.length) { box.hidden = true; return; }
+    box.hidden = false;
+    $('#notes-summary').textContent = 'For grown-ups: ' + plural(items.length, 'problem') + ' found in the game files';
+    var ul = $('#notes-list');
+    ul.innerHTML = '';
+    items.forEach(function (p) {
+      var li = h('li');
+      li.appendChild(h('strong', null, p.path));
+      li.appendChild(document.createTextNode(': ' + p.message));
+      ul.appendChild(li);
+    });
+  }
+
+  function renderBanner() {
+    var el = $('#banner');
+    if (GH.tokenRejected) {
+      $('#banner-text').textContent = "Progress isn't being saved: GitHub didn't accept the access token. It may have expired. Grown-ups can paste a new one in Settings.";
+      el.hidden = false;
+    } else {
+      el.hidden = true;
+    }
+  }
+
+  var savedTimer = null;
+  function renderSaveStatus() {
+    var el = $('#save-status');
+    clearTimeout(savedTimer);
+    function show(text, kind) { el.textContent = text; el.className = 'save-status is-' + kind; el.hidden = false; }
+    if (GH.tokenRejected && Pending.any()) show('Not saving', 'warn');
+    else if (Saver.state === 'saving') show('Saving…', 'busy');
+    else if (Saver.state === 'waiting') show('Offline: will save later', 'warn');
+    else if (Saver.state === 'saved') {
+      show('Saved', 'ok');
+      savedTimer = setTimeout(function () { el.hidden = true; }, 1800);
+    } else el.hidden = true;
+  }
+
+  /* ================= Dialogs ================= */
+
+  var focusBefore = null;
+  function openOverlay(sel) {
+    var o = typeof sel === 'string' ? $(sel) : sel;
+    focusBefore = document.activeElement;
+    o.hidden = false;
+  }
+  function closeOverlay(sel) {
+    var o = typeof sel === 'string' ? $(sel) : sel;
+    o.hidden = true;
+    if (focusBefore && focusBefore.focus && document.contains(focusBefore)) {
+      try { focusBefore.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+    }
+  }
+  function dialog(opts) {
+    var ov = $('#overlay-dialog');
+    $('#dialog-title').textContent = opts.title;
+    $('#dialog-body').textContent = opts.body;
+    var acts = $('#dialog-actions');
+    acts.innerHTML = '';
+    function add(spec, cls) {
+      var b = h('button', cls, spec.label);
+      b.type = 'button';
+      b.addEventListener('click', function () { closeOverlay(ov); if (spec.action) spec.action(); });
+      acts.appendChild(b);
+      return b;
+    }
+    var first = add(opts.primary, 'btn');
+    if (opts.secondary) add(opts.secondary, 'btn btn-plain');
+    openOverlay(ov);
+    try { first.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+  }
+
+  function renderSettings() {
+    var deviceToken = !!store('wm.token');
+    $('#repo-line').textContent = 'Progress is saved to the ' + REPO_OWNER + '/' + REPO_NAME + ' repository on GitHub.';
+    var status;
+    if (GH.tokenRejected) status = "GitHub didn't accept the current token. Create a fine-grained token with read and write access to this repository's contents, then paste it below.";
+    else if (deviceToken) status = 'Using a token saved on this tablet.';
+    else status = 'Using the token built into the app.';
+    $('#token-status').textContent = status;
+    $('#token-remove').hidden = !deviceToken;
+    renderSoundButtons();
+  }
+
+  /* ================= Wiring ================= */
+
+  $('#action-btn').addEventListener('click', function () {
+    if (this.getAttribute('data-mode') === 'check') checkAnswer();
+    else nextQuestion();
+  });
+  $('#back-btn').addEventListener('click', function () {
+    Game.current = null;
+    showMenu();
+  });
+  $('#menu-message-btn').addEventListener('click', boot);
+  $$('[data-sound-toggle]').forEach(function (b) {
+    b.addEventListener('click', function () { setSound(!Sound.on); });
+  });
+  $('#sound-switch').addEventListener('click', function () { setSound(!Sound.on); });
+  function openSettings() { renderSettings(); openOverlay('#overlay-settings'); }
+  $('#open-settings').addEventListener('click', openSettings);
+  $('#banner-settings').addEventListener('click', openSettings);
+  $('#settings-close').addEventListener('click', function () { closeOverlay('#overlay-settings'); });
+  $('#celebrate-close').addEventListener('click', function () { closeOverlay('#overlay-celebrate'); });
+  $('#token-save').addEventListener('click', function () {
+    var input = $('#token-input');
+    var v = input.value.trim();
+    if (!v) { input.focus(); return; }
+    store('wm.token', v);
+    input.value = '';
+    GH.tokenRejected = false;
+    renderSettings();
+    renderBanner();
+    renderSaveStatus();
+    Saver.retryNow();
+  });
+  $('#token-remove').addEventListener('click', function () {
+    store('wm.token', null);
+    GH.tokenRejected = false;
+    renderSettings();
+    renderBanner();
+    Saver.retryNow();
+  });
+  $('#reload-games').addEventListener('click', function () {
+    closeOverlay('#overlay-settings');
+    boot();
+  });
+  ['#overlay-celebrate', '#overlay-settings'].forEach(function (sel) {
+    $(sel).addEventListener('click', function (e) { if (e.target === this) closeOverlay(this); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = $$('.overlay').filter(function (o) { return !o.hidden; }).pop();
+    if (open) closeOverlay(open);
+  });
+
+  window.addEventListener('online', function () { Saver.retryNow(); });
+  var hiddenAt = 0;
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { hiddenAt = Date.now(); return; }
+    Saver.retryNow();
+    // Coming back after a long break: look for new or changed game files.
+    if (!$('#view-menu').hidden && hiddenAt && Date.now() - hiddenAt > 30 * 60 * 1000) boot();
+  });
+
+  function relayout() { measure(); drawLogos(); }
+  window.addEventListener('resize', relayout);
+  window.addEventListener('orientationchange', function () { setTimeout(relayout, 350); });
+  if (window.ResizeObserver) new ResizeObserver(function () { measure(); }).observe($('#board'));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+
+  renderSoundButtons();
+  boot();
+})();
+</script>
+</body>
+</html>
