@@ -125,7 +125,7 @@
 	{"options_left" : [{"option1" : "eventual"}, {"option2" : "finite"}, {"option3" : "final"}],
 	 "options_right" : [{"option1" : "having limits, able to be counted or measured, not going on for ever"}, {"option2" : "last in a series, coming at the very end, not able to be changed, the last game of a competition"}, {"option3" : "happening later on, as the result of a long process or delay"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "scarce"}, {"option2" : "penultimate"}, {"option3" : "limited"}],
 	 "options_right" : [{"option1" : "second to last, the one just before the last"}, {"option2" : "kept within fixed boundaries, restricted, not great in amount or ability"}, {"option3" : "not plentiful, hard to find or get hold of, rare"}],
