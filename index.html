@@ -205,6 +205,9 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 }
 .board { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) var(--gap-w) minmax(0, 1fr); align-items: center; min-height: 34vh; }
 .board.is-shaking { animation: shake .42s ease; }
+.board { transition: opacity .25s ease; }
+.board.is-frozen { opacity: .45; }
+.board.is-frozen .card { cursor: default; }
 .col { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: center; min-width: 0; }
 .cords { position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 
@@ -303,6 +306,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
   transition: transform .08s ease, box-shadow .08s ease;
 }
 .btn:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--ink); }
+.btn:disabled, .btn:disabled:active { color: var(--ink-2); background: #E7E5EF; border-color: #A7A2C0; box-shadow: 0 6px 0 #A7A2C0; transform: none; cursor: default; }
 .btn.btn-next { color: #fff; background: var(--leaf); }
 .btn.btn-plain { background: var(--card); }
 
@@ -547,6 +551,9 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 
   var REPO_OWNER = 'vladdcsbbk';
   var REPO_NAME = 'match-game';
+
+  // Seconds the board stays frozen after a wrong answer, so answers can't be found by quick guessing.
+  var WRONG_ANSWER_PAUSE = 4;
 
   // GitHub token used to save progress. It is split into pieces on purpose: GitHub automatically
   // revokes tokens it finds written out in full in a public repository. If you ever replace it,
@@ -1421,6 +1428,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 
   function teardownBoard() {
     if (B && B.raf) cancelAnimationFrame(B.raf);
+    if (B && B.freezeTimer) clearInterval(B.freezeTimer);
     B = null;
   }
 
@@ -1610,7 +1618,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 
   // Tapping: tap a word to pick it up (this also unplugs it), then tap a word on the other side.
   function tap(id) {
-    if (!B || B.locked || !B.items[id] || B.drag) return;
+    if (!B || B.locked || B.frozen || !B.items[id] || B.drag) return;
     var it = B.items[id];
     if (B.sel === null) {
       if (unplug(id)) boardChanged();
@@ -1710,7 +1718,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     var lastPointerUp = 0;
 
     function down(target, x, y, pid) {
-      if (!B || B.locked || press) return false;
+      if (!B || B.locked || B.frozen || press) return false;
       var card = target && target.closest ? target.closest('.card') : null;
       if (!card || !board.contains(card)) return false;
       press = { id: card.getAttribute('data-id'), x: x, y: y, pid: pid, dragging: false, el: card };
@@ -1718,7 +1726,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     }
     function move(x, y, pid) {
       if (!press || press.pid !== pid) return false;
-      if (!B || B.locked) return true;
+      if (!B || B.locked || B.frozen) return true;
       if (!press.dragging) {
         var dx = x - press.x, dy = y - press.y;
         if (dx * dx + dy * dy < 100) return true;
@@ -1831,6 +1839,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 
   function setAction(mode) {
     var btn = $('#action-btn');
+    btn.disabled = false;
     btn.setAttribute('data-mode', mode);
     btn.classList.toggle('btn-next', mode !== 'check');
     btn.textContent = mode === 'check' ? 'Check!' : (mode === 'finish' ? 'Finish' : 'Next question');
@@ -1843,7 +1852,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
   }
 
   function checkAnswer() {
-    if (!B || B.locked || B.drag) return;
+    if (!B || B.locked || B.frozen || B.drag) return;
     if (B.sel !== null) { deselect(); draw(); }
     var pairs = B.q.pairs;
     if (!B.links.length && pairs.length) { setFeedback('Join some words first.', 'info'); return; }
@@ -1875,6 +1884,31 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     w.classList.remove('is-shaking');
     void w.offsetWidth; // restart the animation
     w.classList.add('is-shaking');
+    freezeBoard(WRONG_ANSWER_PAUSE);
+  }
+
+  // After a wrong answer the board and the Check! button stop responding for a few seconds.
+  // The button counts down, so it is clear the pause is on purpose.
+  function freezeBoard(seconds) {
+    if (!B || !(seconds > 0)) return;
+    var board = B;
+    var btn = $('#action-btn');
+    var until = Date.now() + seconds * 1000;
+    board.frozen = true;
+    board.wrap.classList.add('is-frozen');
+    btn.disabled = true;
+    function tick() {
+      if (B !== board) { clearInterval(board.freezeTimer); return; } // left the question
+      var left = Math.ceil((until - Date.now()) / 1000);
+      if (left > 0) { btn.textContent = 'Try again in ' + left; return; }
+      clearInterval(board.freezeTimer);
+      board.freezeTimer = 0;
+      board.frozen = false;
+      board.wrap.classList.remove('is-frozen');
+      setAction('check');
+    }
+    tick();
+    board.freezeTimer = setInterval(tick, 200);
   }
 
   function nextQuestion() {
