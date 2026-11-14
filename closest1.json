@@ -40,7 +40,7 @@
   {"options_left" : [{"option1" : "nervous"}, {"option2" : "meek"}, {"option3" : "wary"}],
 	 "options_right" : [{"option1" : "docile"}, {"option2" : "grateful"}, {"option3" : "loyal"}],
 	 "correct_match" : [{"option2" : "option1"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "devour"}, {"option2" : "dine"}, {"option3" : "swallow"}],
 	 "options_right" : [{"option1" : "greedy"}, {"option2" : "gobble"}, {"option3" : "nibble"}],
