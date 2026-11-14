@@ -75,7 +75,7 @@
 	{"options_left" : [{"option1" : "nervous"}, {"option2" : "meek"}, {"option3" : "wary"}],
 	 "options_right" : [{"option1" : "quiet, gentle and easily pushed around, willing to obey others without arguing"}, {"option2" : "careful because you think there may be danger or trouble, cautious and not trusting"}, {"option3" : "worried and anxious about something, easily frightened or upset"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "docile"}, {"option2" : "grateful"}, {"option3" : "loyal"}],
 	 "options_right" : [{"option1" : "feeling or showing thanks for something someone has done for you, thankful"}, {"option2" : "always supporting and staying true to a person, country or cause, faithful"}, {"option3" : "calm and easy to control or teach, quietly obedient, often said of animals"}],
