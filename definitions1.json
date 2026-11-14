@@ -70,7 +70,7 @@
 	{"options_left" : [{"option1" : "shiver"}, {"option2" : "sweat"}, {"option3" : "cold"}],
 	 "options_right" : [{"option1" : "salty liquid that comes out through your skin when you are hot, ill or nervous, work very hard"}, {"option2" : "having a low temperature, unfriendly or unkind, a common illness that causes a runny or blocked nose and a sore throat"}, {"option3" : "shake slightly and uncontrollably when you feel chilly or frightened, a quick trembling movement"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "nervous"}, {"option2" : "meek"}, {"option3" : "wary"}],
 	 "options_right" : [{"option1" : "quiet, gentle and easily pushed around, willing to obey others without arguing"}, {"option2" : "careful because you think there may be danger or trouble, cautious and not trusting"}, {"option3" : "worried and anxious about something, easily frightened or upset"}],
