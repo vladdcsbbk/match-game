@@ -150,7 +150,7 @@
 	{"options_left" : [{"option1" : "miserly"}, {"option2" : "disowned"}, {"option3" : "abandoned"}],
 	 "options_right" : [{"option1" : "officially rejected by your family or a group, no longer accepted as belonging to someone"}, {"option2" : "left alone and deserted, no longer used or cared for, wild and uncontrolled"}, {"option3" : "unwilling to spend or share money, mean or stingy, very small in amount"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	}
     ]
 }
