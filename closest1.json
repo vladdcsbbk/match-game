@@ -35,7 +35,7 @@
   {"options_left" : [{"option1" : "feverish"}, {"option2" : "sneeze"}, {"option3" : "flu"}],
 	 "options_right" : [{"option1" : "shiver"}, {"option2" : "sweat"}, {"option3" : "cold"}],
 	 "correct_match" : [{"option3" : "option3"}],
-	 "done" : false
+	 "done" : true
   },
   {"options_left" : [{"option1" : "nervous"}, {"option2" : "meek"}, {"option3" : "wary"}],
 	 "options_right" : [{"option1" : "docile"}, {"option2" : "grateful"}, {"option3" : "loyal"}],
