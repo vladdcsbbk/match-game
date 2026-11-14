@@ -75,7 +75,7 @@
   {"options_left" : [{"option1" : "empty"}, {"option2" : "neglected"}, {"option3" : "sparse"}],
 	 "options_right" : [{"option1" : "miserly"}, {"option2" : "disowned"}, {"option3" : "abandoned"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	}
     ]
 }
