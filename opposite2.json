@@ -1,5 +1,6 @@
 {
 "game_name": "Opposite Meaning 2",
+"prerequisites" : ["definitions2.json"],
 "instructions": "Find and match two words, one from each side, that have the most opposite meaning",
 "questions": [
 	{"options_left" : [{"option1" : "humble"}, {"option2" : "poor"}, {"option3" : "unhappy"}],
