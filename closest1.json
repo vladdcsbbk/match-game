@@ -25,7 +25,7 @@
   {"options_left" : [{"option1" : "key"}, {"option2" : "lock"}, {"option3" : "protect"}],
 	 "options_right" : [{"option1" : "handcuff"}, {"option2" : "bolt"}, {"option3" : "arrest"}],
 	 "correct_match" : [{"option2" : "option1"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "chase"}, {"option2" : "race"}, {"option3" : "sport"}],
 	 "options_right" : [{"option1" : "exercise"}, {"option2" : "hobby"}, {"option3" : "jog"}],
