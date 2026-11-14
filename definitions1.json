@@ -90,7 +90,7 @@
 	{"options_left" : [{"option1" : "greedy"}, {"option2" : "gobble"}, {"option3" : "nibble"}],
 	 "options_right" : [{"option1" : "eat food very quickly and noisily, the gurgling sound a turkey makes"}, {"option2" : "take small, quick bites of food, a small bite"}, {"option3" : "wanting much more food, money or things than you need"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "waste"}, {"option2" : "hoard"}, {"option3" : "bank"}],
 	 "options_right" : [{"option1" : "collect and secretly store a large amount of something, a secret store of money, food or treasure"}, {"option2" : "a business that keeps money safe and lends it, save money there, the land along the side of a river"}, {"option3" : "use something carelessly or for no good purpose, rubbish or unwanted material, empty land where little grows"}],
