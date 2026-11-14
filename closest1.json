@@ -10,7 +10,7 @@
 	{"options_left" : [{"option1" : "pot"}, {"option2" : "barrel"}, {"option3" : "bucket"}],
 	 "options_right" : [{"option1" : "spade"}, {"option2" : "scoop"}, {"option3" : "pail"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "whisper"}, {"option2" : "hoarse"}, {"option3" : "listen"}],
 	 "options_right" : [{"option1" : "say"}, {"option2" : "mumble"}, {"option3" : "quiet"}],
