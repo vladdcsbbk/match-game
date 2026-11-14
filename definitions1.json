@@ -15,7 +15,7 @@
 	{"options_left" : [{"option1" : "pot"}, {"option2" : "barrel"}, {"option3" : "bucket"}],
 	 "options_right" : [{"option1" : "a large round container with curved sides and flat ends for storing liquids such as oil, move along very fast"}, {"option2" : "an open container with a handle for carrying water, sand or other things, rain very heavily"}, {"option3" : "a deep round container for cooking food, a container that a plant grows in, hit a ball into a pocket in snooker or pool"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "spade"}, {"option2" : "scoop"}, {"option3" : "pail"}],
 	 "options_right" : [{"option1" : "a deep spoon for serving ice cream or flour, lift out with a curved movement, a news story printed before anyone else's"}, {"option2" : "an open container with a handle for carrying water or milk, another word for a bucket"}, {"option3" : "a tool with a flat metal blade and a long handle for digging, one of the four suits in a pack of playing cards"}],
