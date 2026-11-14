@@ -40,7 +40,7 @@
 	{"options_left" : [{"option1" : "naughty"}, {"option2" : "sly"}, {"option3" : "wicked"}],
 	 "options_right" : [{"option1" : "clever at tricking people in a secret way, cunning, showing that you know a secret"}, {"option2" : "evil or very bad, causing great harm, playfully mischievous, really great in slang"}, {"option3" : "badly behaved or disobedient, especially of a child, slightly rude or cheeky"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "key"}, {"option2" : "lock"}, {"option3" : "protect"}],
 	 "options_right" : [{"option1" : "a device that keeps a door or box fastened shut, a section of canal with gates for raising boats, a strand of hair"}, {"option2" : "keep someone or something safe from harm, damage or danger, defend or guard"}, {"option3" : "a shaped piece of metal for opening a door, a button on a computer or piano, most important, a guide to the symbols on a map"}],
