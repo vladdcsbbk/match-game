@@ -65,7 +65,7 @@
 	{"options_left" : [{"option1" : "feverish"}, {"option2" : "sneeze"}, {"option3" : "flu"}],
 	 "options_right" : [{"option1" : "suddenly force air out through your nose and mouth with a loud noise, often because of dust or pollen"}, {"option2" : "an infectious illness caused by a virus, with aches, tiredness and a high temperature, short for influenza"}, {"option3" : "hot and unwell with a raised body temperature, extremely excited, nervous or frantic"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "shiver"}, {"option2" : "sweat"}, {"option3" : "cold"}],
 	 "options_right" : [{"option1" : "salty liquid that comes out through your skin when you are hot, ill or nervous, work very hard"}, {"option2" : "having a low temperature, unfriendly or unkind, a common illness that causes a runny or blocked nose and a sore throat"}, {"option3" : "shake slightly and uncontrollably when you feel chilly or frightened, a quick trembling movement"}],
