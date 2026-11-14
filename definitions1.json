@@ -45,7 +45,7 @@
 	{"options_left" : [{"option1" : "key"}, {"option2" : "lock"}, {"option3" : "protect"}],
 	 "options_right" : [{"option1" : "a device that keeps a door or box fastened shut, a section of canal with gates for raising boats, a strand of hair"}, {"option2" : "keep someone or something safe from harm, damage or danger, defend or guard"}, {"option3" : "a shaped piece of metal for opening a door, a button on a computer or piano, most important, a guide to the symbols on a map"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "handcuff"}, {"option2" : "bolt"}, {"option3" : "arrest"}],
 	 "options_right" : [{"option1" : "a metal bar that slides across to fasten a door or window, a metal pin used with a nut, run away suddenly, a flash of lightning"}, {"option2" : "take someone into custody because they are believed to have broken the law, stop or slow something down"}, {"option3" : "a pair of metal rings joined by a chain and fastened around a prisoner's wrists, put these rings on someone"}],
