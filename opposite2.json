@@ -5,72 +5,72 @@
 	{"options_left" : [{"option1" : "humble"}, {"option2" : "poor"}, {"option3" : "unhappy"}],
 	 "options_right" : [{"option1" : "proud"}, {"option2" : "ordinary"}, {"option3" : "weak"}],
 	 "correct_match" : [{"option1" : "option1"}],
-	 "done" : true
+	 "done" : false
 	},
 	{"options_left" : [{"option1" : "unusual"}, {"option2" : "dull"}, {"option3" : "interesting"}],
 	 "options_right" : [{"option1" : "long"}, {"option2" : "mundane"}, {"option3" : "old"}],
 	 "correct_match" : [{"option3" : "option2"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "challenge"}, {"option2" : "conquer"}, {"option3" : "battle"}],
 	 "options_right" : [{"option1" : "fight"}, {"option2" : "lose"}, {"option3" : "drop"}],
 	 "correct_match" : [{"option2" : "option2"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "decaying"}, {"option2" : "ancient"}, {"option3" : "dirty"}],
 	 "options_right" : [{"option1" : "elegant"}, {"option2" : "decorative"}, {"option3" : "modern"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "brave"}, {"option2" : "strong"}, {"option3" : "confident"}],
 	 "options_right" : [{"option1" : "shy"}, {"option2" : "surly"}, {"option3" : "suspicious"}],
 	 "correct_match" : [{"option3" : "option1"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "cease"}, {"option2" : "ban"}, {"option3" : "prevent"}],
 	 "options_right" : [{"option1" : "finish"}, {"option2" : "commence"}, {"option3" : "abolish"}],
 	 "correct_match" : [{"option1" : "option2"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "reserved"}, {"option2" : "slow"}, {"option3" : "serene"}],
 	 "options_right" : [{"option1" : "busy"}, {"option2" : "frenzied"}, {"option3" : "troublesome"}],
 	 "correct_match" : [{"option3" : "option2"}],
-	 "done" : true
+	 "done" : false
   },
   {"options_left" : [{"option1" : "claim"}, {"option2" : "accuse"}, {"option3" : "quarrel"}],
 	 "options_right" : [{"option1" : "decide"}, {"option2" : "fight"}, {"option3" : "defend"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "deteriorate"}, {"option2" : "undermine"}, {"option3" : "elevate"}],
 	 "options_right" : [{"option1" : "correct"}, {"option2" : "advance"}, {"option3" : "improve"}],
 	 "correct_match" : [{"option1" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "direct"}, {"option2" : "honest"}, {"option3" : "genuine"}],
 	 "options_right" : [{"option1" : "ignorant"}, {"option2" : "natural"}, {"option3" : "untruthful"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "modest"}, {"option2" : "wealthy"}, {"option3" : "golden"}],
 	 "options_right" : [{"option1" : "pitiful"}, {"option2" : "sad"}, {"option3" : "needy"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "rich"}, {"option2" : "plentiful"}, {"option3" : "sufficient"}],
 	 "options_right" : [{"option1" : "ample"}, {"option2" : "feeble"}, {"option3" : "scarce"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "sometimes"}, {"option2" : "regularly"}, {"option3" : "never"}],
 	 "options_right" : [{"option1" : "normally"}, {"option2" : "daily"}, {"option3" : "occasionally"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "vengeful"}, {"option2" : "violent"}, {"option3" : "bitter"}],
 	 "options_right" : [{"option1" : "merciful"}, {"option2" : "resentful"}, {"option3" : "supportive"}],
 	 "correct_match" : [{"option1" : "option1"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "nimble"}, {"option2" : "lumbering"}, {"option3" : "quick"}],
 	 "options_right" : [{"option1" : "clumsy"}, {"option2" : "ackward"}, {"option3" : "swift"}],
@@ -80,27 +80,27 @@
   {"options_left" : [{"option1" : "tropical"}, {"option2" : "deserted"}, {"option3" : "humid"}],
 	 "options_right" : [{"option1" : "barren"}, {"option2" : "impoverished"}, {"option3" : "arid"}],
 	 "correct_match" : [{"option3" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "muffle"}, {"option2" : "restrain"}, {"option3" : "restrict"}],
 	 "options_right" : [{"option1" : "amplify"}, {"option2" : "elaborate"}, {"option3" : "summarise"}],
 	 "correct_match" : [{"option1" : "option1"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "pithy"}, {"option2" : "rambling"}, {"option3" : "complicated"}],
 	 "options_right" : [{"option1" : "incomplete"}, {"option2" : "abbreviated"}, {"option3" : "concise"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "doubtful"}, {"option2" : "tactful"}, {"option3" : "sincere"}],
 	 "options_right" : [{"option1" : "obnoxious"}, {"option2" : "fortright"}, {"option3" : "obstinate"}],
 	 "correct_match" : [{"option2" : "option2"}],
-	 "done" : true
+	 "done" : false
 	},
   {"options_left" : [{"option1" : "dismiss"}, {"option2" : "excuse"}, {"option3" : "condemn"}],
 	 "options_right" : [{"option1" : "ridicule"}, {"option2" : "commend"}, {"option3" : "reject"}],
 	 "correct_match" : [{"option3" : "option2"}],
-	 "done" : true
+	 "done" : false
 	}
 
 
