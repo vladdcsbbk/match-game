@@ -128,6 +128,11 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 .meter { display: block; height: 12px; overflow: hidden; background: #E2EFE8; border: 2px solid var(--ink); border-radius: 99px; }
 .meter-fill { display: block; width: 0; height: 100%; background: var(--leaf); border-radius: 99px; transition: width .4s ease; }
 .badge-star { position: absolute; top: -16px; right: -12px; width: 52px; height: 52px; transform: rotate(12deg); }
+.game-tile.is-locked { background: #F1EFF6; }
+.game-tile.is-locked .game-name { color: var(--ink-2); }
+.game-meta.is-locked-meta { grid-template-columns: minmax(0, 1fr); }
+.game-count.lock-text { white-space: normal; }
+.badge-lock { position: absolute; top: -18px; right: -10px; width: 50px; height: 50px; transform: rotate(-10deg); }
 
 .banner {
   display: grid;
@@ -343,6 +348,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 .celebrate-sheet { text-align: center; }
 .celebrate-sheet .celebrate-game { margin-bottom: 6px; font-size: 22px; font-weight: 700; }
 .celebrate-star { display: block; width: 136px; height: 136px; margin: -6px auto 6px; animation: star-pop .7s cubic-bezier(.2, 1.6, .4, 1); }
+.sheet .celebrate-unlock { display: inline-block; margin: -4px 0 22px; padding: 8px 18px; font-weight: 700; color: var(--leaf); background: #E2F3E9; border: 2.5px solid var(--leaf); border-radius: 99px; }
 
 .settings-sheet { max-width: 600px; }
 .setting { padding: 18px 0; border-top: 2px solid #E5EEE9; }
@@ -508,6 +514,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     <h2 id="celebrate-title">You finished it!</h2>
     <p class="celebrate-game" id="celebrate-game"></p>
     <p>Every question is done. Brilliant work!</p>
+    <p class="celebrate-unlock" id="celebrate-unlock" hidden></p>
     <div class="sheet-actions"><button class="btn" type="button" id="celebrate-close">Choose a game</button></div>
   </div>
 </div>
@@ -897,10 +904,20 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     if (!scanned && !nameM) return null; // some other kind of JSON file
     if (!scanned) throw new Error('This file has no "questions" list');
     var instrM = getMember(root, 'instructions');
+    // "prerequisites": games (file names, or game names) that must be fully done before this one
+    var preM = getMember(root, 'prerequisites');
+    var prereqRefs = [];
+    if (preM) {
+      (preM.v.t === 'arr' ? preM.v.items : [preM.v]).forEach(function (it) {
+        var ref = textOf(it).trim();
+        if (ref) prereqRefs.push(ref);
+      });
+    }
     return {
       path: path,
       name: (nameM && textOf(nameM.v).trim()) || fileLabel(path),
       instructions: instrM ? textOf(instrM.v).trim() : '',
+      prereqRefs: prereqRefs,
       questions: scanned.map(function (q) { return { sig: q.sig, left: q.left, right: q.right, pairs: q.pairs, done: q.done }; }),
       warnings: warnings
     };
@@ -1185,11 +1202,67 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
         g.questions.forEach(function (q) { if (has(pend, q.sig)) q.done = !!pend[q.sig]; });
       });
       games.sort(function (a, b) { return naturalCompare(a.name, b.name) || naturalCompare(a.path, b.path); });
+      resolvePrereqs(games, problems);
       problems.sort(function (a, b) { return naturalCompare(a.path, b.path); });
       State.games = games;
       State.problems = problems;
       Saver.flushAll();
     });
+  }
+
+  /* ================= Prerequisites ================= */
+
+  function baseName(p) { return String(p).split('/').pop().toLowerCase(); }
+
+  // A prerequisite can be written as a file path ("definitions2.json"), a bare file name
+  // (also without ".json"), or a game name ("Definitions 2").
+  function findGameByRef(games, ref) {
+    var low = String(ref).trim().replace(/^\.?\//, '').toLowerCase();
+    var file = /\.json$/.test(low) ? low : low + '.json';
+    var hit = null;
+    games.forEach(function (g) { if (!hit && g.path.toLowerCase() === file) hit = g; });
+    games.forEach(function (g) { if (!hit && baseName(g.path) === baseName(file)) hit = g; });
+    games.forEach(function (g) { if (!hit && g.name.trim().toLowerCase() === low) hit = g; });
+    return hit;
+  }
+
+  function requiresGame(from, target, seen) {
+    if (from === target) return true;
+    seen = seen || [];
+    if (seen.indexOf(from) >= 0) return false;
+    seen.push(from);
+    return from.prereqs.some(function (p) { return requiresGame(p, target, seen); });
+  }
+
+  // Mistakes never lock a game for good: a prerequisite that can't be found, or two games that
+  // require each other, is skipped and reported to grown-ups instead.
+  function resolvePrereqs(games, problems) {
+    games.forEach(function (g) {
+      g.prereqs = [];
+      (g.prereqRefs || []).forEach(function (ref) {
+        var target = findGameByRef(games, ref);
+        if (!target) { problems.push({ path: g.path, message: 'prerequisite "' + ref + '" was not found among the games (check the file name), so it is ignored' }); return; }
+        if (target === g) { problems.push({ path: g.path, message: 'lists itself as a prerequisite, so that is ignored' }); return; }
+        if (g.prereqs.indexOf(target) < 0) g.prereqs.push(target);
+      });
+    });
+    games.forEach(function (g) {
+      g.prereqs = g.prereqs.filter(function (p) {
+        if (!requiresGame(p, g)) return true;
+        problems.push({ path: g.path, message: 'requires ' + p.path + ', which requires it back, so this prerequisite is ignored' });
+        return false;
+      });
+    });
+  }
+
+  function unfinishedPrereqs(g) {
+    return (g.prereqs || []).filter(function (p) { return p.questions.some(function (q) { return !q.done; }); });
+  }
+
+  function joinNames(list) {
+    var names = list.map(function (g) { return g.name; });
+    if (names.length < 2) return names.join('');
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
   }
 
   function boot() {
@@ -1570,7 +1643,8 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
       if (anim) Object.keys(anim).forEach(function (k) { link.anim[k] = anim[k]; });
     }
     B.links.push(link);
-    if (!firstLinkMade) { firstLinkMade = true; $('#hint').hidden = true; }
+    // The hint fades but keeps its space until the next question, so the Check! button doesn't jump.
+    if (!firstLinkMade) { firstLinkMade = true; $('#hint').style.visibility = 'hidden'; }
     Sound.play('plug');
     boardChanged();
     draw();
@@ -1798,6 +1872,16 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
   }
 
   function openGame(g) {
+    var blockers = unfinishedPrereqs(g);
+    if (blockers.length) {
+      dialog({
+        title: 'Complete ' + joinNames(blockers) + ' first!',
+        body: g.name + " opens once you've finished " + (blockers.length === 1 ? blockers[0].name : 'these games') + '.',
+        primary: { label: 'Play ' + blockers[0].name, action: function () { openGame(blockers[0]); } },
+        secondary: { label: 'Not now' }
+      });
+      return;
+    }
     var undone = g.questions.filter(function (q) { return !q.done; });
     if (!undone.length) {
       dialog({
@@ -1824,6 +1908,7 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     cur.q = cur.round[cur.idx];
     $('#instructions').textContent = cur.game.instructions || 'Join each word on the left to its partner on the right.';
     $('#hint').hidden = firstLinkMade;
+    $('#hint').style.visibility = '';
     setFeedback('', '');
     setAction('check');
     updateProgress();
@@ -1936,6 +2021,12 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 
   function celebrate(g) {
     $('#celebrate-game').textContent = g.name;
+    var opened = State.games.filter(function (x) {
+      return x !== g && x.prereqs && x.prereqs.indexOf(g) >= 0 && !unfinishedPrereqs(x).length;
+    });
+    var unlock = $('#celebrate-unlock');
+    unlock.textContent = opened.length ? 'You unlocked ' + joinNames(opened) + '!' : '';
+    unlock.hidden = !opened.length;
     openOverlay('#overlay-celebrate');
     Sound.play('finish');
     confettiRain();
@@ -1993,26 +2084,44 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
     return s;
   }
 
+  function lockSvg(cls) {
+    var s = svgEl('svg', { viewBox: '0 0 100 100', 'class': cls, 'aria-hidden': 'true' });
+    s.appendChild(svgEl('path', { d: 'M32 46V34a18 18 0 0 1 36 0v12', fill: 'none', stroke: '#26214A', 'stroke-width': '9', 'stroke-linecap': 'round' }));
+    s.appendChild(svgEl('rect', { x: '20', y: '44', width: '60', height: '46', rx: '10', fill: '#FFC93C', stroke: '#26214A', 'stroke-width': '6' }));
+    s.appendChild(svgEl('circle', { cx: '50', cy: '62', r: '6.5', fill: '#26214A' }));
+    s.appendChild(svgEl('path', { d: 'M50 64v12', stroke: '#26214A', 'stroke-width': '6', 'stroke-linecap': 'round' }));
+    return s;
+  }
+
   function gameTile(g) {
     var total = g.questions.length;
     var done = g.questions.filter(function (q) { return q.done; }).length;
+    var blockers = unfinishedPrereqs(g);
     var b = h('button', 'game-tile');
     b.type = 'button';
     var label;
-    if (done === total) { label = 'All done!'; b.classList.add('is-complete'); }
+    if (blockers.length) label = 'Complete ' + joinNames(blockers) + ' first';
+    else if (done === total) { label = 'All done!'; b.classList.add('is-complete'); }
     else if (done === 0) label = plural(total, 'question');
     else label = done + ' of ' + total + ' done';
     b.appendChild(h('span', 'game-name', g.name));
     var meta = h('span', 'game-meta');
-    var meter = h('span', 'meter');
-    var fill = h('span', 'meter-fill');
-    fill.style.width = (total ? Math.round(done / total * 100) : 0) + '%';
-    meter.appendChild(fill);
-    meta.appendChild(meter);
-    meta.appendChild(h('span', 'game-count', label));
+    if (blockers.length) {
+      b.classList.add('is-locked');
+      meta.classList.add('is-locked-meta');
+      meta.appendChild(h('span', 'game-count lock-text', label));
+    } else {
+      var meter = h('span', 'meter');
+      var fill = h('span', 'meter-fill');
+      fill.style.width = (total ? Math.round(done / total * 100) : 0) + '%';
+      meter.appendChild(fill);
+      meta.appendChild(meter);
+      meta.appendChild(h('span', 'game-count', label));
+    }
     b.appendChild(meta);
-    if (done === total) b.appendChild(starSvg('badge-star'));
-    b.setAttribute('aria-label', g.name + ', ' + label);
+    if (blockers.length) b.appendChild(lockSvg('badge-lock'));
+    else if (done === total) b.appendChild(starSvg('badge-star'));
+    b.setAttribute('aria-label', g.name + (blockers.length ? ', locked. ' : ', ') + label);
     b.addEventListener('click', function () { openGame(g); });
     return b;
   }
@@ -2105,17 +2214,59 @@ button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-c
 
   /* ================= Wiring ================= */
 
-  $('#action-btn').addEventListener('click', function () {
+  // Right after a quick drag, some browsers (Chrome on tablets) drop the click of the next tap.
+  // Buttons used while playing therefore also respond when the finger lifts; the click that
+  // may follow is ignored, and a click with no touch before it (keyboard, mouse) still works.
+  // When a tap is handled as the finger lifts, the browser may still send its click a moment
+  // later, at the same spot, to whatever is there by then (for example the congratulations
+  // that just opened). That one leftover click is swallowed here.
+  var ghost = null;
+  document.addEventListener('click', function (e) {
+    if (!ghost) return;
+    var near = Math.abs(e.clientX - ghost.x) < 30 && Math.abs(e.clientY - ghost.y) < 30;
+    if (Date.now() < ghost.until && near) {
+      ghost = null;
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }, true);
+
+  function onTap(el, handler) {
+    var down = null;
+    var firedAt = 0;
+    if (window.PointerEvent) {
+      el.addEventListener('pointerdown', function (e) {
+        down = e.pointerType === 'mouse' ? null : { x: e.clientX, y: e.clientY, id: e.pointerId };
+      });
+      el.addEventListener('pointercancel', function () { down = null; });
+      el.addEventListener('pointerup', function (e) {
+        var d = down;
+        down = null;
+        if (!d || d.id !== e.pointerId || el.disabled) return;
+        var r = el.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) return;
+        firedAt = Date.now();
+        ghost = { x: e.clientX, y: e.clientY, until: firedAt + 800 };
+        handler.call(el, e);
+      });
+    }
+    el.addEventListener('click', function (e) {
+      if (Date.now() - firedAt < 800) return;
+      handler.call(el, e);
+    });
+  }
+
+  onTap($('#action-btn'), function () {
     if (this.getAttribute('data-mode') === 'check') checkAnswer();
     else nextQuestion();
   });
-  $('#back-btn').addEventListener('click', function () {
+  onTap($('#back-btn'), function () {
     Game.current = null;
     showMenu();
   });
   $('#menu-message-btn').addEventListener('click', boot);
   $$('[data-sound-toggle]').forEach(function (b) {
-    b.addEventListener('click', function () { setSound(!Sound.on); });
+    onTap(b, function () { setSound(!Sound.on); });
   });
   $('#sound-switch').addEventListener('click', function () { setSound(!Sound.on); });
   function openSettings() { renderSettings(); openOverlay('#overlay-settings'); }
