@@ -1,0 +1,156 @@
+{
+"game_name": "Definitions 1",
+"instructions": "Connect each word on the left to its definition on the right",
+"questions": [
+	{"options_left" : [{"option1" : "slide"}, {"option2" : "skip"}, {"option3" : "tumble"}],
+	 "options_right" : [{"option1" : "hop or leap, omit or bypass, absent oneself"}, {"option2" : "fall suddenly, drop in value, move in a hurried or chaotic way"}, {"option3" : "move smoothly, decline or fall, move quietly"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "fall"}, {"option2" : "dive"}, {"option3" : "skate"}],
+	 "options_right" : [{"option1" : "drop or move downward, trip, slip, become lower in size, amount, value, or strength"}, {"option2" : "jump headfirst into water, swim underwater, descend steeply"}, {"option3" : "move or travel across ice, a floor, or the ground using ice skates, roller skates, or a skateboard"}],
+	 "correct_match" : [{"option1" : "option1"}, {"option2" : "option2"}, {"option3" : "option3"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "pot"}, {"option2" : "barrel"}, {"option3" : "bucket"}],
+	 "options_right" : [{"option1" : "a large round container with curved sides and flat ends for storing liquids such as oil, move along very fast"}, {"option2" : "an open container with a handle for carrying water, sand or other things, rain very heavily"}, {"option3" : "a deep round container for cooking food, a container that a plant grows in, hit a ball into a pocket in snooker or pool"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "spade"}, {"option2" : "scoop"}, {"option3" : "pail"}],
+	 "options_right" : [{"option1" : "a deep spoon for serving ice cream or flour, lift out with a curved movement, a news story printed before anyone else's"}, {"option2" : "an open container with a handle for carrying water or milk, another word for a bucket"}, {"option3" : "a tool with a flat metal blade and a long handle for digging, one of the four suits in a pack of playing cards"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "whisper"}, {"option2" : "hoarse"}, {"option3" : "listen"}],
+	 "options_right" : [{"option1" : "sounding rough and croaky, often because of a sore throat or too much shouting"}, {"option2" : "pay attention to sounds or to someone speaking, take notice of advice and follow it"}, {"option3" : "speak very softly using your breath instead of your voice, a soft rustling sound, a rumour or hint"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "say"}, {"option2" : "mumble"}, {"option3" : "quiet"}],
+	 "options_right" : [{"option1" : "speak softly and unclearly with your mouth almost closed, so that words are hard to understand"}, {"option2" : "making little or no noise, calm and peaceful, shy and not talkative, not busy"}, {"option3" : "speak words aloud, tell or state something, give an opinion, the right to help make a decision"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "crafty"}, {"option2" : "villain"}, {"option3" : "wrong"}],
+	 "options_right" : [{"option1" : "an evil person who harms others or breaks the law, the bad character in a story, film or play"}, {"option2" : "not correct or true, unfair or morally bad, not suitable, not working properly"}, {"option3" : "clever at getting what you want, especially by tricking people, cunning and sneaky"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "naughty"}, {"option2" : "sly"}, {"option3" : "wicked"}],
+	 "options_right" : [{"option1" : "clever at tricking people in a secret way, cunning, showing that you know a secret"}, {"option2" : "evil or very bad, causing great harm, playfully mischievous, really great in slang"}, {"option3" : "badly behaved or disobedient, especially of a child, slightly rude or cheeky"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "key"}, {"option2" : "lock"}, {"option3" : "protect"}],
+	 "options_right" : [{"option1" : "a device that keeps a door or box fastened shut, a section of canal with gates for raising boats, a strand of hair"}, {"option2" : "keep someone or something safe from harm, damage or danger, defend or guard"}, {"option3" : "a shaped piece of metal for opening a door, a button on a computer or piano, most important, a guide to the symbols on a map"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "handcuff"}, {"option2" : "bolt"}, {"option3" : "arrest"}],
+	 "options_right" : [{"option1" : "a metal bar that slides across to fasten a door or window, a metal pin used with a nut, run away suddenly, a flash of lightning"}, {"option2" : "take someone into custody because they are believed to have broken the law, stop or slow something down"}, {"option3" : "a pair of metal rings joined by a chain and fastened around a prisoner's wrists, put these rings on someone"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "chase"}, {"option2" : "race"}, {"option3" : "sport"}],
+	 "options_right" : [{"option1" : "a contest of speed, move or run very fast, compete to be the first to achieve something"}, {"option2" : "a game or activity such as football or swimming that needs physical effort and skill, wear something proudly"}, {"option3" : "run after someone or something to catch them, try hard to get something, drive away"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "exercise"}, {"option2" : "hobby"}, {"option3" : "jog"}],
+	 "options_right" : [{"option1" : "an activity you enjoy doing in your free time, such as painting, collecting things or gardening"}, {"option2" : "run at a slow, steady pace to keep fit, nudge or bump slightly, prompt someone's memory"}, {"option3" : "physical activity done to stay fit and healthy, a task done to practise a skill, use or put into action"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "feverish"}, {"option2" : "sneeze"}, {"option3" : "flu"}],
+	 "options_right" : [{"option1" : "suddenly force air out through your nose and mouth with a loud noise, often because of dust or pollen"}, {"option2" : "an infectious illness caused by a virus, with aches, tiredness and a high temperature, short for influenza"}, {"option3" : "hot and unwell with a raised body temperature, extremely excited, nervous or frantic"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "shiver"}, {"option2" : "sweat"}, {"option3" : "cold"}],
+	 "options_right" : [{"option1" : "salty liquid that comes out through your skin when you are hot, ill or nervous, work very hard"}, {"option2" : "having a low temperature, unfriendly or unkind, a common illness that causes a runny or blocked nose and a sore throat"}, {"option3" : "shake slightly and uncontrollably when you feel chilly or frightened, a quick trembling movement"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "nervous"}, {"option2" : "meek"}, {"option3" : "wary"}],
+	 "options_right" : [{"option1" : "quiet, gentle and easily pushed around, willing to obey others without arguing"}, {"option2" : "careful because you think there may be danger or trouble, cautious and not trusting"}, {"option3" : "worried and anxious about something, easily frightened or upset"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "docile"}, {"option2" : "grateful"}, {"option3" : "loyal"}],
+	 "options_right" : [{"option1" : "feeling or showing thanks for something someone has done for you, thankful"}, {"option2" : "always supporting and staying true to a person, country or cause, faithful"}, {"option3" : "calm and easy to control or teach, quietly obedient, often said of animals"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "devour"}, {"option2" : "dine"}, {"option3" : "swallow"}],
+	 "options_right" : [{"option1" : "eat an evening meal, have a meal, especially a formal one or at a restaurant"}, {"option2" : "make food or drink go down your throat, believe something too easily, a small fast bird with a forked tail"}, {"option3" : "eat something hungrily and quickly, destroy completely as fire does, read or take in eagerly"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "greedy"}, {"option2" : "gobble"}, {"option3" : "nibble"}],
+	 "options_right" : [{"option1" : "eat food very quickly and noisily, the gurgling sound a turkey makes"}, {"option2" : "take small, quick bites of food, a small bite"}, {"option3" : "wanting much more food, money or things than you need"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "waste"}, {"option2" : "hoard"}, {"option3" : "bank"}],
+	 "options_right" : [{"option1" : "collect and secretly store a large amount of something, a secret store of money, food or treasure"}, {"option2" : "a business that keeps money safe and lends it, save money there, the land along the side of a river"}, {"option3" : "use something carelessly or for no good purpose, rubbish or unwanted material, empty land where little grows"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "spend"}, {"option2" : "invest"}, {"option3" : "squander"}],
+	 "options_right" : [{"option1" : "put money into a business or property hoping to make a profit, give time or effort to something worthwhile"}, {"option2" : "waste money, time or chances in a foolish, careless way"}, {"option3" : "pay out money to buy things, use time doing something, use up energy or effort"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "burglary"}, {"option2" : "crime"}, {"option3" : "defraud"}],
+	 "options_right" : [{"option1" : "an action that breaks the law and can be punished, illegal acts in general, something shameful or very wrong"}, {"option2" : "get money or property from someone illegally by tricking or deceiving them, cheat"}, {"option3" : "breaking into a house or other building illegally to steal things"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "swindle"}, {"option2" : "vandalise"}, {"option3" : "steal"}],
+	 "options_right" : [{"option1" : "deliberately damage or destroy property that belongs to someone else or to the public"}, {"option2" : "take something that belongs to someone else without permission, move quietly and secretly"}, {"option3" : "cheat someone out of money or property by tricking them, a dishonest scheme"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "trudge"}, {"option2" : "meander"}, {"option3" : "loiter"}],
+	 "options_right" : [{"option1" : "follow a winding, twisting course like a river, wander about without hurrying or with no clear aim"}, {"option2" : "stand or wait around somewhere with no obvious reason, move slowly and keep stopping"}, {"option3" : "walk slowly with heavy steps because you are tired or the ground is difficult"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "slow"}, {"option2" : "stumble"}, {"option3" : "dawdle"}],
+	 "options_right" : [{"option1" : "trip or lose your balance for a moment, walk unsteadily, make mistakes when speaking or reading, find something by chance"}, {"option2" : "take more time than needed to do something or get somewhere, waste time, lag behind others"}, {"option3" : "moving or happening without much speed, not quick to understand, showing a time behind the correct one, reduce speed"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "eventual"}, {"option2" : "finite"}, {"option3" : "final"}],
+	 "options_right" : [{"option1" : "having limits, able to be counted or measured, not going on for ever"}, {"option2" : "last in a series, coming at the very end, not able to be changed, the last game of a competition"}, {"option3" : "happening later on, as the result of a long process or delay"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "scarce"}, {"option2" : "penultimate"}, {"option3" : "limited"}],
+	 "options_right" : [{"option1" : "second to last, the one just before the last"}, {"option2" : "kept within fixed boundaries, restricted, not great in amount or ability"}, {"option3" : "not plentiful, hard to find or get hold of, rare"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "ground"}, {"option2" : "feeling"}, {"option3" : "opinion"}],
+	 "options_right" : [{"option1" : "an emotion such as joy or anger, the sense of touch, a vague idea or hunch that something is true"}, {"option2" : "what someone thinks or believes about something, a view or judgement, expert advice"}, {"option3" : "the surface of the earth, land used for sport, a good reason for doing or believing something, crushed into powder"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "answer"}, {"option2" : "reason"}, {"option3" : "persuade"}],
+	 "options_right" : [{"option1" : "the cause or explanation of why something happened, the ability to think and judge sensibly, think in a logical way"}, {"option2" : "convince someone to do or believe something by arguing, coaxing or explaining"}, {"option3" : "something said or written in reply to a question, the solution to a problem, respond to a call or a knock at the door"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "empty"}, {"option2" : "neglected"}, {"option3" : "sparse"}],
+	 "options_right" : [{"option1" : "not looked after properly, left without the care or attention that is needed"}, {"option2" : "thinly scattered, with only a few things spread over an area, small in amount"}, {"option3" : "containing nothing, with no people in it, without meaning or value, remove everything from a container"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "miserly"}, {"option2" : "disowned"}, {"option3" : "abandoned"}],
+	 "options_right" : [{"option1" : "officially rejected by your family or a group, no longer accepted as belonging to someone"}, {"option2" : "left alone and deserted, no longer used or cared for, wild and uncontrolled"}, {"option3" : "unwilling to spend or share money, mean or stingy, very small in amount"}],
+	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
+	 "done" : false
+	}
+    ]
+}
