@@ -70,7 +70,7 @@
   {"options_left" : [{"option1" : "ground"}, {"option2" : "feeling"}, {"option3" : "opinion"}],
 	 "options_right" : [{"option1" : "answer"}, {"option2" : "reason"}, {"option3" : "persuade"}],
 	 "correct_match" : [{"option1" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "empty"}, {"option2" : "neglected"}, {"option3" : "sparse"}],
 	 "options_right" : [{"option1" : "miserly"}, {"option2" : "disowned"}, {"option3" : "abandoned"}],
