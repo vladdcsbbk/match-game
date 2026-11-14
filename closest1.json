@@ -5,7 +5,7 @@
 	{"options_left" : [{"option1" : "slide"}, {"option2" : "skip"}, {"option3" : "tumble"}],
 	 "options_right" : [{"option1" : "fall"}, {"option2" : "dive"}, {"option3" : "skate"}],
 	 "correct_match" : [{"option3" : "option1"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "pot"}, {"option2" : "barrel"}, {"option3" : "bucket"}],
 	 "options_right" : [{"option1" : "spade"}, {"option2" : "scoop"}, {"option3" : "pail"}],
