@@ -50,7 +50,7 @@
 	{"options_left" : [{"option1" : "handcuff"}, {"option2" : "bolt"}, {"option3" : "arrest"}],
 	 "options_right" : [{"option1" : "a metal bar that slides across to fasten a door or window, a metal pin used with a nut, run away suddenly, a flash of lightning"}, {"option2" : "take someone into custody because they are believed to have broken the law, stop or slow something down"}, {"option3" : "a pair of metal rings joined by a chain and fastened around a prisoner's wrists, put these rings on someone"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "chase"}, {"option2" : "race"}, {"option3" : "sport"}],
 	 "options_right" : [{"option1" : "a contest of speed, move or run very fast, compete to be the first to achieve something"}, {"option2" : "a game or activity such as football or swimming that needs physical effort and skill, wear something proudly"}, {"option3" : "run after someone or something to catch them, try hard to get something, drive away"}],
