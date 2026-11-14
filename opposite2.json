@@ -1,5 +1,5 @@
 {
-"game_name": "Opposite Meaning 1",
+"game_name": "Opposite Meaning 2",
 "instructions": "Find and match two words, one from each side, that have the most opposite meaning",
 "questions": [
 	{"options_left" : [{"option1" : "humble"}, {"option2" : "poor"}, {"option3" : "unhappy"}],
@@ -73,7 +73,7 @@
 	 "done" : false
 	},
   {"options_left" : [{"option1" : "nimble"}, {"option2" : "lumbering"}, {"option3" : "quick"}],
-	 "options_right" : [{"option1" : "clumsy"}, {"option2" : "ackward"}, {"option3" : "swift"}],
+	 "options_right" : [{"option1" : "clumsy"}, {"option2" : "awkward"}, {"option3" : "swift"}],
 	 "correct_match" : [{"option1" : "option1"}],
 	 "done" : true
 	},
@@ -93,7 +93,7 @@
 	 "done" : false
 	},
   {"options_left" : [{"option1" : "doubtful"}, {"option2" : "tactful"}, {"option3" : "sincere"}],
-	 "options_right" : [{"option1" : "obnoxious"}, {"option2" : "fortright"}, {"option3" : "obstinate"}],
+	 "options_right" : [{"option1" : "obnoxious"}, {"option2" : "forthright"}, {"option3" : "obstinate"}],
 	 "correct_match" : [{"option2" : "option2"}],
 	 "done" : false
 	},
