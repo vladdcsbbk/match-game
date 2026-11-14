@@ -5,12 +5,12 @@
 	{"options_left" : [{"option1" : "love"}, {"option2" : "hate"}],
 	 "options_right" : [{"option1" : "antipathy"}, {"option2" : "sympathy"}],
 	 "correct_match" : [{"option1" : "option2"}, {"option2" : "option1"}],
-	 "done" : true
+	 "done" : false
 	},
 	{"options_left" : [{"option1" : "calculate"}, {"option2" : "destroy"}],
 	 "options_right" : [{"option1" : "compute"}, {"option2" : "dog"}],
 	 "correct_match" : [{"option1" : "option1"}],
-	 "done" : true
+	 "done" : false
 	}
 
     ]
