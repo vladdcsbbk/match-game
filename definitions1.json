@@ -85,7 +85,7 @@
 	{"options_left" : [{"option1" : "devour"}, {"option2" : "dine"}, {"option3" : "swallow"}],
 	 "options_right" : [{"option1" : "eat an evening meal, have a meal, especially a formal one or at a restaurant"}, {"option2" : "make food or drink go down your throat, believe something too easily, a small fast bird with a forked tail"}, {"option3" : "eat something hungrily and quickly, destroy completely as fire does, read or take in eagerly"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "greedy"}, {"option2" : "gobble"}, {"option3" : "nibble"}],
 	 "options_right" : [{"option1" : "eat food very quickly and noisily, the gurgling sound a turkey makes"}, {"option2" : "take small, quick bites of food, a small bite"}, {"option3" : "wanting much more food, money or things than you need"}],
