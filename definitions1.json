@@ -10,7 +10,7 @@
 	{"options_left" : [{"option1" : "fall"}, {"option2" : "dive"}, {"option3" : "skate"}],
 	 "options_right" : [{"option1" : "drop or move downward, trip, slip, become lower in size, amount, value, or strength"}, {"option2" : "jump headfirst into water, swim underwater, descend steeply"}, {"option3" : "move or travel across ice, a floor, or the ground using ice skates, roller skates, or a skateboard"}],
 	 "correct_match" : [{"option1" : "option1"}, {"option2" : "option2"}, {"option3" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "pot"}, {"option2" : "barrel"}, {"option3" : "bucket"}],
 	 "options_right" : [{"option1" : "a large round container with curved sides and flat ends for storing liquids such as oil, move along very fast"}, {"option2" : "an open container with a handle for carrying water, sand or other things, rain very heavily"}, {"option3" : "a deep round container for cooking food, a container that a plant grows in, hit a ball into a pocket in snooker or pool"}],
