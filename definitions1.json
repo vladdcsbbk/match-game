@@ -110,7 +110,7 @@
 	{"options_left" : [{"option1" : "swindle"}, {"option2" : "vandalise"}, {"option3" : "steal"}],
 	 "options_right" : [{"option1" : "deliberately damage or destroy property that belongs to someone else or to the public"}, {"option2" : "take something that belongs to someone else without permission, move quietly and secretly"}, {"option3" : "cheat someone out of money or property by tricking them, a dishonest scheme"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "trudge"}, {"option2" : "meander"}, {"option3" : "loiter"}],
 	 "options_right" : [{"option1" : "follow a winding, twisting course like a river, wander about without hurrying or with no clear aim"}, {"option2" : "stand or wait around somewhere with no obvious reason, move slowly and keep stopping"}, {"option3" : "walk slowly with heavy steps because you are tired or the ground is difficult"}],
