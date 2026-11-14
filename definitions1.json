@@ -135,7 +135,7 @@
 	{"options_left" : [{"option1" : "ground"}, {"option2" : "feeling"}, {"option3" : "opinion"}],
 	 "options_right" : [{"option1" : "an emotion such as joy or anger, the sense of touch, a vague idea or hunch that something is true"}, {"option2" : "what someone thinks or believes about something, a view or judgement, expert advice"}, {"option3" : "the surface of the earth, land used for sport, a good reason for doing or believing something, crushed into powder"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "answer"}, {"option2" : "reason"}, {"option3" : "persuade"}],
 	 "options_right" : [{"option1" : "the cause or explanation of why something happened, the ability to think and judge sensibly, think in a logical way"}, {"option2" : "convince someone to do or believe something by arguing, coaxing or explaining"}, {"option3" : "something said or written in reply to a question, the solution to a problem, respond to a call or a knock at the door"}],
