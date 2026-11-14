@@ -55,7 +55,7 @@
   {"options_left" : [{"option1" : "burglary"}, {"option2" : "crime"}, {"option3" : "defraud"}],
 	 "options_right" : [{"option1" : "swindle"}, {"option2" : "vandalise"}, {"option3" : "steal"}],
 	 "correct_match" : [{"option3" : "option1"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "trudge"}, {"option2" : "meander"}, {"option3" : "loiter"}],
 	 "options_right" : [{"option1" : "slow"}, {"option2" : "stumble"}, {"option3" : "dawdle"}],
