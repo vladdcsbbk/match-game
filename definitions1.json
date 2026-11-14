@@ -5,7 +5,7 @@
 	{"options_left" : [{"option1" : "slide"}, {"option2" : "skip"}, {"option3" : "tumble"}],
 	 "options_right" : [{"option1" : "hop or leap, omit or bypass, absent oneself"}, {"option2" : "fall suddenly, drop in value, move in a hurried or chaotic way"}, {"option3" : "move smoothly, decline or fall, move quietly"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "fall"}, {"option2" : "dive"}, {"option3" : "skate"}],
 	 "options_right" : [{"option1" : "drop or move downward, trip, slip, become lower in size, amount, value, or strength"}, {"option2" : "jump headfirst into water, swim underwater, descend steeply"}, {"option3" : "move or travel across ice, a floor, or the ground using ice skates, roller skates, or a skateboard"}],
