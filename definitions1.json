@@ -120,7 +120,7 @@
 	{"options_left" : [{"option1" : "slow"}, {"option2" : "stumble"}, {"option3" : "dawdle"}],
 	 "options_right" : [{"option1" : "trip or lose your balance for a moment, walk unsteadily, make mistakes when speaking or reading, find something by chance"}, {"option2" : "take more time than needed to do something or get somewhere, waste time, lag behind others"}, {"option3" : "moving or happening without much speed, not quick to understand, showing a time behind the correct one, reduce speed"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "eventual"}, {"option2" : "finite"}, {"option3" : "final"}],
 	 "options_right" : [{"option1" : "having limits, able to be counted or measured, not going on for ever"}, {"option2" : "last in a series, coming at the very end, not able to be changed, the last game of a competition"}, {"option3" : "happening later on, as the result of a long process or delay"}],
