@@ -100,7 +100,7 @@
 	{"options_left" : [{"option1" : "spend"}, {"option2" : "invest"}, {"option3" : "squander"}],
 	 "options_right" : [{"option1" : "put money into a business or property hoping to make a profit, give time or effort to something worthwhile"}, {"option2" : "waste money, time or chances in a foolish, careless way"}, {"option3" : "pay out money to buy things, use time doing something, use up energy or effort"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "burglary"}, {"option2" : "crime"}, {"option3" : "defraud"}],
 	 "options_right" : [{"option1" : "an action that breaks the law and can be punished, illegal acts in general, something shameful or very wrong"}, {"option2" : "get money or property from someone illegally by tricking or deceiving them, cheat"}, {"option3" : "breaking into a house or other building illegally to steal things"}],
