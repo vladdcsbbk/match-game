@@ -20,7 +20,7 @@
   {"options_left" : [{"option1" : "crafty"}, {"option2" : "villain"}, {"option3" : "wrong"}],
 	 "options_right" : [{"option1" : "naughty"}, {"option2" : "sly"}, {"option3" : "wicked"}],
 	 "correct_match" : [{"option1" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "key"}, {"option2" : "lock"}, {"option3" : "protect"}],
 	 "options_right" : [{"option1" : "handcuff"}, {"option2" : "bolt"}, {"option3" : "arrest"}],
