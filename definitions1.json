@@ -95,7 +95,7 @@
 	{"options_left" : [{"option1" : "waste"}, {"option2" : "hoard"}, {"option3" : "bank"}],
 	 "options_right" : [{"option1" : "collect and secretly store a large amount of something, a secret store of money, food or treasure"}, {"option2" : "a business that keeps money safe and lends it, save money there, the land along the side of a river"}, {"option3" : "use something carelessly or for no good purpose, rubbish or unwanted material, empty land where little grows"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "spend"}, {"option2" : "invest"}, {"option3" : "squander"}],
 	 "options_right" : [{"option1" : "put money into a business or property hoping to make a profit, give time or effort to something worthwhile"}, {"option2" : "waste money, time or chances in a foolish, careless way"}, {"option3" : "pay out money to buy things, use time doing something, use up energy or effort"}],
