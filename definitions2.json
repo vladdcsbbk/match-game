@@ -185,7 +185,7 @@
 	{"options_left" : [{"option1" : "doubtful"}, {"option2" : "tactful"}, {"option3" : "sincere"}],
 	 "options_right" : [{"option1" : "careful not to upset or offend people, saying difficult things in a kind and sensitive way"}, {"option2" : "honest and meaning what you say, genuine, not pretending"}, {"option3" : "feeling unsure or uncertain, unlikely to happen, questionable"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "obnoxious"}, {"option2" : "forthright"}, {"option3" : "obstinate"}],
 	 "options_right" : [{"option1" : "saying exactly what you think, openly and plainly, even if it upsets people"}, {"option2" : "refusing to change your mind or behaviour, stubborn, hard to get rid of"}, {"option3" : "extremely unpleasant and rude, very annoying"}],
