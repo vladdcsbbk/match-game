@@ -85,7 +85,7 @@
 	{"options_left" : [{"option1" : "deteriorate"}, {"option2" : "undermine"}, {"option3" : "elevate"}],
 	 "options_right" : [{"option1" : "gradually weaken someone or something, often secretly, dig away underneath something"}, {"option2" : "lift or raise to a higher position, promote to a higher rank, make better or more important"}, {"option3" : "become worse in quality or condition, decline"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "correct"}, {"option2" : "advance"}, {"option3" : "improve"}],
 	 "options_right" : [{"option1" : "move forward, make progress, lend money before it is due, a forward movement"}, {"option2" : "make or become better"}, {"option3" : "free from mistakes, right or true, put something right, mark mistakes in work, proper and suitable"}],
