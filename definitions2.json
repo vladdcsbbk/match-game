@@ -130,7 +130,7 @@
 	{"options_left" : [{"option1" : "normally"}, {"option2" : "daily"}, {"option3" : "occasionally"}],
 	 "options_right" : [{"option1" : "happening once every twenty-four hours, a newspaper published each morning"}, {"option2" : "now and then, from time to time, not often"}, {"option3" : "usually, in the ordinary way, as is typical"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "vengeful"}, {"option2" : "violent"}, {"option3" : "bitter"}],
 	 "options_right" : [{"option1" : "using physical force to hurt or damage, extremely strong and sudden, such as a storm"}, {"option2" : "having a sharp, unpleasant taste, angry and hurt because of unfair treatment, painfully cold"}, {"option3" : "wanting to hurt someone in return for a harm they did to you, wanting to get even"}],
