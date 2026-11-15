@@ -40,7 +40,7 @@
 	{"options_left" : [{"option1" : "elegant"}, {"option2" : "decorative"}, {"option3" : "modern"}],
 	 "options_right" : [{"option1" : "making something look more attractive, used as an ornament rather than for a practical purpose"}, {"option2" : "belonging to the present time or recent times, using the latest ideas or equipment, up to date"}, {"option3" : "graceful and stylish in appearance or movement, cleverly simple"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "brave"}, {"option2" : "strong"}, {"option3" : "confident"}],
 	 "options_right" : [{"option1" : "having great physical power, not easily broken, intense or powerful, firm in your beliefs"}, {"option2" : "sure of yourself and your abilities, feeling certain that something will happen"}, {"option3" : "ready to face danger or pain without showing fear, courageous"}],
