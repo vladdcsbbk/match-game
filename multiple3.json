@@ -1,6 +1,7 @@
 {
 "game_name": "Multiple Meaning 3",
 "instructions": "Chose the word that has a similar meaning to the words in both sets of brackets",
+"prerequisites" : ["definitions3.json"],
 "questions": [
 	{"options_left" : [{"option1" : "(dry clear) (nice lovely)"}],
 	 "options_right" : [{"option1" : "bright"}, {"option2" : "good"}, {"option3" : "great"}, {"option4" : "fine"}, {"option5" : "sunny"}],
