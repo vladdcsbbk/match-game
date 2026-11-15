@@ -160,7 +160,7 @@
 	{"options_left" : [{"option1" : "barren"}, {"option2" : "impoverished"}, {"option3" : "arid"}],
 	 "options_right" : [{"option1" : "made very poor, without enough money to live on, made weaker or worse in quality"}, {"option2" : "having very little rain, extremely dry, dull and uninteresting"}, {"option3" : "unable to produce crops or plants, bleak and lifeless, producing no results"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "muffle"}, {"option2" : "restrain"}, {"option3" : "restrict"}],
 	 "options_right" : [{"option1" : "hold someone back from doing something, keep feelings or actions under control"}, {"option2" : "put a limit on something, keep within certain boundaries"}, {"option3" : "make a sound quieter or less clear, wrap something up to keep it warm"}],
