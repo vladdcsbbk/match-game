@@ -150,7 +150,7 @@
 	{"options_left" : [{"option1" : "clumsy"}, {"option2" : "awkward"}, {"option3" : "swift"}],
 	 "options_right" : [{"option1" : "making you feel embarrassed or uncomfortable, difficult to use, do or deal with, stiff and ungraceful"}, {"option2" : "happening or moving very quickly, prompt, a small fast-flying bird"}, {"option3" : "often dropping things or bumping into them, moving carelessly, done without skill"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "tropical"}, {"option2" : "deserted"}, {"option3" : "humid"}],
 	 "options_right" : [{"option1" : "empty of people, abandoned or left alone"}, {"option2" : "damp and warm, with a lot of moisture in the air"}, {"option3" : "belonging to the hot regions of the world near the equator, very hot"}],
