@@ -110,7 +110,7 @@
 	{"options_left" : [{"option1" : "pitiful"}, {"option2" : "sad"}, {"option3" : "needy"}],
 	 "options_right" : [{"option1" : "unhappy or full of sorrow, causing sorrow, regrettable or unfortunate"}, {"option2" : "very poor and lacking things such as food or shelter, wanting a lot of attention and reassurance"}, {"option3" : "making you feel sorry for someone, deserving sympathy, so poor in quality that it is laughable"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "rich"}, {"option2" : "plentiful"}, {"option3" : "sufficient"}],
 	 "options_right" : [{"option1" : "available in large amounts, more than enough, abundant"}, {"option2" : "as much as is needed for a purpose, adequate"}, {"option3" : "having a lot of money or possessions, full of good things, heavy with butter, cream or sugar, deep and strong in colour or sound"}],
