@@ -175,7 +175,7 @@
 	{"options_left" : [{"option1" : "pithy"}, {"option2" : "rambling"}, {"option3" : "complicated"}],
 	 "options_right" : [{"option1" : "long and confused, wandering from one subject to another, spreading out in many directions, walking for pleasure in the countryside"}, {"option2" : "made of many connected parts, difficult to understand or deal with"}, {"option3" : "short but full of meaning, brief and to the point"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "incomplete"}, {"option2" : "abbreviated"}, {"option3" : "concise"}],
 	 "options_right" : [{"option1" : "made shorter by leaving parts out, such as a word written in a shortened form"}, {"option2" : "giving a lot of information clearly in few words"}, {"option3" : "not finished, with some parts missing"}],
