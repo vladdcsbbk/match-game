@@ -80,7 +80,7 @@
 	{"options_left" : [{"option1" : "decide"}, {"option2" : "fight"}, {"option3" : "defend"}],
 	 "options_right" : [{"option1" : "use your body or weapons to try to hurt someone, a struggle against something, argue angrily, try hard to stop or achieve something"}, {"option2" : "protect someone or something from attack or harm, speak in support of someone who is criticised or accused"}, {"option3" : "make up your mind after thinking, choose, settle a question or argument"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "deteriorate"}, {"option2" : "undermine"}, {"option3" : "elevate"}],
 	 "options_right" : [{"option1" : "gradually weaken someone or something, often secretly, dig away underneath something"}, {"option2" : "lift or raise to a higher position, promote to a higher rank, make better or more important"}, {"option3" : "become worse in quality or condition, decline"}],
