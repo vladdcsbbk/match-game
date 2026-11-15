@@ -100,7 +100,7 @@
 	{"options_left" : [{"option1" : "ignorant"}, {"option2" : "natural"}, {"option3" : "untruthful"}],
 	 "options_right" : [{"option1" : "not made or caused by people, normal or expected, relaxed and not pretending, present from birth like a talent"}, {"option2" : "saying things that are false, dishonest, not to be believed"}, {"option3" : "not knowing about something, lacking education or information, rude or impolite"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "modest"}, {"option2" : "wealthy"}, {"option3" : "golden"}],
 	 "options_right" : [{"option1" : "having a lot of money or possessions, rich"}, {"option2" : "made of or coloured like the precious yellow metal, shining and yellow, very special or successful, a happy time of great success"}, {"option3" : "not boasting about your abilities or achievements, fairly small or not expensive, simple and plain"}],
