@@ -5,7 +5,7 @@
 	{"options_left" : [{"option1" : "humble"}, {"option2" : "poor"}, {"option3" : "unhappy"}],
 	 "options_right" : [{"option1" : "having very little money, of low quality or badly done, deserving sympathy, lacking in something"}, {"option2" : "sad or miserable, not pleased or satisfied, unlucky or unfortunate"}, {"option3" : "modest and not boastful, not thinking you are better than others, simple and plain rather than grand, low in rank"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "proud"}, {"option2" : "ordinary"}, {"option3" : "weak"}],
 	 "options_right" : [{"option1" : "normal and usual, nothing special, plain and average"}, {"option2" : "lacking physical strength or energy, easily broken or damaged, not convincing, watery or diluted"}, {"option3" : "pleased about something you or someone close to you has done, thinking too highly of yourself, dignified"}],
