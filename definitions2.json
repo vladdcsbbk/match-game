@@ -195,7 +195,7 @@
 	{"options_left" : [{"option1" : "dismiss"}, {"option2" : "excuse"}, {"option3" : "condemn"}],
 	 "options_right" : [{"option1" : "a reason given to explain a mistake or bad behaviour, forgive someone, allow someone not to do something"}, {"option2" : "say strongly that something is wrong or bad, sentence someone to a punishment, declare a building unsafe"}, {"option3" : "send someone away, remove someone from their job, decide something is not worth thinking about"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "ridicule"}, {"option2" : "commend"}, {"option3" : "reject"}],
 	 "options_right" : [{"option1" : "praise someone, especially formally or in public, speak well of something"}, {"option2" : "refuse to accept or agree to something, throw away as not good enough, push someone away"}, {"option3" : "make fun of someone or something in an unkind way, mockery"}],
