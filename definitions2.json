@@ -90,7 +90,7 @@
 	{"options_left" : [{"option1" : "correct"}, {"option2" : "advance"}, {"option3" : "improve"}],
 	 "options_right" : [{"option1" : "move forward, make progress, lend money before it is due, a forward movement"}, {"option2" : "make or become better"}, {"option3" : "free from mistakes, right or true, put something right, mark mistakes in work, proper and suitable"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "direct"}, {"option2" : "honest"}, {"option3" : "genuine"}],
 	 "options_right" : [{"option1" : "truthful, not lying, cheating or stealing, fair and open"}, {"option2" : "real and exactly what it seems to be, not fake or copied, sincere and heartfelt"}, {"option3" : "going straight from one place to another without stopping or turning, frank and to the point, manage or control, show someone the way"}],
