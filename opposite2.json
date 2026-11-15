@@ -51,7 +51,7 @@
   {"options_left" : [{"option1" : "direct"}, {"option2" : "honest"}, {"option3" : "genuine"}],
 	 "options_right" : [{"option1" : "ignorant"}, {"option2" : "natural"}, {"option3" : "untruthful"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "modest"}, {"option2" : "wealthy"}, {"option3" : "golden"}],
 	 "options_right" : [{"option1" : "pitiful"}, {"option2" : "sad"}, {"option3" : "needy"}],
