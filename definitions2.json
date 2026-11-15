@@ -75,7 +75,7 @@
 	{"options_left" : [{"option1" : "claim"}, {"option2" : "accuse"}, {"option3" : "quarrel"}],
 	 "options_right" : [{"option1" : "say that someone has done something wrong or illegal, blame"}, {"option2" : "an angry argument, argue angrily with someone"}, {"option3" : "say something is true without giving proof, ask for something because you think it belongs to you, a statement that might not be true"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "decide"}, {"option2" : "fight"}, {"option3" : "defend"}],
 	 "options_right" : [{"option1" : "use your body or weapons to try to hurt someone, a struggle against something, argue angrily, try hard to stop or achieve something"}, {"option2" : "protect someone or something from attack or harm, speak in support of someone who is criticised or accused"}, {"option3" : "make up your mind after thinking, choose, settle a question or argument"}],
