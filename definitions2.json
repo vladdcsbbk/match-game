@@ -35,7 +35,7 @@
 	{"options_left" : [{"option1" : "decaying"}, {"option2" : "ancient"}, {"option3" : "dirty"}],
 	 "options_right" : [{"option1" : "belonging to the very distant past, very old, having existed for a very long time"}, {"option2" : "covered with mud, dust or stains, not clean, unfair or dishonest, rude"}, {"option3" : "rotting or breaking down slowly, becoming weaker or falling into ruin"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "elegant"}, {"option2" : "decorative"}, {"option3" : "modern"}],
 	 "options_right" : [{"option1" : "making something look more attractive, used as an ornament rather than for a practical purpose"}, {"option2" : "belonging to the present time or recent times, using the latest ideas or equipment, up to date"}, {"option3" : "graceful and stylish in appearance or movement, cleverly simple"}],
