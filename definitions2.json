@@ -20,7 +20,7 @@
 	{"options_left" : [{"option1" : "long"}, {"option2" : "mundane"}, {"option3" : "old"}],
 	 "options_right" : [{"option1" : "ordinary and dull, lacking excitement or interest, to do with everyday life"}, {"option2" : "having lived or existed for many years, belonging to the past, not new or modern, former or previous"}, {"option3" : "measuring a great distance from one end to the other, lasting a lot of time, wish very much for something"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "challenge"}, {"option2" : "conquer"}, {"option3" : "battle"}],
 	 "options_right" : [{"option1" : "take control of a country or people by force, defeat an enemy, overcome a problem or fear"}, {"option2" : "a fight between armies or groups, a long struggle to achieve something, struggle hard against something"}, {"option3" : "a difficult task that tests your ability, invite someone to compete, question whether something is true or right"}],
