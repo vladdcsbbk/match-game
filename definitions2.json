@@ -180,7 +180,7 @@
 	{"options_left" : [{"option1" : "incomplete"}, {"option2" : "abbreviated"}, {"option3" : "concise"}],
 	 "options_right" : [{"option1" : "made shorter by leaving parts out, such as a word written in a shortened form"}, {"option2" : "giving a lot of information clearly in few words"}, {"option3" : "not finished, with some parts missing"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "doubtful"}, {"option2" : "tactful"}, {"option3" : "sincere"}],
 	 "options_right" : [{"option1" : "careful not to upset or offend people, saying difficult things in a kind and sensitive way"}, {"option2" : "honest and meaning what you say, genuine, not pretending"}, {"option3" : "feeling unsure or uncertain, unlikely to happen, questionable"}],
