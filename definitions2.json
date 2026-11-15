@@ -60,7 +60,7 @@
 	{"options_left" : [{"option1" : "finish"}, {"option2" : "commence"}, {"option3" : "abolish"}],
 	 "options_right" : [{"option1" : "begin or start, often in a formal way"}, {"option2" : "officially get rid of a law, system or custom, do away with completely"}, {"option3" : "come or bring to an end, complete a task, the last part of something, the surface coating on wood or furniture"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "reserved"}, {"option2" : "slow"}, {"option3" : "serene"}],
 	 "options_right" : [{"option1" : "moving or happening without much speed, not quick to understand, showing a time behind the correct one, reduce speed"}, {"option2" : "calm, peaceful and free from worry, still and clear like a cloudless sky"}, {"option3" : "keeping your feelings and thoughts to yourself, quiet and private, booked or kept for someone"}],
