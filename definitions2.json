@@ -135,7 +135,7 @@
 	{"options_left" : [{"option1" : "vengeful"}, {"option2" : "violent"}, {"option3" : "bitter"}],
 	 "options_right" : [{"option1" : "using physical force to hurt or damage, extremely strong and sudden, such as a storm"}, {"option2" : "having a sharp, unpleasant taste, angry and hurt because of unfair treatment, painfully cold"}, {"option3" : "wanting to hurt someone in return for a harm they did to you, wanting to get even"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "merciful"}, {"option2" : "resentful"}, {"option3" : "supportive"}],
 	 "options_right" : [{"option1" : "feeling angry and upset because you think you have been treated unfairly"}, {"option2" : "giving help, encouragement and kindness to someone"}, {"option3" : "showing kindness and forgiveness to someone you could punish, bringing relief from suffering"}],
