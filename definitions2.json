@@ -45,7 +45,7 @@
 	{"options_left" : [{"option1" : "brave"}, {"option2" : "strong"}, {"option3" : "confident"}],
 	 "options_right" : [{"option1" : "having great physical power, not easily broken, intense or powerful, firm in your beliefs"}, {"option2" : "sure of yourself and your abilities, feeling certain that something will happen"}, {"option3" : "ready to face danger or pain without showing fear, courageous"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "shy"}, {"option2" : "surly"}, {"option3" : "suspicious"}],
 	 "options_right" : [{"option1" : "bad-tempered, unfriendly and rude"}, {"option2" : "feeling that someone may be guilty or dishonest, not trusting, making you think something is wrong"}, {"option3" : "nervous and uncomfortable around other people, easily startled, unwilling to do something"}],
