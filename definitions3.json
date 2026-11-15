@@ -75,7 +75,7 @@
 	{"options_left" : [{"option1" : "lesson"}, {"option2" : "pact"}, {"option3" : "fall"}, {"option4" : "arrangement"}, {"option5" : "contract"}],
 	 "options_right" : [{"option1" : "a formal agreement between people or countries"}, {"option2" : "drop or move downward, trip, slip, become lower in size, amount, value, or strength"}, {"option3" : "a plan or agreement about how something will be done, the way things are placed or ordered, a piece of music adapted for instruments"}, {"option4" : "a written agreement or deal that can be enforced by law, shrink or become smaller, catch an illness"}, {"option5" : "a period of teaching, something you learn from experience, a warning or example"}],
 	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "reserve"}, {"option2" : "modesty"}, {"option3" : "arrange"}, {"option4" : "organise"}, {"option5" : "restraint"}],
 	 "options_right" : [{"option1" : "not boasting about your abilities or achievements, behaving or dressing so as not to attract attention"}, {"option2" : "put things in a neat or particular order, plan or set up an event, adapt music for instruments"}, {"option3" : "plan and prepare an event or activity, put things in order or into a system"}, {"option4" : "calm control over your feelings or actions, something that holds back or limits"}, {"option5" : "shyness or not showing your feelings, book or keep something for later, an extra supply kept until it is needed, a protected area of land for wildlife"}],
