@@ -120,7 +120,7 @@
 	{"options_left" : [{"option1" : "ample"}, {"option2" : "feeble"}, {"option3" : "scarce"}],
 	 "options_right" : [{"option1" : "very weak, lacking strength or energy, not convincing or effective"}, {"option2" : "not plentiful, hard to find or get hold of, rare"}, {"option3" : "more than enough, plenty, large and roomy"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "sometimes"}, {"option2" : "regularly"}, {"option3" : "never"}],
 	 "options_right" : [{"option1" : "happening at fixed or even intervals, often, as a habit or routine"}, {"option2" : "at no time in the past or future, not once, not at all"}, {"option3" : "on some occasions but not always, now and then"}],
