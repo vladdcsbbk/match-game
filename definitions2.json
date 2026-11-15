@@ -170,7 +170,7 @@
 	{"options_left" : [{"option1" : "amplify"}, {"option2" : "elaborate"}, {"option3" : "summarise"}],
 	 "options_right" : [{"option1" : "very detailed and complicated, add more details to something you have said"}, {"option2" : "give a short account of the main points of something"}, {"option3" : "make a sound louder, especially with electronic equipment, make something stronger or greater"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "pithy"}, {"option2" : "rambling"}, {"option3" : "complicated"}],
 	 "options_right" : [{"option1" : "long and confused, wandering from one subject to another, spreading out in many directions, walking for pleasure in the countryside"}, {"option2" : "made of many connected parts, difficult to understand or deal with"}, {"option3" : "short but full of meaning, brief and to the point"}],
