@@ -50,7 +50,7 @@
 	{"options_left" : [{"option1" : "shy"}, {"option2" : "surly"}, {"option3" : "suspicious"}],
 	 "options_right" : [{"option1" : "bad-tempered, unfriendly and rude"}, {"option2" : "feeling that someone may be guilty or dishonest, not trusting, making you think something is wrong"}, {"option3" : "nervous and uncomfortable around other people, easily startled, unwilling to do something"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "cease"}, {"option2" : "ban"}, {"option3" : "prevent"}],
 	 "options_right" : [{"option1" : "officially forbid something, an official rule saying that something is not allowed"}, {"option2" : "keep something from happening, make it impossible for someone to do something"}, {"option3" : "stop doing something, come to an end, bring something to an end"}],
