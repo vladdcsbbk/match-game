@@ -30,7 +30,7 @@
 	{"options_left" : [{"option1" : "fight"}, {"option2" : "lose"}, {"option3" : "drop"}],
 	 "options_right" : [{"option1" : "no longer have something because you cannot find it, fail to win a game or contest, have something taken away"}, {"option2" : "let something fall, fall or become lower, a small round amount of liquid, stop doing or including something"}, {"option3" : "use your body or weapons to try to hurt someone, a struggle against something, argue angrily, try hard to stop or achieve something"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "decaying"}, {"option2" : "ancient"}, {"option3" : "dirty"}],
 	 "options_right" : [{"option1" : "belonging to the very distant past, very old, having existed for a very long time"}, {"option2" : "covered with mud, dust or stains, not clean, unfair or dishonest, rude"}, {"option3" : "rotting or breaking down slowly, becoming weaker or falling into ruin"}],
