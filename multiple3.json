@@ -1,0 +1,96 @@
+{
+"game_name": "Multiple Meaning 3",
+"instructions": "Chose the word that has a similar meaning to the words in both sets of brackets",
+"questions": [
+	{"options_left" : [{"option1" : "(dry clear) (nice lovely)"}],
+	 "options_right" : [{"option1" : "bright"}, {"option2" : "good"}, {"option3" : "great"}, {"option4" : "fine"}, {"option5" : "sunny"}],
+	 "correct_match" : [{"option1" : "option4"}],
+	 "done" : false
+	},
+  {"options_left" : [{"option1" : "(turn revolve) (bun bread)"}],
+	 "options_right" : [{"option1" : "snack"}, {"option2" : "spin"}, {"option3" : "circle"}, {"option4" : "roll"}, {"option5" : "rotate"}],
+	 "correct_match" : [{"option1" : "option4"}],
+	 "done" : false
+	},
+  {"options_left" : [{"option1" : "(pink blush) (soared ascended)"}],
+	 "options_right" : [{"option1" : "red"}, {"option2" : "lifted"}, {"option3" : "rose"}, {"option4" : "bloom"}, {"option5" : "floated"}],
+	 "correct_match" : [{"option1" : "option3"}],
+	 "done" : false
+	},
+  {"options_left" : [{"option1" : "(firm solid) (difficult awkward)"}],
+	 "options_right" : [{"option1" : "rigid"}, {"option2" : "complex"}, {"option3" : "stiff"}, {"option4" : "troublesome"}, {"option5" : "hard"}],
+	 "correct_match" : [{"option1" : "option5"}],
+	 "done" : false
+	},
+  {"options_left" : [{"option1" : "(take guide) (first main)"}],
+	 "options_right" : [{"option1" : "command"}, {"option2" : "head"}, {"option3" : "lead"}, {"option4" : "chief"}, {"option5" : "direct"}],
+	 "correct_match" : [{"option1" : "option3"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(error fault) (muddle confuse)"}],
+	 "options_right" : [{"option1" : "wrong"}, {"option2" : "mistake"}, {"option3" : "puzzle"}, {"option4" : "baffle"}, {"option5" : "slip"}],
+	 "correct_match" : [{"option1" : "option1"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(near adjacent) (shut secure)"}],
+	 "options_right" : [{"option1" : "lock"}, {"option2" : "adjoining"}, {"option3" : "close"}, {"option4" : "seal"}, {"option5" : "neighbouring"}],
+	 "correct_match" : [{"option1" : "option3"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(article item) (aim end)"}],
+	 "options_right" : [{"option1" : "object"}, {"option2" : "motive"}, {"option3" : "goal"}, {"option4" : "thing"}, {"option5" : "gadget"}],
+	 "correct_match" : [{"option1" : "option1"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(award medal) (value cherish)"}],
+	 "options_right" : [{"option1" : "bonus"}, {"option2" : "reward"}, {"option3" : "treasure"}, {"option4" : "love"}, {"option5" : "prize"}],
+	 "correct_match" : [{"option1" : "option5"}],
+	 "done" : false
+	},
+ 	{"options_left" : [{"option1" : "(rest recline) (untruth deception)"}],
+	 "options_right" : [{"option1" : "fraud"}, {"option2" : "fake"}, {"option3" : "repose"}, {"option4" : "lounge"}, {"option5" : "lie"}],
+	 "correct_match" : [{"option1" : "option5"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(breeze gale) (coil reel)"}],
+	 "options_right" : [{"option1" : "blow"}, {"option2" : "wind"}, {"option3" : "twist"}, {"option4" : "spiral"}, {"option5" : "gust"}],
+	 "correct_match" : [{"option1" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(bend curtsey) (ribbon knot)"}],
+	 "options_right" : [{"option1" : "nod"}, {"option2" : "braid"}, {"option3" : "string"}, {"option4" : "bow"}, {"option5" : "stoop"}],
+	 "correct_match" : [{"option1" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(grassland flatland) (simple obvious)"}],
+	 "options_right" : [{"option1" : "prairie"}, {"option2" : "clear"}, {"option3" : "field"}, {"option4" : "distinct"}, {"option5" : "plain"}],
+	 "correct_match" : [{"option1" : "option5"}],
+	 "done" : false
+	},
+  {"options_left" : [{"option1" : "(pit quarry) (bomb explosive)"}],
+	 "options_right" : [{"option1" : "mine"}, {"option2" : "blast"}, {"option3" : "missile"}, {"option4" : "trench"}, {"option5" : "ditch"}],
+	 "correct_match" : [{"option1" : "option1"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(agreement deal) (shrink reduce)"}],
+	 "options_right" : [{"option1" : "lesson"}, {"option2" : "pact"}, {"option3" : "fall"}, {"option4" : "arrangement"}, {"option5" : "contract"}],
+	 "correct_match" : [{"option1" : "option5"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(shyness timidity) (book engage)"}],
+	 "options_right" : [{"option1" : "reserve"}, {"option2" : "modesty"}, {"option3" : "arrange"}, {"option4" : "organise"}, {"option5" : "restraint"}],
+	 "correct_match" : [{"option1" : "option1"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(use purpose) (event party)"}],
+	 "options_right" : [{"option1" : "job"}, {"option2" : "function"}, {"option3" : "ball"}, {"option4" : "social"}, {"option5" : "utility"}],
+	 "correct_match" : [{"option1" : "option2"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "(reason basis) (earth land)"}],
+	 "options_right" : [{"option1" : "soil"}, {"option2" : "ground"}, {"option3" : "principle"}, {"option4" : "theory"}, {"option5" : "field"}],
+	 "correct_match" : [{"option1" : "option2"}],
+	 "done" : false
+	}
+]
+}
