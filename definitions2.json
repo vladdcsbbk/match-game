@@ -165,7 +165,7 @@
 	{"options_left" : [{"option1" : "muffle"}, {"option2" : "restrain"}, {"option3" : "restrict"}],
 	 "options_right" : [{"option1" : "hold someone back from doing something, keep feelings or actions under control"}, {"option2" : "put a limit on something, keep within certain boundaries"}, {"option3" : "make a sound quieter or less clear, wrap something up to keep it warm"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "amplify"}, {"option2" : "elaborate"}, {"option3" : "summarise"}],
 	 "options_right" : [{"option1" : "very detailed and complicated, add more details to something you have said"}, {"option2" : "give a short account of the main points of something"}, {"option3" : "make a sound louder, especially with electronic equipment, make something stronger or greater"}],
