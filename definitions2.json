@@ -65,7 +65,7 @@
 	{"options_left" : [{"option1" : "reserved"}, {"option2" : "slow"}, {"option3" : "serene"}],
 	 "options_right" : [{"option1" : "moving or happening without much speed, not quick to understand, showing a time behind the correct one, reduce speed"}, {"option2" : "calm, peaceful and free from worry, still and clear like a cloudless sky"}, {"option3" : "keeping your feelings and thoughts to yourself, quiet and private, booked or kept for someone"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "busy"}, {"option2" : "frenzied"}, {"option3" : "troublesome"}],
 	 "options_right" : [{"option1" : "wild, uncontrolled and frantic, done very fast and with great energy"}, {"option2" : "causing difficulty, worry or annoyance, hard to deal with"}, {"option3" : "having a lot to do, full of people or activity, in use, too full of detail"}],
