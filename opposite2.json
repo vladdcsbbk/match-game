@@ -21,7 +21,7 @@
   {"options_left" : [{"option1" : "decaying"}, {"option2" : "ancient"}, {"option3" : "dirty"}],
 	 "options_right" : [{"option1" : "elegant"}, {"option2" : "decorative"}, {"option3" : "modern"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "brave"}, {"option2" : "strong"}, {"option3" : "confident"}],
 	 "options_right" : [{"option1" : "shy"}, {"option2" : "surly"}, {"option3" : "suspicious"}],
