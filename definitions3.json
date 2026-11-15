@@ -1,0 +1,96 @@
+{
+"game_name": "Definitions 3",
+"instructions": "Connect each word on the left to its definition on the right",
+"questions": [
+	{"options_left" : [{"option1" : "bright"}, {"option2" : "good"}, {"option3" : "great"}, {"option4" : "fine"}, {"option5" : "sunny"}],
+	 "options_right" : [{"option1" : "of high quality or pleasing, kind and helpful, well behaved, skilful at something, useful or beneficial"}, {"option2" : "very large in size or amount, very important or famous, excellent or very enjoyable"}, {"option3" : "dry and clear, used about the weather, nice or lovely, very thin or made of tiny pieces, money paid as a punishment, all right or well"}, {"option4" : "full of warm daylight from a cloudless sky, cheerful and happy"}, {"option5" : "giving out or full of strong light, vivid in colour, clever and quick to learn, cheerful and lively"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "snack"}, {"option2" : "spin"}, {"option3" : "circle"}, {"option4" : "roll"}, {"option5" : "rotate"}],
+	 "options_right" : [{"option1" : "turn round and round quickly, make thread by twisting fibres, a short drive or ride for pleasure"}, {"option2" : "a perfectly round shape, a group of people with shared interests, move all the way round something"}, {"option3" : "turn over and over or revolve while moving along, a small round bun of bread, an official list of names, a long deep rumbling sound"}, {"option4" : "turn around a central point, take turns or swap around in a regular order"}, {"option5" : "a small amount of food eaten between meals, eat a little food between meals"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "red"}, {"option2" : "lifted"}, {"option3" : "rose"}, {"option4" : "bloom"}, {"option5" : "floated"}],
+	 "options_right" : [{"option1" : "raised up to a higher position, picked up, made more cheerful, ended or taken away"}, {"option2" : "a sweet-smelling flower with thorny stems, a pale pink colour, went up or soared upwards, got up from a bed or chair"}, {"option3" : "a flower, produce flowers, be healthy and full of life, a healthy glow on the cheeks"}, {"option4" : "rested or drifted on the surface of water, drifted gently through the air, suggested an idea"}, {"option5" : "the colour of blood or ripe strawberries, flushed in the face from embarrassment or anger"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "rigid"}, {"option2" : "complex"}, {"option3" : "stiff"}, {"option4" : "troublesome"}, {"option5" : "hard"}],
+	 "options_right" : [{"option1" : "made of many connected parts, complicated and difficult to understand, a group of buildings used for one purpose"}, {"option2" : "not easily bent or moved, aching after exercise, formal and unfriendly, severe or strong"}, {"option3" : "causing difficulty, worry or annoyance, not easy to deal with"}, {"option4" : "firm and solid, not soft, difficult to do or understand, using a lot of effort, strict or unkind"}, {"option5" : "unable to bend, firmly fixed, very strict and unwilling to change"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "command"}, {"option2" : "head"}, {"option3" : "lead"}, {"option4" : "chief"}, {"option5" : "direct"}],
+	 "options_right" : [{"option1" : "the top part of the body, the person in charge of a school or group, the front or top of something, go towards a place"}, {"option2" : "take or guide someone somewhere, be first or in front, main or most important, a strap for walking a dog, a soft heavy grey metal"}, {"option3" : "the person in charge of a group or tribe, most important or main"}, {"option4" : "going straight without stopping or turning, frank and to the point, manage or control, show someone the way"}, {"option5" : "give an order, be in charge of soldiers or a group, an instruction, great skill at something"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "wrong"}, {"option2" : "mistake"}, {"option3" : "puzzle"}, {"option4" : "baffle"}, {"option5" : "slip"}],
+	 "options_right" : [{"option1" : "an error or fault, something done incorrectly, confuse or muddle up one person or thing with another"}, {"option2" : "a game or problem that tests your thinking, something hard to understand, confuse someone and make them think hard"}, {"option3" : "confuse someone completely so they cannot understand, a screen that controls the flow of sound or air"}, {"option4" : "slide by accident and lose your balance, a small error, move quietly and quickly, a small piece of paper"}, {"option5" : "not correct or true, unfair or morally bad, not suitable, not working properly"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "lock"}, {"option2" : "adjoining"}, {"option3" : "close"}, {"option4" : "seal"}, {"option5" : "neighbouring"}],
+	 "options_right" : [{"option1" : "next to and connected with something, sharing a wall or boundary"}, {"option2" : "near in distance or time, next to, shut a door or lid, fasten securely, end something, very friendly"}, {"option3" : "fasten tightly shut so nothing can get in or out, a large animal with flippers that lives along cold coasts, an official stamp"}, {"option4" : "situated next to or very near, in the surrounding area"}, {"option5" : "a device that keeps a door or box fastened shut, a section of canal with gates for raising boats, a strand of hair"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "object"}, {"option2" : "motive"}, {"option3" : "goal"}, {"option4" : "thing"}, {"option5" : "gadget"}],
+	 "options_right" : [{"option1" : "the reason why someone does what they do, especially a hidden one"}, {"option2" : "an aim or target you want to achieve, the net that a ball must go into, a point scored in this way"}, {"option3" : "any item, idea or fact that you do not name exactly, a possession or belonging"}, {"option4" : "a small, clever tool or device"}, {"option5" : "an article or item that can be seen and touched, an aim or purpose, the end you are working towards, disagree or protest"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "bonus"}, {"option2" : "reward"}, {"option3" : "treasure"}, {"option4" : "love"}, {"option5" : "prize"}],
+	 "options_right" : [{"option1" : "a gift or payment given in return for good work or behaviour, money offered for finding someone or something"}, {"option2" : "a store of gold, jewels or other valuable things, a precious possession, value highly and look after carefully"}, {"option3" : "a strong feeling of caring for someone, like something very much, a score of zero in tennis"}, {"option4" : "an award or medal given to a winner, something won in a competition, value very highly, cherish"}, {"option5" : "an extra payment on top of normal pay, an unexpected extra advantage"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "fraud"}, {"option2" : "fake"}, {"option3" : "repose"}, {"option4" : "lounge"}, {"option5" : "lie"}],
+	 "options_right" : [{"option1" : "not real or genuine, a copy made to trick people, pretend"}, {"option2" : "a state of rest, sleep or calm, rest or be placed somewhere"}, {"option3" : "a comfortable sitting room, sit or stretch out in a relaxed, lazy way"}, {"option4" : "rest flat or recline on a bed or the ground, an untruth said to deceive someone, be in a particular place"}, {"option5" : "the crime of tricking people to get money, a person who pretends to be someone they are not"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "blow"}, {"option2" : "wind"}, {"option3" : "twist"}, {"option4" : "spiral"}, {"option5" : "gust"}],
+	 "options_right" : [{"option1" : "moving air, such as a breeze or gale, coil or reel something round and round, follow a bending course"}, {"option2" : "turn something round or bend it out of shape, an unexpected change in a story, a sharp turn"}, {"option3" : "a curve that goes round and round a central point, getting further away or closer, increase or decrease faster and faster"}, {"option4" : "a sudden strong rush of air"}, {"option5" : "move air out through your mouth, be moved by moving air, a hard hit, a sudden shock or disappointment"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "nod"}, {"option2" : "braid"}, {"option3" : "string"}, {"option4" : "bow"}, {"option5" : "stoop"}],
+	 "options_right" : [{"option1" : "a length of hair or threads twisted together, a plait, a decorative band of woven threads"}, {"option2" : "thin cord used for tying things, a row of things, a tight wire on a guitar or violin"}, {"option3" : "bend forward to show respect, like a curtsey, a ribbon tied in a knot with loops, a weapon that shoots arrows, the front of a ship"}, {"option4" : "bend your body forward and down, stand with your shoulders bent forward, lower yourself to do something wrong"}, {"option5" : "move your head down and up to say yes or to greet someone, fall asleep for a short time"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "prairie"}, {"option2" : "clear"}, {"option3" : "field"}, {"option4" : "distinct"}, {"option5" : "plain"}],
+	 "options_right" : [{"option1" : "easy to see through, easy to understand, obvious, free from clouds, remove things from a place"}, {"option2" : "an area of open land with grass or crops, a place where a sport is played, an area of study or work, all the people taking part in a race"}, {"option3" : "noticeably different from others, easy to see, hear or recognise"}, {"option4" : "a wide area of flat grassland, simple and without decoration, obvious and easy to understand, ordinary-looking"}, {"option5" : "a huge area of grassland with few trees, especially in North America"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "mine"}, {"option2" : "blast"}, {"option3" : "missile"}, {"option4" : "trench"}, {"option5" : "ditch"}],
+	 "options_right" : [{"option1" : "a powerful explosion, a sudden strong rush of air or sound, blow up with explosives"}, {"option2" : "a weapon that is fired or thrown at a target, such as a rocket"}, {"option3" : "a long, narrow channel dug in the ground, used by soldiers for shelter or for pipes and drains"}, {"option4" : "a channel at the edge of a road or field that drains away water, get rid of something"}, {"option5" : "a deep hole or pit where coal or metal is dug out, a bomb hidden in the ground or sea that explodes when touched, belonging to me"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "lesson"}, {"option2" : "pact"}, {"option3" : "fall"}, {"option4" : "arrangement"}, {"option5" : "contract"}],
+	 "options_right" : [{"option1" : "a formal agreement between people or countries"}, {"option2" : "drop or move downward, trip, slip, become lower in size, amount, value, or strength"}, {"option3" : "a plan or agreement about how something will be done, the way things are placed or ordered, a piece of music adapted for instruments"}, {"option4" : "a written agreement or deal that can be enforced by law, shrink or become smaller, catch an illness"}, {"option5" : "a period of teaching, something you learn from experience, a warning or example"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "reserve"}, {"option2" : "modesty"}, {"option3" : "arrange"}, {"option4" : "organise"}, {"option5" : "restraint"}],
+	 "options_right" : [{"option1" : "not boasting about your abilities or achievements, behaving or dressing so as not to attract attention"}, {"option2" : "put things in a neat or particular order, plan or set up an event, adapt music for instruments"}, {"option3" : "plan and prepare an event or activity, put things in order or into a system"}, {"option4" : "calm control over your feelings or actions, something that holds back or limits"}, {"option5" : "shyness or not showing your feelings, book or keep something for later, an extra supply kept until it is needed, a protected area of land for wildlife"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "job"}, {"option2" : "function"}, {"option3" : "ball"}, {"option4" : "social"}, {"option5" : "utility"}],
+	 "options_right" : [{"option1" : "the use or purpose of something, what something is for, a formal event or party, work or operate"}, {"option2" : "a round object used in games, a grand formal party with dancing"}, {"option3" : "to do with people living together in a community, enjoying the company of others, a party or gathering organised by a club"}, {"option4" : "usefulness, a service such as gas, water or electricity supplied to homes"}, {"option5" : "paid work that someone does, a task, a duty or responsibility"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	},
+	{"options_left" : [{"option1" : "soil"}, {"option2" : "ground"}, {"option3" : "principle"}, {"option4" : "theory"}, {"option5" : "field"}],
+	 "options_right" : [{"option1" : "the surface of the earth, land used for sport, a good reason for doing or believing something, crushed into powder"}, {"option2" : "a basic rule or belief that guides how someone behaves, a basic truth or law that explains how something works"}, {"option3" : "an idea or set of ideas that tries to explain why something happens, the ideas behind a subject rather than the practice of it"}, {"option4" : "an area of open land with grass or crops, a place where a sport is played, an area of study or work, all the people taking part in a race"}, {"option5" : "the earth in which plants grow, make something dirty"}],
+	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
+	 "done" : false
+	}
+    ]
+}
