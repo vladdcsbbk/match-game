@@ -1,6 +1,6 @@
 {
 "game_name": "Multiple Meaning 3",
-"instructions": "Chose the word that has a similar meaning to the words in both sets of brackets",
+"instructions": "Choose the word that has a similar meaning to the words in both sets of brackets",
 "prerequisites" : ["definitions3.json"],
 "questions": [
 	{"options_left" : [{"option1" : "(dry clear) (nice lovely)"}],
@@ -30,7 +30,7 @@
 	},
 	{"options_left" : [{"option1" : "(error fault) (muddle confuse)"}],
 	 "options_right" : [{"option1" : "wrong"}, {"option2" : "mistake"}, {"option3" : "puzzle"}, {"option4" : "baffle"}, {"option5" : "slip"}],
-	 "correct_match" : [{"option1" : "option1"}],
+	 "correct_match" : [{"option1" : "option2"}],
 	 "done" : false
 	},
 	{"options_left" : [{"option1" : "(near adjacent) (shut secure)"}],
