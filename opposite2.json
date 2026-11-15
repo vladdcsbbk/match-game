@@ -61,7 +61,7 @@
   {"options_left" : [{"option1" : "rich"}, {"option2" : "plentiful"}, {"option3" : "sufficient"}],
 	 "options_right" : [{"option1" : "ample"}, {"option2" : "feeble"}, {"option3" : "scarce"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "sometimes"}, {"option2" : "regularly"}, {"option3" : "never"}],
 	 "options_right" : [{"option1" : "normally"}, {"option2" : "daily"}, {"option3" : "occasionally"}],
