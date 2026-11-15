@@ -60,7 +60,7 @@
 	{"options_left" : [{"option1" : "nod"}, {"option2" : "braid"}, {"option3" : "string"}, {"option4" : "bow"}, {"option5" : "stoop"}],
 	 "options_right" : [{"option1" : "a length of hair or threads twisted together, a plait, a decorative band of woven threads"}, {"option2" : "thin cord used for tying things, a row of things, a tight wire on a guitar or violin"}, {"option3" : "bend forward to show respect, like a curtsey, a ribbon tied in a knot with loops, a weapon that shoots arrows, the front of a ship"}, {"option4" : "bend your body forward and down, stand with your shoulders bent forward, lower yourself to do something wrong"}, {"option5" : "move your head down and up to say yes or to greet someone, fall asleep for a short time"}],
 	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "prairie"}, {"option2" : "clear"}, {"option3" : "field"}, {"option4" : "distinct"}, {"option5" : "plain"}],
 	 "options_right" : [{"option1" : "easy to see through, easy to understand, obvious, free from clouds, remove things from a place"}, {"option2" : "an area of open land with grass or crops, a place where a sport is played, an area of study or work, all the people taking part in a race"}, {"option3" : "noticeably different from others, easy to see, hear or recognise"}, {"option4" : "a wide area of flat grassland, simple and without decoration, obvious and easy to understand, ordinary-looking"}, {"option5" : "a huge area of grassland with few trees, especially in North America"}],
