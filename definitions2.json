@@ -70,7 +70,7 @@
 	{"options_left" : [{"option1" : "busy"}, {"option2" : "frenzied"}, {"option3" : "troublesome"}],
 	 "options_right" : [{"option1" : "wild, uncontrolled and frantic, done very fast and with great energy"}, {"option2" : "causing difficulty, worry or annoyance, hard to deal with"}, {"option3" : "having a lot to do, full of people or activity, in use, too full of detail"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "claim"}, {"option2" : "accuse"}, {"option3" : "quarrel"}],
 	 "options_right" : [{"option1" : "say that someone has done something wrong or illegal, blame"}, {"option2" : "an angry argument, argue angrily with someone"}, {"option3" : "say something is true without giving proof, ask for something because you think it belongs to you, a statement that might not be true"}],
