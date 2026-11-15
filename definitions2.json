@@ -10,7 +10,7 @@
 	{"options_left" : [{"option1" : "proud"}, {"option2" : "ordinary"}, {"option3" : "weak"}],
 	 "options_right" : [{"option1" : "normal and usual, nothing special, plain and average"}, {"option2" : "lacking physical strength or energy, easily broken or damaged, not convincing, watery or diluted"}, {"option3" : "pleased about something you or someone close to you has done, thinking too highly of yourself, dignified"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "unusual"}, {"option2" : "dull"}, {"option3" : "interesting"}],
 	 "options_right" : [{"option1" : "boring and not exciting, not bright or shiny, cloudy and grey, not sharp, slow to understand"}, {"option2" : "catching and holding your attention, making you curious to know more"}, {"option3" : "not common or ordinary, rare, different from what is expected"}],
