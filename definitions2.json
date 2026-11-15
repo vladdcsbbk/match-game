@@ -140,7 +140,7 @@
 	{"options_left" : [{"option1" : "merciful"}, {"option2" : "resentful"}, {"option3" : "supportive"}],
 	 "options_right" : [{"option1" : "feeling angry and upset because you think you have been treated unfairly"}, {"option2" : "giving help, encouragement and kindness to someone"}, {"option3" : "showing kindness and forgiveness to someone you could punish, bringing relief from suffering"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "nimble"}, {"option2" : "lumbering"}, {"option3" : "quick"}],
 	 "options_right" : [{"option1" : "moving in a slow, heavy and awkward way"}, {"option2" : "moving fast or done in a short time, lasting only a short time, sudden or hasty"}, {"option3" : "light and agile on your feet, moving easily and neatly, sharp-witted"}],
