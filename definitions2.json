@@ -15,7 +15,7 @@
 	{"options_left" : [{"option1" : "unusual"}, {"option2" : "dull"}, {"option3" : "interesting"}],
 	 "options_right" : [{"option1" : "boring and not exciting, not bright or shiny, cloudy and grey, not sharp, slow to understand"}, {"option2" : "catching and holding your attention, making you curious to know more"}, {"option3" : "not common or ordinary, rare, different from what is expected"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "long"}, {"option2" : "mundane"}, {"option3" : "old"}],
 	 "options_right" : [{"option1" : "ordinary and dull, lacking excitement or interest, to do with everyday life"}, {"option2" : "having lived or existed for many years, belonging to the past, not new or modern, former or previous"}, {"option3" : "measuring a great distance from one end to the other, lasting a lot of time, wish very much for something"}],
