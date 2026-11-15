@@ -190,7 +190,7 @@
 	{"options_left" : [{"option1" : "obnoxious"}, {"option2" : "forthright"}, {"option3" : "obstinate"}],
 	 "options_right" : [{"option1" : "saying exactly what you think, openly and plainly, even if it upsets people"}, {"option2" : "refusing to change your mind or behaviour, stubborn, hard to get rid of"}, {"option3" : "extremely unpleasant and rude, very annoying"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "dismiss"}, {"option2" : "excuse"}, {"option3" : "condemn"}],
 	 "options_right" : [{"option1" : "a reason given to explain a mistake or bad behaviour, forgive someone, allow someone not to do something"}, {"option2" : "say strongly that something is wrong or bad, sentence someone to a punishment, declare a building unsafe"}, {"option3" : "send someone away, remove someone from their job, decide something is not worth thinking about"}],
