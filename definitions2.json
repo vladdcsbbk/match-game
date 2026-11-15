@@ -115,7 +115,7 @@
 	{"options_left" : [{"option1" : "rich"}, {"option2" : "plentiful"}, {"option3" : "sufficient"}],
 	 "options_right" : [{"option1" : "available in large amounts, more than enough, abundant"}, {"option2" : "as much as is needed for a purpose, adequate"}, {"option3" : "having a lot of money or possessions, full of good things, heavy with butter, cream or sugar, deep and strong in colour or sound"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "ample"}, {"option2" : "feeble"}, {"option3" : "scarce"}],
 	 "options_right" : [{"option1" : "very weak, lacking strength or energy, not convincing or effective"}, {"option2" : "not plentiful, hard to find or get hold of, rare"}, {"option3" : "more than enough, plenty, large and roomy"}],
