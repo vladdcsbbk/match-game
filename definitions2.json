@@ -200,7 +200,7 @@
 	{"options_left" : [{"option1" : "ridicule"}, {"option2" : "commend"}, {"option3" : "reject"}],
 	 "options_right" : [{"option1" : "praise someone, especially formally or in public, speak well of something"}, {"option2" : "refuse to accept or agree to something, throw away as not good enough, push someone away"}, {"option3" : "make fun of someone or something in an unkind way, mockery"}],
 	 "correct_match" : [{"option1" : "option3"}, {"option2" : "option1"}, {"option3" : "option2"}],
-	 "done" : false
+	 "done" : true
 	}
     ]
 }
