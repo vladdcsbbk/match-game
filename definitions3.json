@@ -15,7 +15,7 @@
 	{"options_left" : [{"option1" : "red"}, {"option2" : "lifted"}, {"option3" : "rose"}, {"option4" : "bloom"}, {"option5" : "floated"}],
 	 "options_right" : [{"option1" : "raised up to a higher position, picked up, made more cheerful, ended or taken away"}, {"option2" : "a sweet-smelling flower with thorny stems, a pale pink colour, went up or soared upwards, got up from a bed or chair"}, {"option3" : "a flower, produce flowers, be healthy and full of life, a healthy glow on the cheeks"}, {"option4" : "rested or drifted on the surface of water, drifted gently through the air, suggested an idea"}, {"option5" : "the colour of blood or ripe strawberries, flushed in the face from embarrassment or anger"}],
 	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "rigid"}, {"option2" : "complex"}, {"option3" : "stiff"}, {"option4" : "troublesome"}, {"option5" : "hard"}],
 	 "options_right" : [{"option1" : "made of many connected parts, complicated and difficult to understand, a group of buildings used for one purpose"}, {"option2" : "not easily bent or moved, aching after exercise, formal and unfriendly, severe or strong"}, {"option3" : "causing difficulty, worry or annoyance, not easy to deal with"}, {"option4" : "firm and solid, not soft, difficult to do or understand, using a lot of effort, strict or unkind"}, {"option5" : "unable to bend, firmly fixed, very strict and unwilling to change"}],
