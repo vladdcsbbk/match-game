@@ -90,7 +90,7 @@
 	{"options_left" : [{"option1" : "soil"}, {"option2" : "ground"}, {"option3" : "principle"}, {"option4" : "theory"}, {"option5" : "field"}],
 	 "options_right" : [{"option1" : "the surface of the earth, land used for sport, a good reason for doing or believing something, crushed into powder"}, {"option2" : "a basic rule or belief that guides how someone behaves, a basic truth or law that explains how something works"}, {"option3" : "an idea or set of ideas that tries to explain why something happens, the ideas behind a subject rather than the practice of it"}, {"option4" : "an area of open land with grass or crops, a place where a sport is played, an area of study or work, all the people taking part in a race"}, {"option5" : "the earth in which plants grow, make something dirty"}],
 	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
-	 "done" : false
+	 "done" : true
 	}
     ]
 }
