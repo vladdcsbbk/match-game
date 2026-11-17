@@ -5,7 +5,7 @@
 	{"options_left" : [{"option1" : "bright"}, {"option2" : "good"}, {"option3" : "great"}, {"option4" : "fine"}, {"option5" : "sunny"}],
 	 "options_right" : [{"option1" : "of high quality or pleasing, kind and helpful, well behaved, skilful at something, useful or beneficial"}, {"option2" : "very large in size or amount, very important or famous, excellent or very enjoyable"}, {"option3" : "dry and clear, used about the weather, nice or lovely, very thin or made of tiny pieces, money paid as a punishment, all right or well"}, {"option4" : "full of warm daylight from a cloudless sky, cheerful and happy"}, {"option5" : "giving out or full of strong light, vivid in colour, clever and quick to learn, cheerful and lively"}],
 	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "snack"}, {"option2" : "spin"}, {"option3" : "circle"}, {"option4" : "roll"}, {"option5" : "rotate"}],
 	 "options_right" : [{"option1" : "turn round and round quickly, make thread by twisting fibres, a short drive or ride for pleasure"}, {"option2" : "a perfectly round shape, a group of people with shared interests, move all the way round something"}, {"option3" : "turn over and over or revolve while moving along, a small round bun of bread, an official list of names, a long deep rumbling sound"}, {"option4" : "turn around a central point, take turns or swap around in a regular order"}, {"option5" : "a small amount of food eaten between meals, eat a little food between meals"}],
