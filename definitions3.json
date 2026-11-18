@@ -25,7 +25,7 @@
 	{"options_left" : [{"option1" : "command"}, {"option2" : "head"}, {"option3" : "lead"}, {"option4" : "chief"}, {"option5" : "direct"}],
 	 "options_right" : [{"option1" : "the top part of the body, the person in charge of a school or group, the front or top of something, go towards a place"}, {"option2" : "take or guide someone somewhere, be first or in front, main or most important, a strap for walking a dog, a soft heavy grey metal"}, {"option3" : "the person in charge of a group or tribe, most important or main"}, {"option4" : "going straight without stopping or turning, frank and to the point, manage or control, show someone the way"}, {"option5" : "give an order, be in charge of soldiers or a group, an instruction, great skill at something"}],
 	 "correct_match" : [{"option1" : "option5"}, {"option2" : "option1"}, {"option3" : "option2"}, {"option4" : "option3"}, {"option5" : "option4"}],
-	 "done" : false
+	 "done" : true
 	},
 	{"options_left" : [{"option1" : "wrong"}, {"option2" : "mistake"}, {"option3" : "puzzle"}, {"option4" : "baffle"}, {"option5" : "slip"}],
 	 "options_right" : [{"option1" : "an error or fault, something done incorrectly, confuse or muddle up one person or thing with another"}, {"option2" : "a game or problem that tests your thinking, something hard to understand, confuse someone and make them think hard"}, {"option3" : "confuse someone completely so they cannot understand, a screen that controls the flow of sound or air"}, {"option4" : "slide by accident and lose your balance, a small error, move quietly and quickly, a small piece of paper"}, {"option5" : "not correct or true, unfair or morally bad, not suitable, not working properly"}],
