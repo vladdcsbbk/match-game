@@ -26,7 +26,7 @@
   {"options_left" : [{"option1" : "brave"}, {"option2" : "strong"}, {"option3" : "confident"}],
 	 "options_right" : [{"option1" : "shy"}, {"option2" : "surly"}, {"option3" : "suspicious"}],
 	 "correct_match" : [{"option3" : "option1"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "cease"}, {"option2" : "ban"}, {"option3" : "prevent"}],
 	 "options_right" : [{"option1" : "finish"}, {"option2" : "commence"}, {"option3" : "abolish"}],
