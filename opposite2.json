@@ -66,7 +66,7 @@
   {"options_left" : [{"option1" : "sometimes"}, {"option2" : "regularly"}, {"option3" : "never"}],
 	 "options_right" : [{"option1" : "normally"}, {"option2" : "daily"}, {"option3" : "occasionally"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "vengeful"}, {"option2" : "violent"}, {"option3" : "bitter"}],
 	 "options_right" : [{"option1" : "merciful"}, {"option2" : "resentful"}, {"option3" : "supportive"}],
