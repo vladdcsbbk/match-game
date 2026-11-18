@@ -91,7 +91,7 @@
   {"options_left" : [{"option1" : "pithy"}, {"option2" : "rambling"}, {"option3" : "complicated"}],
 	 "options_right" : [{"option1" : "incomplete"}, {"option2" : "abbreviated"}, {"option3" : "concise"}],
 	 "correct_match" : [{"option2" : "option3"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "doubtful"}, {"option2" : "tactful"}, {"option3" : "sincere"}],
 	 "options_right" : [{"option1" : "obnoxious"}, {"option2" : "forthright"}, {"option3" : "obstinate"}],
