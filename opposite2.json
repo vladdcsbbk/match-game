@@ -71,7 +71,7 @@
   {"options_left" : [{"option1" : "vengeful"}, {"option2" : "violent"}, {"option3" : "bitter"}],
 	 "options_right" : [{"option1" : "merciful"}, {"option2" : "resentful"}, {"option3" : "supportive"}],
 	 "correct_match" : [{"option1" : "option1"}],
-	 "done" : false
+	 "done" : true
 	},
   {"options_left" : [{"option1" : "nimble"}, {"option2" : "lumbering"}, {"option3" : "quick"}],
 	 "options_right" : [{"option1" : "clumsy"}, {"option2" : "awkward"}, {"option3" : "swift"}],
